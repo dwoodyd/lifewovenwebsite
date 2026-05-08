@@ -1,107 +1,154 @@
-/*
- * LIFEWOVEN Hero Section — "A Woven Self meets the visitor"
- * 
- * Layout: Woven Self figure right 40%, copy left
- * Copy: "You have the books. Something still isn't woven."
- * Animation: Figure fades in, then text staggers in
+/**
+ * HeroSection — Full-bleed video background: man holding "Before the Words" book to his chest
+ * Design: Deep indigo overlay on warm dark-navy video. Copy floats left-aligned over the video.
+ * Video: Man_holding_book_stillness — knit elder figure, dark starfield background
+ * Typography: Cormorant Garamond display, Lato body
+ * Palette: cream/ivory text, amber "woven" italic, indigo overlay gradient
  */
+
 import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
-  const [textVisible, setTextVisible] = useState(false);
-  const [figureVisible, setFigureVisible] = useState(false);
-  const [videoReady, setVideoReady] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoReady, setVideoReady] = useState(false);
+
   useEffect(() => {
-    // Stagger: figure first, then text
-    const t1 = setTimeout(() => setFigureVisible(true), 200);
-    const t2 = setTimeout(() => setTextVisible(true), 900);
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-    };
+    const v = videoRef.current;
+    if (!v) return;
+    const onReady = () => setVideoReady(true);
+    v.addEventListener("canplaythrough", onReady);
+    v.load();
+    return () => v.removeEventListener("canplaythrough", onReady);
   }, []);
 
   return (
     <section
-      id="main-content"
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ paddingTop: "80px" }}
-      aria-label="Hero — For people who've read the books"
+      id="hero"
+      className="relative w-full overflow-hidden"
+      style={{ minHeight: "100svh" }}
+      aria-label="Hero"
     >
-      {/* Ambient radial glow behind figure */}
-      <div
-        aria-hidden="true"
-        className="absolute right-0 top-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(233,185,110,0.06) 0%, transparent 70%)",
-          right: "5%",
-        }}
-      />
-
-      {/* Slow-rotating brand mark behind figure */}
-      <div
-        aria-hidden="true"
-        className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
-        style={{
-          right: "3%",
-          width: "520px",
-          height: "520px",
-          opacity: 0.06,
-          animation: "brand-rotate 60s linear infinite",
-        }}
-      >
+      {/* ── Full-bleed video ── */}
+      <div className="absolute inset-0 z-0">
+        {/* Poster / fallback */}
         <img
-          src="/manus-storage/convert-this-uploaded-lifewoven-logo-into-a-pure-m_ad4b74df.svg"
+          src="/manus-storage/poster_man_book_411dec88.jpg"
           alt=""
-          className="w-full h-full"
-          style={{ filter: "brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg)" }}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center center",
+            opacity: videoReady ? 0 : 1,
+            transition: "opacity 0.8s ease",
+          }}
+        />
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster="/manus-storage/poster_man_book_411dec88.jpg"
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center center",
+            opacity: videoReady ? 1 : 0,
+            transition: "opacity 0.8s ease",
+          }}
+        >
+          <source
+            src="/manus-storage/Man_holding_book_stillness_202605080830_f5f1c8f8.mp4"
+            type="video/mp4"
+          />
+        </video>
+
+        {/* Gradient overlay — left side darker for legibility, right side more transparent */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(105deg, rgba(10,10,30,0.88) 0%, rgba(10,10,30,0.72) 45%, rgba(10,10,30,0.25) 75%, rgba(10,10,30,0.10) 100%)",
+          }}
+        />
+        {/* Bottom fade */}
+        <div
+          className="absolute bottom-0 left-0 right-0"
+          style={{
+            height: "18%",
+            background:
+              "linear-gradient(to bottom, transparent, rgba(10,10,30,0.95))",
+          }}
         />
       </div>
 
-      <div className="container relative z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center lg:items-end gap-8 lg:gap-0 min-h-[calc(100vh-80px)] py-16 lg:py-0">
+      {/* ── Nav spacer ── */}
+      <div className="relative z-10 pt-20 md:pt-24" />
 
-          {/* Left — Copy */}
-          <div
-            className="flex-1 max-w-[600px] lg:pb-24"
-            style={{
-              opacity: textVisible ? 1 : 0,
-              transform: textVisible ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1)",
-            }}
-          >
+      {/* ── Copy — floats left over video ── */}
+      <div className="relative z-10 flex flex-col justify-center" style={{ minHeight: "calc(100svh - 5rem)" }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 w-full">
+          <div className="max-w-xl lg:max-w-2xl">
+
             {/* Eyebrow */}
-            <p className="eyebrow mb-6">For people who've read the books</p>
+            <p
+              className="uppercase tracking-[0.22em] text-xs font-medium mb-6"
+              style={{ color: "rgba(212,175,100,0.9)", fontFamily: "'Lato', sans-serif" }}
+            >
+              For people who've read the books
+            </p>
 
-            {/* H1 */}
+            {/* Headline */}
             <h1
-              className="font-display mb-6"
               style={{
-                fontSize: "clamp(48px, 7.5vw, 120px)",
-                lineHeight: 1.02,
-                fontWeight: 600,
-                color: "var(--lw-text)",
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontWeight: 700,
+                fontSize: "clamp(3rem, 7vw, 6rem)",
+                lineHeight: 1.0,
+                color: "#F5F0E8",
                 letterSpacing: "-0.01em",
+                marginBottom: "1.5rem",
               }}
             >
               You have the books.
               <br />
-              Something still isn't{" "}
-              <span className="highlight-amber">woven.</span>
+              <span style={{ fontWeight: 300, color: "rgba(245,240,232,0.7)" }}>
+                Something still
+              </span>
+              <br />
+              <span style={{ fontWeight: 300, color: "rgba(245,240,232,0.7)" }}>
+                isn't{" "}
+              </span>
+              <em
+                style={{
+                  fontStyle: "italic",
+                  fontWeight: 700,
+                  color: "#D4AF64",
+                  background: "rgba(212,175,100,0.12)",
+                  padding: "0 0.12em",
+                  borderRadius: "2px",
+                }}
+              >
+                woven.
+              </em>
             </h1>
 
-            {/* Body */}
+            {/* Sub */}
             <p
-              className="mb-10"
               style={{
-                fontSize: "18px",
-                lineHeight: 1.6,
-                color: "var(--lw-text-muted)",
-                maxWidth: "480px",
-                opacity: textVisible ? 1 : 0,
-                transform: textVisible ? "translateY(0)" : "translateY(12px)",
-                transition: "opacity 0.9s 0.15s cubic-bezier(0.16,1,0.3,1), transform 0.9s 0.15s cubic-bezier(0.16,1,0.3,1)",
+                fontFamily: "'Lato', sans-serif",
+                fontSize: "clamp(1rem, 2vw, 1.2rem)",
+                color: "rgba(245,240,232,0.78)",
+                lineHeight: 1.65,
+                marginBottom: "2.5rem",
+                maxWidth: "38ch",
               }}
             >
               The wisdom you've already gathered doesn't need more reading.
@@ -109,80 +156,58 @@ export default function HeroSection() {
             </p>
 
             {/* CTAs */}
-            <div
-              className="flex flex-wrap items-center gap-6"
-              style={{
-                opacity: textVisible ? 1 : 0,
-                transform: textVisible ? "translateY(0)" : "translateY(12px)",
-                transition: "opacity 0.9s 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.9s 0.3s cubic-bezier(0.16,1,0.3,1)",
-              }}
-            >
-              <a href="#audit" className="btn-primary">
-                Take the Audit →
-              </a>
-              <a href="#" className="btn-secondary">
-                I'm tired of starting over.
-              </a>
-            </div>
-          </div>
-
-          {/* Right — Woven Self figure (video with image fallback) */}
-          <div
-            className="relative flex-shrink-0 flex items-end justify-center lg:absolute lg:right-0 lg:bottom-0"
-            style={{
-              width: "clamp(300px, 42vw, 580px)",
-              height: "clamp(300px, 65vh, 680px)",
-              overflow: "hidden",
-              opacity: figureVisible ? 1 : 0,
-              transform: figureVisible ? "translateY(0)" : "translateY(30px)",
-              transition: "opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1)",
-            }}
-            aria-hidden="true"
-          >
-            {/* Stacked container: image always visible, video overlays when ready */}
-            <div className="relative" style={{ width: "100%", height: "100%" }}>
-              {/* Fallback image — always rendered */}
-              <img
-                src="/manus-storage/lumen_woc_1_1778193478991_f73f2f0c.jpg"
-                alt="A Woven Self — knit figure holding stillness"
+            <div className="flex flex-wrap items-center gap-4">
+              <a
+                href="#audit"
                 style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "top center",
-                  display: "block",
-                  opacity: videoReady ? 0 : 1,
-                  transition: "opacity 0.8s ease",
+                  display: "inline-block",
+                  background: "#D4AF64",
+                  color: "#0F1023",
+                  fontFamily: "'Lato', sans-serif",
+                  fontWeight: 700,
+                  fontSize: "0.95rem",
+                  letterSpacing: "0.04em",
+                  padding: "0.85rem 2rem",
+                  borderRadius: "9999px",
+                  textDecoration: "none",
+                  transition: "background 0.2s, transform 0.2s",
                 }}
-                loading="eager"
-              />
-              {/* Video — positioned absolutely over image, fades in when ready */}
-              <video
-                ref={videoRef}
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="auto"
-                poster="/manus-storage/mascot_poster_68af7f00.jpg"
-                onCanPlay={() => setVideoReady(true)}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center 60%",
-                  opacity: videoReady ? 1 : 0,
-                  transition: "opacity 0.8s ease",
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "#c49d4e";
+                  (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.background = "#D4AF64";
+                  (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                 }}
               >
-                <source src="/manus-storage/Woven_mascot_floats_center_202605071646_b9e2ec92.mp4" type="video/mp4" />
-              </video>
+                Take the Audit →
+              </a>
+              <a
+                href="#five-threads"
+                style={{
+                  display: "inline-block",
+                  color: "rgba(245,240,232,0.7)",
+                  fontFamily: "'Lato', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "0.9rem",
+                  letterSpacing: "0.02em",
+                  textDecoration: "none",
+                  borderBottom: "1px solid rgba(245,240,232,0.3)",
+                  paddingBottom: "2px",
+                  transition: "color 0.2s, border-color 0.2s",
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.color = "#F5F0E8";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(245,240,232,0.7)";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.color = "rgba(245,240,232,0.7)";
+                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(245,240,232,0.3)";
+                }}
+              >
+                I'm tired of starting over.
+              </a>
             </div>
           </div>
         </div>
@@ -190,35 +215,40 @@ export default function HeroSection() {
 
       {/* Scroll indicator */}
       <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        style={{
-          opacity: textVisible ? 0.5 : 0,
-          transition: "opacity 1s 1s ease",
-        }}
+        className="absolute bottom-8 left-1/2 z-10"
+        style={{ transform: "translateX(-50%)" }}
         aria-hidden="true"
       >
-        <span className="text-xs tracking-widest uppercase" style={{ color: "var(--lw-text-muted)", fontSize: "10px" }}>
-          Scroll
-        </span>
         <div
-          className="w-px h-10"
           style={{
-            background: "linear-gradient(to bottom, var(--lw-text-muted), transparent)",
-            animation: "scroll-pulse 2s ease-in-out infinite",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: "6px",
+            opacity: 0.5,
           }}
-        />
+        >
+          <span
+            style={{
+              fontFamily: "'Lato', sans-serif",
+              fontSize: "0.65rem",
+              letterSpacing: "0.2em",
+              color: "#F5F0E8",
+              textTransform: "uppercase",
+            }}
+          >
+            SCROLL
+          </span>
+          <div
+            style={{
+              width: "1px",
+              height: "40px",
+              background: "linear-gradient(to bottom, #F5F0E8, transparent)",
+              animation: "pulse 2s ease-in-out infinite",
+            }}
+          />
+        </div>
       </div>
-
-      <style>{`
-        @keyframes brand-rotate {
-          from { transform: translateY(-50%) rotate(0deg); }
-          to { transform: translateY(-50%) rotate(360deg); }
-        }
-        @keyframes scroll-pulse {
-          0%, 100% { opacity: 0.4; transform: scaleY(1); }
-          50% { opacity: 0.8; transform: scaleY(1.2); }
-        }
-      `}</style>
     </section>
   );
 }

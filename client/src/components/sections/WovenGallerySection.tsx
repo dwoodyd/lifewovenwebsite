@@ -59,7 +59,7 @@ const figures = [
     quotes: [
       "This isn't self-help. It's self-recognition.",
       "I've been weaving for forty years. I just didn't have a name for it.",
-      "Lumin doesn't tell you what to do. She shows you what you already know.",
+      "Lumin doesn't tell you what to do. It shows you what you already know.",
     ],
   },
 ];
