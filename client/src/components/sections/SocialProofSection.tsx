@@ -165,7 +165,6 @@ export default function SocialProofSection() {
                   type="video/mp4"
                 />
               </video>
-
               {/* Subtle amber glow ring */}
               <div
                 aria-hidden="true"
@@ -178,6 +177,25 @@ export default function SocialProofSection() {
                 }}
               />
             </div>
+
+            {/* Amber italic caption */}
+            <p
+              style={{
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontStyle: "italic",
+                fontWeight: 400,
+                fontSize: "13px",
+                color: "rgba(212,175,100,0.7)",
+                textAlign: "center",
+                marginTop: "0.75rem",
+                letterSpacing: "0.01em",
+                lineHeight: 1.4,
+              }}
+            >
+              A Woven Self, reading{" "}
+              <em style={{ color: "rgba(212,175,100,0.9)" }}>Before the Words</em>
+            </p>
+
           </div>
 
         </div>
