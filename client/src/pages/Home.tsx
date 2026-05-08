@@ -1,25 +1,113 @@
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
-
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Best Practices, Design Guide and Common Pitfalls
+/*
+ * LIFEWOVEN Home Page — "Monastery Library at Dusk"
+ * 
+ * Design: Deep indigo (#0F1023) + amber (#E9B96E) + cream (#F0E8D8)
+ * Typography: Cormorant Garamond (display) + DM Sans (body)
+ * Mood: Quiet, wise, attentive — a library at dusk
+ * 
+ * Section order:
+ * 0. Nav (sticky)
+ * 1. Hero — Woven Self meets visitor
+ * 2. Five Threads — 5S Framework
+ * 3. Woven Gallery — marquee of figures
+ * 4. Audit — 12 questions, free
+ * 5. Lumin — INSIDE THE WEAVE (protected)
+ * 6. Built On — wisdom traditions
+ * 7. Pricing — Explorer / Seeker / Oracle
+ * 8. Trust Row → Footer
  */
+import { useEffect } from "react";
+import Nav from "../components/Nav";
+import ParticleField from "../components/ParticleField";
+import HeroSection from "../components/sections/HeroSection";
+import FiveThreadsSection from "../components/sections/FiveThreadsSection";
+import WovenGallerySection from "../components/sections/WovenGallerySection";
+import AuditSection from "../components/sections/AuditSection";
+import LuminSection from "../components/sections/LuminSection";
+import BuiltOnSection from "../components/sections/BuiltOnSection";
+import PricingSection from "../components/sections/PricingSection";
+import { TrustRow, Footer } from "../components/sections/TrustFooter";
+import SocialProofSection from "../components/sections/SocialProofSection";
+import ClosingCTA from "../components/sections/ClosingCTA";
+
 export default function Home() {
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
+  // Initialize scroll reveal for all .reveal elements
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const elements = document.querySelectorAll<HTMLElement>(".reveal");
+
+    if (reducedMotion) {
+      elements.forEach((el) => el.classList.add("visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div
+      style={{
+        background: "var(--lw-bg)",
+        color: "var(--lw-text)",
+        minHeight: "100vh",
+        position: "relative",
+      }}
+    >
+      {/* Ambient gold particles — fixed background layer */}
+      <ParticleField />
+
+      {/* Navigation */}
+      <Nav />
+
+      {/* Main content */}
       <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
+        {/* 1. Hero */}
+        <HeroSection />
+
+        {/* 2. Five Threads */}
+        <FiveThreadsSection />
+
+        {/* 3. Woven Gallery */}
+        <WovenGallerySection />
+
+        {/* 4. The Audit */}
+        <AuditSection />
+
+        {/* 5. Lumin — PROTECTED SECTION */}
+        <LuminSection />
+
+        {/* 6. Built On */}
+        <BuiltOnSection />
+
+        {/* 7. Social Proof — the book */}
+        <SocialProofSection />
+
+        {/* 8. Pricing */}
+        <PricingSection />
+
+        {/* 9. Trust Row */}
+        <TrustRow />
+
+        {/* 10. Closing CTA */}
+        <ClosingCTA />
       </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

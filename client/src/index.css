@@ -1,3 +1,12 @@
+/*
+ * LIFEWOVEN — Design Philosophy: "Monastery Library at Dusk"
+ * 
+ * Color: Deep indigo ground (#0F1023) with amber warmth (#E9B96E) and cream text (#F0E8D8)
+ * Typography: Cormorant Garamond (display) + DM Sans (body)
+ * Mood: Quiet, wise, attentive — a library at dusk
+ * Layout: Asymmetric, mascot-anchored, generous vertical rhythm
+ */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -23,136 +32,124 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
+/* ============================================================
+   LIFEWOVEN DESIGN TOKENS
+   ============================================================ */
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
+  /* Core palette */
+  --lw-bg:           #0F1023;   /* deep indigo — the ground */
+  --lw-bg-elevated:  #1A1B33;   /* card backgrounds */
+  --lw-bg-lumin:     #0A0B1A;   /* Lumin section — pull the indigo down */
+  --lw-text:         #F0E8D8;   /* warm cream */
+  --lw-text-muted:   #989AB0;   /* secondary text */
+  --lw-amber:        #E9B96E;   /* amber accent — CTAs, highlights */
+  --lw-amber-soft:   rgba(233, 185, 110, 0.18); /* soft amber for highlight blocks */
+  --lw-amber-glow:   rgba(233, 185, 110, 0.08); /* very soft amber for backgrounds */
+  --lw-rose:         #C97B7B;   /* rose — Stewardship thread */
+  --lw-border:       #2D2E48;
+  --lw-border-soft:  rgba(45, 46, 72, 0.6);
+
+  /* Thread colors for 5S */
+  --thread-state:        #7BA7C9;  /* blue */
+  --thread-story:        #E9B96E;  /* amber */
+  --thread-standards:    #7BC99A;  /* green */
+  --thread-strategy:     #7B7BC9;  /* indigo */
+  --thread-stewardship:  #C97B7B;  /* rose */
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', 'Georgia', serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --space-section: clamp(80px, 12vw, 160px);
+  --max-width: 1280px;
+  --content-width: 720px;
+
+  /* Tailwind/shadcn compatibility */
+  --radius: 0.5rem;
+  --background: oklch(0.12 0.02 265);
+  --foreground: oklch(0.93 0.02 75);
+  --card: oklch(0.16 0.02 265);
+  --card-foreground: oklch(0.93 0.02 75);
+  --popover: oklch(0.16 0.02 265);
+  --popover-foreground: oklch(0.93 0.02 75);
+  --primary: oklch(0.78 0.12 75);
+  --primary-foreground: oklch(0.12 0.02 265);
+  --secondary: oklch(0.20 0.02 265);
+  --secondary-foreground: oklch(0.93 0.02 75);
+  --muted: oklch(0.20 0.02 265);
+  --muted-foreground: oklch(0.62 0.03 265);
+  --accent: oklch(0.78 0.12 75);
+  --accent-foreground: oklch(0.12 0.02 265);
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
+  --border: oklch(0.25 0.02 265);
+  --input: oklch(0.25 0.02 265);
+  --ring: oklch(0.78 0.12 75);
 }
 
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
-}
-
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--lw-bg);
+    color: var(--lw-text);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    line-height: 1.05;
+    color: var(--lw-text);
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
-  [type="button"]:not(:disabled),
-  [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
-    @apply cursor-pointer;
+  a[href] {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background-color: var(--lw-amber-soft);
+    color: var(--lw-text);
+  }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: 2px solid var(--lw-amber);
+    outline-offset: 3px;
   }
 }
 
+/* ============================================================
+   COMPONENTS
+   ============================================================ */
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
-    padding-right: 1rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .flex {
@@ -162,16 +159,370 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: var(--max-width);
+    }
+  }
+
+  /* ---- Typography utilities ---- */
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-amber {
+    color: var(--lw-amber);
+  }
+
+  .text-muted {
+    color: var(--lw-text-muted);
+  }
+
+  /* Eyebrow label */
+  .eyebrow {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--lw-amber);
+  }
+
+  /* Amber italic highlight block — the merlai treatment */
+  .highlight-amber {
+    position: relative;
+    display: inline;
+    font-style: italic;
+    color: var(--lw-amber);
+  }
+
+  .highlight-amber::before {
+    content: '';
+    position: absolute;
+    inset: -2px -6px;
+    background: var(--lw-amber-soft);
+    border-radius: 3px;
+    transform: rotate(-0.8deg);
+    z-index: -1;
+  }
+
+  /* ---- Buttons ---- */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--lw-amber);
+    color: #0F1023;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 0.75rem 1.75rem;
+    border-radius: 100px;
+    border: none;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-primary:hover {
+    background-color: #f0c87a;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(233, 185, 110, 0.3);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--lw-text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 400;
+    font-style: italic;
+    padding: 0.75rem 0;
+    border: none;
+    border-bottom: 1px solid rgba(240, 232, 216, 0.4);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-secondary:hover {
+    color: var(--lw-amber);
+    border-bottom-color: var(--lw-amber);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--lw-amber);
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0.65rem 1.5rem;
+    border-radius: 100px;
+    border: 1px solid var(--lw-amber);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .btn-outline:hover {
+    background: var(--lw-amber-soft);
+    transform: translateY(-1px);
+  }
+
+  /* ---- Section wrapper ---- */
+  .section {
+    padding-top: var(--space-section);
+    padding-bottom: var(--space-section);
+    position: relative;
+  }
+
+  /* ---- Gold particle canvas ---- */
+  .particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+  }
+
+  /* ---- Scroll reveal ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ---- Marquee ---- */
+  .marquee-track {
+    display: flex;
+    gap: 2rem;
+    animation: marquee-scroll 40s linear infinite;
+    width: max-content;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ---- Thread strands ---- */
+  .thread-strand {
+    transition: opacity 0.2s ease, filter 0.2s ease;
+  }
+
+  .thread-strand.dimmed {
+    opacity: 0.25;
+    filter: saturate(0.3);
+  }
+
+  .thread-strand.active {
+    opacity: 1;
+    filter: saturate(1.4) brightness(1.2);
+  }
+
+  /* ---- Pricing cards ---- */
+  .pricing-card {
+    background: var(--lw-bg-elevated);
+    border: 1px solid var(--lw-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pricing-card:hover {
+    border-color: rgba(233, 185, 110, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .pricing-card.featured {
+    border-color: var(--lw-amber);
+    background: linear-gradient(135deg, #1A1B33 0%, #1F1D38 100%);
+  }
+
+  .pricing-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--lw-amber), transparent);
+  }
+
+  /* ---- Trust chips ---- */
+  .trust-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.85rem;
+    background: rgba(45, 46, 72, 0.6);
+    border: 1px solid var(--lw-border);
+    border-radius: 100px;
+    font-size: 13px;
+    color: var(--lw-text-muted);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .trust-chip:hover {
+    border-color: rgba(233, 185, 110, 0.4);
+    color: var(--lw-text);
+  }
+
+  /* ---- Nav ---- */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
+  }
+
+  .nav.scrolled {
+    background: rgba(15, 16, 35, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--lw-border);
+  }
+
+  /* ---- Woven figure images ---- */
+  .woven-figure {
+    filter: drop-shadow(0 20px 60px rgba(233, 185, 110, 0.15));
+    transition: filter 0.4s ease;
+  }
+
+  .woven-figure:hover {
+    filter: drop-shadow(0 20px 80px rgba(233, 185, 110, 0.25));
+  }
+
+  /* ---- Lumin section ---- */
+  .lumin-section {
+    background: var(--lw-bg-lumin);
+    position: relative;
+  }
+
+  .lumin-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, var(--lw-bg), transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .lumin-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--lw-bg), transparent);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ---- Five threads diagram ---- */
+  .five-threads-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+  }
+
+  /* ---- Woven gallery figure card ---- */
+  .gallery-figure {
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  .gallery-figure-quote {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: rgba(26, 27, 51, 0.95);
+    border: 1px solid var(--lw-border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    width: 240px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--lw-text);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 10;
+    backdrop-filter: blur(8px);
+    text-align: center;
+  }
+
+  .gallery-figure:hover .gallery-figure-quote {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-8px);
+  }
+
+  /* ---- Reduced motion ---- */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    .marquee-track {
+      animation: none;
+    }
+
+    .thread-strand {
+      transition: none;
     }
   }
 }
