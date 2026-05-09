@@ -99,8 +99,8 @@ export default function HeroSection() {
 
             {/* Eyebrow */}
             <p
-              className="uppercase tracking-[0.22em] text-xs font-medium mb-6"
-              style={{ color: "rgba(212,175,100,0.9)", fontFamily: "'Lato', sans-serif" }}
+              className="uppercase font-medium mb-6"
+              style={{ color: "rgba(212,175,100,0.9)", fontFamily: "'Lato', sans-serif", fontSize: "13px", letterSpacing: "0.18em" }}
             >
               For people who've read the books
             </p>

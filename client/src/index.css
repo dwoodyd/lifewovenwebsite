@@ -412,11 +412,17 @@
     left: 0;
     right: 0;
     z-index: 100;
-    padding: 1.25rem 2rem;
+    padding: 1rem 1.25rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: background 0.4s ease, backdrop-filter 0.4s ease, border-bottom 0.4s ease;
+  }
+
+  @media (min-width: 640px) {
+    .nav {
+      padding: 1.25rem 2rem;
+    }
   }
 
   .nav.scrolled {
@@ -507,6 +513,22 @@
   .gallery-figure:hover .gallery-figure-quote {
     opacity: 1;
     transform: translateX(-50%) translateY(-8px);
+  }
+
+  /* ---- Vault pillars: stack on mobile ---- */
+  @media (max-width: 600px) {
+    .vault-pillars {
+      grid-template-columns: 1fr !important;
+      max-width: 320px !important;
+    }
+  }
+
+  /* ---- Section vertical padding: tighten on mobile ---- */
+  @media (max-width: 640px) {
+    .section {
+      padding-top: clamp(64px, 14vw, 96px);
+      padding-bottom: clamp(64px, 14vw, 96px);
+    }
   }
 
   /* ---- Reduced motion ---- */

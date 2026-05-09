@@ -98,8 +98,8 @@ export default function AuditSection() {
 
           {/* Right — Phone mockup with cycling questions */}
           <div
-            className="flex-shrink-0 relative"
-            style={{ width: "clamp(260px, 30vw, 340px)" }}
+            className="flex-shrink-0 relative w-full lg:w-auto"
+            style={{ maxWidth: "340px", margin: "0 auto" }}
             aria-label="Example audit questions"
           >
             {/* Phone frame */}

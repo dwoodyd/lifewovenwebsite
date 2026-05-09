@@ -104,6 +104,7 @@ export default function VaultSection() {
 
           {/* Three pillars */}
           <div
+            className="vault-pillars"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",

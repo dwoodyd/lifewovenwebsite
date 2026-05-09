@@ -47,8 +47,8 @@ export default function ClosingCTA() {
                 alt=""
                 className="woven-figure"
                 style={{
-                  width: "clamp(80px, 12vw, 160px)",
-                  height: "clamp(100px, 16vw, 200px)",
+                  width: "clamp(100px, 22vw, 160px)",
+                  height: "clamp(130px, 28vw, 200px)",
                   objectFit: "cover",
                   objectPosition: "top center",
                   borderRadius: "8px",

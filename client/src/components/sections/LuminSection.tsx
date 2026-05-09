@@ -198,8 +198,8 @@ export default function LuminSection() {
             style={{
               fontFamily: "'Lato', sans-serif",
               fontWeight: 500,
-              fontSize: "11px",
-              letterSpacing: "0.22em",
+              fontSize: "13px",
+              letterSpacing: "0.18em",
               textTransform: "uppercase",
               color: "#D4AF64",
               marginBottom: "1.25rem",
@@ -255,7 +255,7 @@ export default function LuminSection() {
           <p
             style={{
               fontFamily: "'Lato', sans-serif",
-              fontSize: "clamp(0.95rem, 1.4vw, 1.05rem)",
+              fontSize: "clamp(1rem, 1.6vw, 1.05rem)",
               color: "rgba(245,240,232,0.78)",
               lineHeight: 1.75,
               marginBottom: "2rem",

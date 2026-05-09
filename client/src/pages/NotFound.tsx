@@ -20,7 +20,7 @@ export default function NotFound() {
     >
       <p
         style={{
-          fontSize: "11px",
+          fontSize: "13px",
           letterSpacing: "0.15em",
           textTransform: "uppercase",
           color: "var(--lw-amber)",

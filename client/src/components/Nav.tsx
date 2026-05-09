@@ -64,7 +64,7 @@ export default function Nav() {
 
       {/* CTA */}
       <div className="flex items-center gap-3">
-        <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-primary hidden sm:inline-flex">
+        <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex">
           Take the Audit
         </a>
 

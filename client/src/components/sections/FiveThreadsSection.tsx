@@ -150,8 +150,8 @@ export default function FiveThreadsSection() {
             {/* Left: headline — sits over the lighter part of the video */}
             <div className="lg:w-5/12 section reveal">
               <p
-                className="uppercase tracking-[0.22em] text-xs font-medium mb-5"
-                style={{ color: "#D4AF64", fontFamily: "'Lato', sans-serif" }}
+                className="uppercase tracking-[0.18em] font-medium mb-5"
+                style={{ color: "#D4AF64", fontFamily: "'Lato', sans-serif", fontSize: "13px" }}
               >
                 The 5S Framework
               </p>
@@ -252,8 +252,8 @@ export default function FiveThreadsSection() {
                 <p
                   style={{
                     fontFamily: "'Lato', sans-serif",
-                    fontSize: "0.7rem",
-                    letterSpacing: "0.2em",
+                    fontSize: "13px",
+                    letterSpacing: "0.15em",
                     textTransform: "uppercase",
                     color: "#D4AF64",
                     marginBottom: "0.75rem",
@@ -276,7 +276,7 @@ export default function FiveThreadsSection() {
                 <p
                   style={{
                     fontFamily: "'Lato', sans-serif",
-                    fontSize: "0.97rem",
+                    fontSize: "1rem",
                     color: "rgba(245,240,232,0.72)",
                     lineHeight: 1.7,
                   }}

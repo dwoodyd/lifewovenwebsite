@@ -27,7 +27,6 @@ export default function SocialProofSection() {
       ref={sectionRef}
       className="section reveal"
       aria-label="The book that started this"
-      style={{ padding: "7rem 0 8rem" }}
     >
       <div className="container">
         {/* Two-column layout: left content | right video */}
@@ -117,8 +116,8 @@ export default function SocialProofSection() {
 
           {/* Right column — Woven lady reading video (tall, commanding) */}
           <div
-            className="flex-shrink-0 flex flex-col items-center justify-center"
-            style={{ width: "clamp(300px, 40vw, 520px)" }}
+            className="flex-shrink-0 flex flex-col items-center justify-center w-full lg:w-auto"
+            style={{ maxWidth: "520px", margin: "0 auto" }}
             aria-label="A woven figure reading Before the Words"
           >
             <div

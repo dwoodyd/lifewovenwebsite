@@ -438,7 +438,7 @@ export default function PricingSection() {
                 background: "rgba(245,240,232,0.04)",
                 border: "1px solid rgba(212,175,100,0.2)",
                 borderRadius: "16px",
-                padding: "2.5rem",
+                padding: "clamp(1.25rem, 5vw, 2.5rem)",
                 display: "flex",
                 flexDirection: "column",
                 gap: "1.5rem",
