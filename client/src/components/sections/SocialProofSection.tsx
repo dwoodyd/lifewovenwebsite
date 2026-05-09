@@ -100,7 +100,13 @@ export default function SocialProofSection() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#" className="btn-outline" style={{ fontSize: "15px" }}>
+              <a
+                href="https://www.soulengineer.online/book-shop"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline"
+                style={{ fontSize: "15px" }}
+              >
                 Get the book →
               </a>
               <a href="#audit" className="btn-secondary" style={{ fontSize: "15px" }}>
