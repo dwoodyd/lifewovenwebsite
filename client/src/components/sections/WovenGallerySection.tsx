@@ -93,6 +93,13 @@ function ArchetypeCard({
         flexShrink: 0,
         position: "relative",
         cursor: "pointer",
+        borderRadius: "14px",
+        transform: isActive ? "translateY(-8px) scale(1.025)" : "translateY(0) scale(1)",
+        transition: "transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease",
+        boxShadow: isActive
+          ? "0 20px 48px rgba(212,175,100,0.18), 0 8px 20px rgba(0,0,0,0.45)"
+          : "0 4px 16px rgba(0,0,0,0.25)",
+        outline: isActive ? "1px solid rgba(212,175,100,0.45)" : "1px solid transparent",
       }}
       onMouseEnter={() => onActivate(cardIndex)}
       onMouseLeave={onDeactivate}
@@ -119,8 +126,12 @@ function ArchetypeCard({
           objectPosition: "top center",
           borderRadius: "12px",
           display: "block",
-          transition: "filter 0.2s ease",
-          filter: isActive ? "brightness(0.65)" : "brightness(1)",
+          transition: "filter 0.35s ease, transform 0.35s ease",
+          filter: isActive
+            ? "brightness(0.6) saturate(1.1)"
+            : "brightness(0.92) saturate(0.95)",
+          transform: isActive ? "scale(1.04)" : "scale(1)",
+          transformOrigin: "top center",
         }}
         loading="lazy"
       />
@@ -133,8 +144,10 @@ function ArchetypeCard({
           left: 0,
           right: 0,
           padding: "0.6rem 0.75rem",
-          background: "linear-gradient(to top, rgba(10,10,30,0.75) 0%, transparent 100%)",
+          background: "linear-gradient(to top, rgba(10,10,30,0.85) 0%, transparent 100%)",
           borderRadius: "0 0 12px 12px",
+          transition: "opacity 0.25s ease",
+          opacity: isActive ? 0 : 1,
         }}
       >
         <p
@@ -166,12 +179,25 @@ function ArchetypeCard({
           padding: "1.25rem",
           textAlign: "center",
           opacity: isActive ? 1 : 0,
-          transition: "opacity 0.18s ease",
+          transition: "opacity 0.25s ease",
           pointerEvents: isActive ? "auto" : "none",
-          background: "rgba(10,10,30,0.55)",
-          backdropFilter: "blur(2px)",
+          background: "linear-gradient(to top, rgba(10,10,30,0.82) 0%, rgba(10,10,30,0.45) 100%)",
+          backdropFilter: "blur(3px)",
         }}
       >
+        <p
+          style={{
+            fontFamily: "'Lato', sans-serif",
+            fontSize: "11px",
+            fontWeight: 700,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "rgba(212,175,100,0.85)",
+            marginBottom: "0.6rem",
+          }}
+        >
+          {archetype.label}
+        </p>
         <p
           style={{
             fontFamily: "'Cormorant Garamond', Georgia, serif",
