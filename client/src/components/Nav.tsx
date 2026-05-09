@@ -56,7 +56,7 @@ export default function Nav() {
            style={{ color: "var(--lw-text-muted)" }}>
           Founding Members
         </a>
-        <a href="/sign-in" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           Sign in
         </a>
@@ -98,7 +98,7 @@ export default function Nav() {
             { label: "The Five", href: "#the-five", external: false },
             { label: "The Audit", href: "https://lifewoven.click", external: true },
             { label: "Founding Members", href: "#pricing", external: false },
-            { label: "Sign in", href: "/sign-in", external: false },
+            { label: "Sign in", href: "https://lifewoven.click", external: true },
           ].map((item) => (
             <a
               key={item.label}

@@ -4,7 +4,7 @@
  * Design philosophy: Deep indigo / Cormorant Garamond display, Lato body
  * Amber (#D4AF64) accents, warm ivory text on dark background
  *
- * Desktop: 2×2 grid (4 screens)
+ * Desktop: 2×2 + 1 centered grid (5 screens)
  * Mobile: horizontal snap-scroll carousel, one card per view
  * Each card shows the mockup image with its headline and sub-caption
  */
@@ -39,6 +39,13 @@ const screens = [
     headline: "Meet yourself",
     headlineItalic: "where you are.",
     caption: "Align. Resonance. Uplift. Flow. Four doorways into the practice.",
+  },
+  {
+    src: "/manus-storage/mockup_ground_check_e93c12fd.png",
+    alt: "Lifewoven Ground Check screen showing the headline 'Where are you right now?' with the sub-copy 'Seven honest questions. No score. No judgment. Just a reading of where you are.' and the first question 'How settled does your body feel right now?' with answer options 0 through 4.",
+    headline: "Where are you,",
+    headlineItalic: "right now?",
+    caption: "Seven honest questions. No score. No judgment. Just a reading of where you are.",
   },
 ];
 
@@ -209,7 +216,7 @@ export default function AppPreviewSection() {
             lineHeight: 1.5,
           }}
         >
-          Four screens. One practice. Everything you've gathered, finally given a place to land.
+          Five screens. One practice. Everything you've gathered, finally given a place to land.
         </p>
       </div>
 
@@ -221,18 +228,28 @@ export default function AppPreviewSection() {
         }}
         id="app-preview-desktop"
       >
+        {/* First 4 in 2×2 grid */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "2rem",
             maxWidth: "900px",
+            margin: "0 auto 2rem",
+          }}
+        >
+          {screens.slice(0, 4).map((screen, i) => (
+            <MockupCard key={i} screen={screen} index={i} />
+          ))}
+        </div>
+        {/* 5th card — centered, narrower */}
+        <div
+          style={{
+            maxWidth: "440px",
             margin: "0 auto",
           }}
         >
-          {screens.map((screen, i) => (
-            <MockupCard key={i} screen={screen} index={i} />
-          ))}
+          <MockupCard screen={screens[4]} index={4} />
         </div>
       </div>
 

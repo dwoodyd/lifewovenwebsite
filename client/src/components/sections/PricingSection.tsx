@@ -581,11 +581,14 @@ export default function PricingSection() {
                   style={{
                     fontFamily: "'Lato', sans-serif",
                     fontSize: "12px",
-                    color: "rgba(245,240,232,0.3)",
+                    color: formState.work.length >= 200 ? "rgba(212,175,100,0.5)" : "rgba(245,240,232,0.3)",
                     textAlign: "right",
+                    transition: "color 0.3s ease",
                   }}
                 >
-                  {formState.work.length} / 600
+                  {formState.work.length < 200
+                    ? `${formState.work.length} / 200 minimum`
+                    : `✓ ${formState.work.length} characters`}
                 </p>
               </div>
 

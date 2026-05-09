@@ -72,12 +72,25 @@ export default function HeroSection() {
 
         {/* Gradient overlay — left side darker for legibility, right side more transparent */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 hero-gradient-overlay"
           style={{
             background:
               "linear-gradient(105deg, rgba(10,10,30,0.88) 0%, rgba(10,10,30,0.72) 45%, rgba(10,10,30,0.25) 75%, rgba(10,10,30,0.10) 100%)",
           }}
         />
+        {/* Mobile-only: stronger full overlay so copy is always legible on narrow viewports */}
+        <style>{`
+          @media (max-width: 640px) {
+            .hero-gradient-overlay {
+              background: linear-gradient(
+                to bottom,
+                rgba(10,10,30,0.75) 0%,
+                rgba(10,10,30,0.60) 50%,
+                rgba(10,10,30,0.80) 100%
+              ) !important;
+            }
+          }
+        `}</style>
         {/* Bottom fade */}
         <div
           className="absolute bottom-0 left-0 right-0"
