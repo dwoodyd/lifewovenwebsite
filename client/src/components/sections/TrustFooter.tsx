@@ -100,7 +100,7 @@ export function Footer() {
               {[
                 { label: "The Five", href: "#the-five" },
                 { label: "The Audit", href: "#audit" },
-                { label: "Pricing", href: "#pricing" },
+                { label: "Founding Members", href: "#pricing" },
                 { label: "Privacy", href: "/privacy" },
                 { label: "Terms", href: "/terms" },
               ].map((link) => (

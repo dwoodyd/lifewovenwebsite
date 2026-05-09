@@ -94,7 +94,7 @@ export default function ClosingCTA() {
               Take the Audit →
             </a>
             <a href="#pricing" className="btn-outline" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>
-              See pricing
+              Founding Members →
             </a>
           </div>
         </div>

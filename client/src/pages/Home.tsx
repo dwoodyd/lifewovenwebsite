@@ -2,19 +2,22 @@
  * LIFEWOVEN Home Page — "Monastery Library at Dusk"
  * 
  * Design: Deep indigo (#0F1023) + amber (#E9B96E) + cream (#F0E8D8)
- * Typography: Cormorant Garamond (display) + DM Sans (body)
+ * Typography: Cormorant Garamond (display) + Lato (body)
  * Mood: Quiet, wise, attentive — a library at dusk
  * 
- * Section order:
+ * Section order (Fix 5c applied):
  * 0. Nav (sticky)
- * 1. Hero — Woven Self meets visitor
- * 2. Five Threads — 5S Framework
- * 3. Woven Gallery — marquee of figures
- * 4. Audit — 12 questions, free
- * 5. Lumin — INSIDE THE WEAVE (protected)
- * 6. Built On — wisdom traditions
- * 7. Pricing — Explorer / Seeker / Oracle
- * 8. Trust Row → Footer
+ * 1. Hero — full-bleed man holding book
+ * 1b. PWA device strip
+ * 2. Five Threads — 5S Framework (full-bleed woman on bench)
+ * 3. Built On — wisdom traditions (moved up from below Lumin)
+ * 4. Vault — "Where the work is kept."
+ * 5. Woven Gallery — archetype portraits
+ * 6. Audit — 12 questions, free
+ * 7. Lumin — Meet Lumin (full-bleed mascot)
+ * 8. Social Proof — the book
+ * 9. Founding Members — application form
+ * 10. Trust Row → Closing CTA → Footer
  */
 import { useEffect } from "react";
 import Nav from "../components/Nav";
@@ -29,6 +32,8 @@ import PricingSection from "../components/sections/PricingSection";
 import { TrustRow, Footer } from "../components/sections/TrustFooter";
 import SocialProofSection from "../components/sections/SocialProofSection";
 import ClosingCTA from "../components/sections/ClosingCTA";
+import PWAStrip from "../components/sections/PWAStrip";
+import VaultSection from "../components/sections/VaultSection";
 
 export default function Home() {
   // Initialize scroll reveal for all .reveal elements
@@ -75,34 +80,40 @@ export default function Home() {
 
       {/* Main content */}
       <main>
-        {/* 1. Hero */}
+        {/* 1. Hero — full-bleed man holding book */}
         <HeroSection />
 
-        {/* 2. Five Threads */}
+        {/* 1b. PWA device strip */}
+        <PWAStrip />
+
+        {/* 2. Five Threads — 5S Framework */}
         <FiveThreadsSection />
 
-        {/* 3. Woven Gallery */}
-        <WovenGallerySection />
-
-        {/* 4. The Audit */}
-        <AuditSection />
-
-        {/* 5. Lumin — PROTECTED SECTION */}
-        <LuminSection />
-
-        {/* 6. Built On */}
+        {/* 3. Built On — wisdom traditions (Fix 5c: moved up before Audit) */}
         <BuiltOnSection />
 
-        {/* 7. Social Proof — the book */}
+        {/* 4. Vault — "Where the work is kept." (Fix 5b: fills empty section) */}
+        <VaultSection />
+
+        {/* 5. Woven Gallery — archetype portraits */}
+        <WovenGallerySection />
+
+        {/* 6. The Audit */}
+        <AuditSection />
+
+        {/* 7. Lumin — Meet Lumin (full-bleed mascot) */}
+        <LuminSection />
+
+        {/* 8. Social Proof — the book */}
         <SocialProofSection />
 
-        {/* 8. Pricing */}
+        {/* 9. Founding Members — application form */}
         <PricingSection />
 
-        {/* 9. Trust Row */}
+        {/* 10. Trust Row */}
         <TrustRow />
 
-        {/* 10. Closing CTA */}
+        {/* 11. Closing CTA */}
         <ClosingCTA />
       </main>
 

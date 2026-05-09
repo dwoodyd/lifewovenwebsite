@@ -209,6 +209,21 @@ export default function HeroSection() {
                 I'm tired of starting over.
               </a>
             </div>
+
+            {/* PWA descriptor — quiet clarifier, not a feature box */}
+            <p
+              style={{
+                fontFamily: "'Lato', sans-serif",
+                fontSize: "14px",
+                color: "rgba(245,240,232,0.55)",
+                marginTop: "1.25rem",
+                lineHeight: 1.5,
+                maxWidth: "38ch",
+              }}
+            >
+              A daily practice — in your pocket or on the web.
+              Install on iOS, Android, or open in any browser.
+            </p>
           </div>
         </div>
       </div>

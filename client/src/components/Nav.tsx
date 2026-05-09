@@ -54,7 +54,7 @@ export default function Nav() {
         </a>
         <a href="#pricing" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
-          Pricing
+          Founding Members
         </a>
         <a href="/sign-in" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
@@ -97,7 +97,7 @@ export default function Nav() {
           {[
             { label: "The Five", href: "#the-five" },
             { label: "The Audit", href: "#audit" },
-            { label: "Pricing", href: "#pricing" },
+            { label: "Founding Members", href: "#pricing" },
             { label: "Sign in", href: "/sign-in" },
           ].map((item) => (
             <a
