@@ -66,7 +66,7 @@ export default function BuiltOnSection() {
               >
                 <span
                   style={{
-                    fontSize: "13px",
+                    fontSize: "15px",
                     color: "var(--lw-text)",
                     fontFamily: "var(--font-display)",
                     fontWeight: 500,
@@ -76,11 +76,11 @@ export default function BuiltOnSection() {
                 </span>
                 <span
                   style={{
-                    fontSize: "11px",
+                    fontSize: "13px",
                     color: "var(--lw-amber)",
                     fontFamily: "var(--font-body)",
                     letterSpacing: "0.05em",
-                    marginTop: "2px",
+                    marginTop: "3px",
                   }}
                 >
                   {t.work}

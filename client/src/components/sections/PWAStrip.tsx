@@ -72,7 +72,7 @@ export default function PWAStrip() {
         background: "rgba(245,240,232,0.03)",
         borderTop: "1px solid rgba(212,175,100,0.12)",
         borderBottom: "1px solid rgba(212,175,100,0.12)",
-        padding: "2.5rem 0",
+        padding: "3.5rem 0",
       }}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
@@ -111,12 +111,12 @@ export default function PWAStrip() {
               {/* Label */}
               <p
                 style={{
-                  fontFamily: "'Lato', sans-serif",
-                  fontSize: "11px",
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "13px",
                   fontWeight: 600,
-                  letterSpacing: "0.18em",
+                  letterSpacing: "0.14em",
                   textTransform: "uppercase",
-                  color: "rgba(212,175,100,0.7)",
+                  color: "rgba(212,175,100,0.75)",
                 }}
               >
                 {device.label}
@@ -127,10 +127,10 @@ export default function PWAStrip() {
                 style={{
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   fontStyle: "italic",
-                  fontSize: "15px",
-                  color: "rgba(245,240,232,0.65)",
-                  lineHeight: 1.4,
-                  maxWidth: "18ch",
+                  fontSize: "17px",
+                  color: "rgba(245,240,232,0.72)",
+                  lineHeight: 1.5,
+                  maxWidth: "20ch",
                 }}
               >
                 {device.caption}
@@ -144,9 +144,9 @@ export default function PWAStrip() {
           style={{
             textAlign: "center",
             marginTop: "1.5rem",
-            fontFamily: "'Lato', sans-serif",
-            fontSize: "14px",
-            color: "rgba(245,240,232,0.38)",
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "15px",
+            color: "rgba(245,240,232,0.42)",
             letterSpacing: "0.04em",
           }}
         >

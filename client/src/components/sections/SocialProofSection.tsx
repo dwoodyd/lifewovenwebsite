@@ -1,7 +1,7 @@
 /**
  * SocialProofSection — "The book that started this"
- * Layout: Three-column on desktop — book mockup (larger) | quote + copy | woven lady reading video
- * The woven lady reading video (dark starfield, gold particles) sits to the right of the copy.
+ * Layout: Two-column on desktop — left: book + quote + CTAs | right: woven lady reading video (tall)
+ * The video is the visual hero of this section — large, portrait, commanding.
  * On mobile: stacks vertically — book → copy → video.
  */
 
@@ -9,7 +9,7 @@ import { useRef, useEffect, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
 
 export default function SocialProofSection() {
-  const sectionRef = useReveal(0.15) as React.RefObject<HTMLElement>;
+  const sectionRef = useReveal(0.12) as React.RefObject<HTMLElement>;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoReady, setVideoReady] = useState(false);
 
@@ -27,62 +27,60 @@ export default function SocialProofSection() {
       ref={sectionRef}
       className="section reveal"
       aria-label="The book that started this"
+      style={{ padding: "7rem 0 8rem" }}
     >
       <div className="container">
-        {/* Three-column layout: book | quote | video */}
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12">
+        {/* Two-column layout: left content | right video */}
+        <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
 
-          {/* Column 1 — Book mockup (larger) */}
-          <div
-            className="flex-shrink-0 flex justify-center"
-            style={{ width: "clamp(220px, 26vw, 340px)" }}
-            aria-label="Before the Words — the book"
-          >
+          {/* Left column — book + quote + copy + CTAs */}
+          <div className="flex flex-col justify-center" style={{ flex: "1 1 0", minWidth: 0 }}>
+
+            <p className="eyebrow mb-8">The book that started this</p>
+
+            {/* Book mockup */}
             <div
-              style={{
-                transform: "rotate(-3deg)",
-                filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.55))",
-                transition: "transform 0.4s ease, filter 0.4s ease",
-                width: "100%",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.transform = "rotate(0deg) scale(1.03)";
-                (e.currentTarget as HTMLElement).style.filter =
-                  "drop-shadow(0 40px 80px rgba(212,175,100,0.25))";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.transform = "rotate(-3deg)";
-                (e.currentTarget as HTMLElement).style.filter =
-                  "drop-shadow(0 30px 60px rgba(0,0,0,0.55))";
-              }}
+              className="flex justify-start mb-10"
+              aria-label="Before the Words — the book"
             >
-              <img
-                src="/manus-storage/book_mockup_before_the_words_1778253763210_0a5dbe61.png"
-                alt="Before the Words — the book that started Lifewoven"
+              <div
                 style={{
-                  width: "100%",
-                  borderRadius: "4px",
-                  display: "block",
+                  transform: "rotate(-3deg)",
+                  filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.55))",
+                  transition: "transform 0.4s ease, filter 0.4s ease",
+                  width: "clamp(220px, 28vw, 360px)",
                 }}
-                loading="lazy"
-              />
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLElement).style.transform = "rotate(0deg) scale(1.03)";
+                  (e.currentTarget as HTMLElement).style.filter =
+                    "drop-shadow(0 40px 80px rgba(212,175,100,0.25))";
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLElement).style.transform = "rotate(-3deg)";
+                  (e.currentTarget as HTMLElement).style.filter =
+                    "drop-shadow(0 30px 60px rgba(0,0,0,0.55))";
+                }}
+              >
+                <img
+                  src="/manus-storage/book_mockup_before_the_words_1778253763210_0a5dbe61.png"
+                  alt="Before the Words — the book that started Lifewoven"
+                  style={{ width: "100%", borderRadius: "4px", display: "block" }}
+                  loading="lazy"
+                />
+              </div>
             </div>
-          </div>
-
-          {/* Column 2 — Quote + copy */}
-          <div className="flex-1 min-w-0" style={{ maxWidth: "420px" }}>
-            <p className="eyebrow mb-6">The book that started this</p>
 
             <blockquote
               className="font-display mb-6"
               style={{
-                fontSize: "clamp(20px, 2.8vw, 32px)",
-                lineHeight: 1.3,
+                fontSize: "clamp(22px, 2.6vw, 34px)",
+                lineHeight: 1.35,
                 color: "var(--lw-text)",
                 fontStyle: "italic",
                 fontWeight: 400,
                 borderLeft: "2px solid var(--lw-amber)",
                 paddingLeft: "1.5rem",
+                maxWidth: "520px",
               }}
             >
               "The wisdom you carry becomes who you are — but only if you give it a place to land."
@@ -90,10 +88,11 @@ export default function SocialProofSection() {
 
             <p
               style={{
-                fontSize: "15px",
+                fontSize: "17px",
                 color: "var(--lw-text-muted)",
-                lineHeight: 1.6,
-                marginBottom: "2rem",
+                lineHeight: 1.7,
+                marginBottom: "2.5rem",
+                maxWidth: "460px",
               }}
             >
               <em>Before the Words</em> is the book that asked the question.
@@ -101,28 +100,28 @@ export default function SocialProofSection() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#" className="btn-outline" style={{ fontSize: "14px" }}>
+              <a href="#" className="btn-outline" style={{ fontSize: "15px" }}>
                 Get the book →
               </a>
-              <a href="#audit" className="btn-secondary" style={{ fontSize: "14px" }}>
+              <a href="#audit" className="btn-secondary" style={{ fontSize: "15px" }}>
                 Start with the Audit
               </a>
             </div>
           </div>
 
-          {/* Column 3 — Woven lady reading video */}
+          {/* Right column — Woven lady reading video (tall, commanding) */}
           <div
-            className="flex-shrink-0 flex justify-center"
-            style={{ width: "clamp(200px, 24vw, 320px)" }}
+            className="flex-shrink-0 flex flex-col items-center justify-center"
+            style={{ width: "clamp(300px, 40vw, 520px)" }}
             aria-label="A woven figure reading Before the Words"
           >
             <div
               style={{
                 position: "relative",
                 width: "100%",
-                borderRadius: "16px",
+                borderRadius: "20px",
                 overflow: "hidden",
-                boxShadow: "0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px rgba(212,175,100,0.12)",
+                boxShadow: "0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,100,0.15)",
                 aspectRatio: "9/16",
               }}
             >
@@ -171,8 +170,8 @@ export default function SocialProofSection() {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  borderRadius: "16px",
-                  boxShadow: "inset 0 0 40px rgba(212,175,100,0.06)",
+                  borderRadius: "20px",
+                  boxShadow: "inset 0 0 60px rgba(212,175,100,0.08)",
                   pointerEvents: "none",
                 }}
               />
@@ -184,18 +183,17 @@ export default function SocialProofSection() {
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontStyle: "italic",
                 fontWeight: 400,
-                fontSize: "13px",
-                color: "rgba(212,175,100,0.7)",
+                fontSize: "15px",
+                color: "rgba(212,175,100,0.75)",
                 textAlign: "center",
-                marginTop: "0.75rem",
+                marginTop: "1rem",
                 letterSpacing: "0.01em",
-                lineHeight: 1.4,
+                lineHeight: 1.5,
               }}
             >
               A Woven Self, reading{" "}
-              <em style={{ color: "rgba(212,175,100,0.9)" }}>Before the Words</em>
+              <em style={{ color: "rgba(212,175,100,0.95)" }}>Before the Words</em>
             </p>
-
           </div>
 
         </div>

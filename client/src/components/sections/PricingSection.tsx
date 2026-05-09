@@ -159,12 +159,12 @@ export default function PricingSection() {
           >
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: "10px",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "13px",
                 fontWeight: 700,
-                letterSpacing: "0.2em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(212,175,100,0.7)",
+                color: "rgba(212,175,100,0.75)",
               }}
             >
               During Beta
@@ -177,10 +177,10 @@ export default function PricingSection() {
             </h3>
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: "15px",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "16px",
                 color: "var(--lw-text-muted)",
-                lineHeight: 1.65,
+                lineHeight: 1.7,
               }}
             >
               Every founding member starts on Seeker for the full 90-day beta — no credit
@@ -224,12 +224,12 @@ export default function PricingSection() {
             </div>
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: "10px",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "13px",
                 fontWeight: 700,
-                letterSpacing: "0.2em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(212,175,100,0.7)",
+                color: "rgba(212,175,100,0.75)",
               }}
             >
               Locked for Life
@@ -242,10 +242,10 @@ export default function PricingSection() {
             </h3>
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: "15px",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "16px",
                 color: "var(--lw-text-muted)",
-                lineHeight: 1.65,
+                lineHeight: 1.7,
               }}
             >
               $10/month Seeker. $25/month Oracle. Locked at the founding rate forever — even
@@ -277,12 +277,12 @@ export default function PricingSection() {
                 >
                   <p
                     style={{
-                      fontFamily: "'Lato', sans-serif",
-                      fontSize: "11px",
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "13px",
                       fontWeight: 700,
-                      letterSpacing: "0.1em",
+                      letterSpacing: "0.08em",
                       textTransform: "uppercase",
-                      color: "rgba(212,175,100,0.8)",
+                      color: "rgba(212,175,100,0.85)",
                       marginBottom: "0.4rem",
                     }}
                   >
@@ -302,18 +302,18 @@ export default function PricingSection() {
                   </p>
                   <p
                     style={{
-                      fontFamily: "'Lato', sans-serif",
-                      fontSize: "11px",
-                      color: "rgba(245,240,232,0.45)",
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "13px",
+                      color: "rgba(245,240,232,0.5)",
                     }}
                   >
                     or {r.foundingYr}
                   </p>
                   <p
                     style={{
-                      fontFamily: "'Lato', sans-serif",
-                      fontSize: "11px",
-                      color: "rgba(245,240,232,0.3)",
+                      fontFamily: "'DM Sans', sans-serif",
+                      fontSize: "13px",
+                      color: "rgba(245,240,232,0.35)",
                       marginTop: "0.4rem",
                       textDecoration: "line-through",
                     }}
@@ -339,12 +339,12 @@ export default function PricingSection() {
           >
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: "10px",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "13px",
                 fontWeight: 700,
-                letterSpacing: "0.2em",
+                letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "rgba(212,175,100,0.7)",
+                color: "rgba(212,175,100,0.75)",
               }}
             >
               Community
@@ -357,10 +357,10 @@ export default function PricingSection() {
             </h3>
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
-                fontSize: "15px",
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "16px",
                 color: "var(--lw-text-muted)",
-                lineHeight: 1.65,
+                lineHeight: 1.7,
               }}
             >
               Founding members get a monthly office-hour with the founder, early access to

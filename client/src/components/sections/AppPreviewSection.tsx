@@ -148,10 +148,10 @@ function MockupCard({ screen, index }: { screen: typeof screens[0]; index: numbe
         </p>
         <p
           style={{
-            fontFamily: "'Lato', sans-serif",
-            fontSize: "14px",
+            fontFamily: "'DM Sans', sans-serif",
+            fontSize: "16px",
             color: "var(--lw-text-muted)",
-            lineHeight: 1.5,
+            lineHeight: 1.55,
             margin: 0,
           }}
         >
@@ -233,10 +233,10 @@ export default function AppPreviewSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "1.5rem",
-            marginBottom: "1.5rem",
-            maxWidth: "860px",
-            margin: "0 auto 1.5rem",
+            gap: "2rem",
+            marginBottom: "2rem",
+            maxWidth: "900px",
+            margin: "0 auto 2rem",
           }}
         >
           {screens.slice(0, 2).map((screen, i) => (
@@ -248,9 +248,9 @@ export default function AppPreviewSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "1.5rem",
-            maxWidth: "860px",
-            margin: "0 auto 1.5rem",
+            gap: "2rem",
+            maxWidth: "900px",
+            margin: "0 auto 2rem",
           }}
         >
           {screens.slice(2, 4).map((screen, i) => (

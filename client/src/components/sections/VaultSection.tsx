@@ -120,7 +120,7 @@ export default function VaultSection() {
                   flexDirection: "column",
                   alignItems: "center",
                   gap: "0.75rem",
-                  padding: "1.5rem 1rem",
+                  padding: "2rem 1.25rem",
                   background: "rgba(212,175,100,0.05)",
                   border: "1px solid rgba(212,175,100,0.14)",
                   borderRadius: "12px",
@@ -133,10 +133,10 @@ export default function VaultSection() {
                   style={{
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     fontStyle: "italic",
-                    fontSize: "15px",
-                    color: "rgba(245,240,232,0.75)",
+                    fontSize: "17px",
+                    color: "rgba(245,240,232,0.82)",
                     textAlign: "center",
-                    lineHeight: 1.4,
+                    lineHeight: 1.45,
                     margin: 0,
                   }}
                 >
