@@ -109,7 +109,7 @@ export default function SocialProofSection() {
               >
                 Get the book →
               </a>
-              <a href="#audit" className="btn-secondary" style={{ fontSize: "15px" }}>
+              <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ fontSize: "15px" }}>
                 Start with the Audit
               </a>
             </div>

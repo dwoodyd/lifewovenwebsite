@@ -158,7 +158,7 @@ export default function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="#audit"
+                href="https://lifewoven.click" target="_blank" rel="noopener noreferrer"
                 style={{
                   display: "inline-block",
                   background: "#D4AF64",

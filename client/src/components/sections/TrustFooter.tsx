@@ -272,7 +272,7 @@ export function Footer() {
             <div className="flex flex-wrap gap-6">
               {[
                 { label: "The Five", href: "#the-five" },
-                { label: "The Audit", href: "#audit" },
+                { label: "The Audit", href: "https://lifewoven.click" },
                 { label: "Founding Members", href: "#pricing" },
                 { label: "Install Guide", href: "#install-guide" },
                 { label: "Privacy", href: "/privacy" },

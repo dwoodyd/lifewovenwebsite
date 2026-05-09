@@ -4,7 +4,7 @@
  * Design philosophy: Deep indigo / Cormorant Garamond display, Lato body
  * Amber (#D4AF64) accents, warm ivory text on dark background
  *
- * Desktop: 2×2 grid + 1 centered below (5 total)
+ * Desktop: 2×2 grid (4 screens)
  * Mobile: horizontal snap-scroll carousel, one card per view
  * Each card shows the mockup image with its headline and sub-caption
  */
@@ -18,13 +18,6 @@ const screens = [
     headline: "Your whole life,",
     headlineItalic: "woven.",
     caption: "One screen. Five doors in. State, Story, Standards, Strategy, Stewardship.",
-  },
-  {
-    src: "/manus-storage/mockup_dashboard2_b1e088da.webp",
-    alt: "Lifewoven Ground Check screen asking 'Where are you right now?' with the subtitle 'Seven honest questions. No score. No judgment.' showing question 1 of 7 about how settled the body feels, with answer options on a 0-4 scale.",
-    headline: "Good morning,",
-    headlineItalic: "DeWayne.",
-    caption: "Your daily check-in, your rhythms, and your next step — all in one place.",
   },
   {
     src: "/manus-storage/mockup_mood_f50b957e.png",
@@ -216,11 +209,11 @@ export default function AppPreviewSection() {
             lineHeight: 1.5,
           }}
         >
-          Five screens. One practice. Everything you've gathered, finally given a place to land.
+          Four screens. One practice. Everything you've gathered, finally given a place to land.
         </p>
       </div>
 
-      {/* ── DESKTOP: 2×2 + 1 grid ── */}
+      {/* ── DESKTOP: 2×2 grid ── */}
       <div
         className="container"
         style={{
@@ -228,45 +221,18 @@ export default function AppPreviewSection() {
         }}
         id="app-preview-desktop"
       >
-        {/* Top row: 2 cards */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "2rem",
-            marginBottom: "2rem",
-            maxWidth: "900px",
-            margin: "0 auto 2rem",
-          }}
-        >
-          {screens.slice(0, 2).map((screen, i) => (
-            <MockupCard key={i} screen={screen} index={i} />
-          ))}
-        </div>
-        {/* Middle row: 2 cards */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
             gap: "2rem",
             maxWidth: "900px",
-            margin: "0 auto 2rem",
-          }}
-        >
-          {screens.slice(2, 4).map((screen, i) => (
-            <MockupCard key={i + 2} screen={screen} index={i + 2} />
-          ))}
-        </div>
-        {/* Bottom row: 1 centered card */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            maxWidth: "420px",
             margin: "0 auto",
           }}
         >
-          <MockupCard screen={screens[4]} index={4} />
+          {screens.map((screen, i) => (
+            <MockupCard key={i} screen={screen} index={i} />
+          ))}
         </div>
       </div>
 

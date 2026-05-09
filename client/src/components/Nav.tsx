@@ -48,7 +48,7 @@ export default function Nav() {
            style={{ color: "var(--lw-text-muted)" }}>
           The Five
         </a>
-        <a href="#audit" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           The Audit
         </a>
@@ -64,7 +64,7 @@ export default function Nav() {
 
       {/* CTA */}
       <div className="flex items-center gap-3">
-        <a href="#audit" className="btn-primary hidden sm:inline-flex">
+        <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-primary hidden sm:inline-flex">
           Take the Audit
         </a>
 
@@ -95,14 +95,16 @@ export default function Nav() {
           }}
         >
           {[
-            { label: "The Five", href: "#the-five" },
-            { label: "The Audit", href: "#audit" },
-            { label: "Founding Members", href: "#pricing" },
-            { label: "Sign in", href: "/sign-in" },
+            { label: "The Five", href: "#the-five", external: false },
+            { label: "The Audit", href: "https://lifewoven.click", external: true },
+            { label: "Founding Members", href: "#pricing", external: false },
+            { label: "Sign in", href: "/sign-in", external: false },
           ].map((item) => (
             <a
               key={item.label}
               href={item.href}
+              target={item.external ? "_blank" : undefined}
+              rel={item.external ? "noopener noreferrer" : undefined}
               className="px-6 py-4 text-base font-medium border-b transition-colors hover:text-amber-400"
               style={{
                 color: "var(--lw-text-muted)",
@@ -114,7 +116,7 @@ export default function Nav() {
             </a>
           ))}
           <div className="px-6 py-4">
-            <a href="#audit" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
+            <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
               Take the Audit
             </a>
           </div>

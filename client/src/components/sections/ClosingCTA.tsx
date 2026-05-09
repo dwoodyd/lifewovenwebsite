@@ -90,7 +90,7 @@ export default function ClosingCTA() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-5">
-            <a href="#audit" className="btn-primary" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>
+            <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>
               Take the Audit →
             </a>
             <a href="#pricing" className="btn-outline" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>
