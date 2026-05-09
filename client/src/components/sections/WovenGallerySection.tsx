@@ -46,13 +46,13 @@ const archetypes = [
     reveal: "Carrying something — a loss, a name, a debt of love. The thread holds it.",
   },
   {
-    src: "/manus-storage/lumen_group_v3_1_1778194988941_5a78e1c5.jpg",
+    src: "/manus-storage/lumen_group_v3_1_1778194988941_3626a9d5.jpg",
     alt: "A woven figure — the beginner again",
     label: "The Beginner Again",
     reveal: "Forty-three. Starting over. Not afraid this time. Mostly.",
   },
   {
-    src: "/manus-storage/lumen_group_v3_2_1778195002242_1b1e2e6b.jpg",
+    src: "/manus-storage/lumen_group_v3_2_1778195002242_41e72a44.jpg",
     alt: "A woven figure — the one who almost stopped",
     label: "The One Who Almost Stopped",
     reveal: "Came back the next morning anyway. That's the whole practice.",
