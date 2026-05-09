@@ -10,54 +10,60 @@ import { useState, useRef, useEffect } from "react";
 
 const archetypes = [
   {
+    // The Returner — lumen photo woman 1
     src: "/manus-storage/lumen_woc_1_1778193478991_20efeace.jpg",
     alt: "A woven figure — The Returner, a confident professional woman with natural locs wearing a cream blazer and carrying an amber and navy woven bag",
     label: "The Returner",
     reveal: "Started six times. This is the time it sticks — because something has to.",
   },
   {
+    // The Builder — new woven older man in striped cardigan
+    src: "/manus-storage/woven_self_friendly_older_man_1778129131618_3207e35f.jpg",
+    alt: "A woven figure — The Builder, a smiling older man in a warm striped cardigan and knit cap, hands clasped, steady and present",
+    label: "The Builder",
+    reveal: "Putting down the next layer of who they're becoming, one quiet day at a time.",
+  },
+  {
+    // The Seeker — lumen photo woman 2
     src: "/manus-storage/lumen_woc_2_1778193490329_44613554.jpg",
     alt: "A woven figure — The Seeker, a woman in a warm patterned cardigan with braided updo, holding a small bag, gazing upward with quiet curiosity",
     label: "The Seeker",
     reveal: "Has read everything. Is finally ready to live one of them.",
   },
   {
-    src: "/manus-storage/lumen_woc_3_1778193506312_621e5511.jpg",
-    alt: "A woven figure — The Builder, a woman in an amber cable-knit blazer and navy trousers standing in a gallery, present and observant",
-    label: "The Builder",
-    reveal: "Putting down the next layer of who they're becoming, one quiet day at a time.",
+    // The One Who Almost Stopped — androgynous woven figure
+    src: "/manus-storage/woven_self_friendly_androgynous_1778129147155_53e73059.jpg",
+    alt: "A woven figure — The One Who Almost Stopped, an androgynous figure in a knit sweater and scarf, still here",
+    label: "The One Who Almost Stopped",
+    reveal: "Came back the next morning anyway. That's the whole practice.",
   },
   {
-    // The Witness → gallery woman in amber blazer (woc_3)
+    // The Witness — lumen photo woman 3
     src: "/manus-storage/lumen_woc_3_1778193506312_621e5511.jpg",
     alt: "A woven figure — The Witness, a woman in an amber cable-knit blazer standing in a gallery, bearing quiet witness to her own story",
     label: "The Witness",
     reveal: "No longer running from the story. Sitting with it. Letting it speak.",
   },
   {
-    // The Elder → grey-haired man in cable-knit sweater (father_3)
+    // The Elder — grey-haired man in cable-knit sweater
     src: "/manus-storage/lumen_father_3_1778193897365_a6b6eec6.jpg",
     alt: "A woven figure — The Elder, a grey-haired man with a beard in a cable-knit sweater, arms folded, carrying the stillness of someone who has lived deeply",
     label: "The Elder",
     reveal: "Has lived enough to know what matters. Now the work is to honor it.",
   },
   {
+    // The Bearer — mature woman woven figure
     src: "/manus-storage/woven_self_friendly_mature_woman_1778129160816_e0f50b41.jpg",
     alt: "A woven figure — The Bearer, a smiling mature woman in warm braided knitwear, holding space for what she carries",
     label: "The Bearer",
     reveal: "Carrying something — a loss, a name, a debt of love. The thread holds it.",
   },
   {
+    // The Beginner Again — young man woven figure
     src: "/manus-storage/woven_self_friendly_young_man_1778129174681_a3e50f13.jpg",
     alt: "A woven figure — The Beginner Again, a young man in a knit cardigan gesturing openly, ready to start fresh",
     label: "The Beginner Again",
     reveal: "Forty-three. Starting over. Not afraid this time. Mostly.",
-  },
-  {
-    src: "/manus-storage/woven_self_friendly_androgynous_1778129147155_53e73059.jpg",
-    alt: "A woven figure — The One Who Almost Stopped, an androgynous figure in a knit sweater and scarf, still here",
-    label: "The One Who Almost Stopped",
-    reveal: "Came back the next morning anyway. That's the whole practice.",
   },
 ];
 
