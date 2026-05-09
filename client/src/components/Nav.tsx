@@ -29,7 +29,7 @@ export default function Nav() {
       {/* Logo */}
       <a href="/" className="flex items-center gap-2.5 group" aria-label="Lifewoven home">
         <img
-          src="/manus-storage/convert-this-uploaded-lifewoven-logo-into-a-pure-m_ad4b74df.svg"
+          src="/manus-storage/lifewoven_mark_25b1dd02.svg"
           alt="Lifewoven woven mark"
           className="w-7 h-7 opacity-90 group-hover:opacity-100 transition-opacity"
           style={{ filter: "brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(1.1)" }}

@@ -52,10 +52,35 @@ export default function PricingSection() {
     e.preventDefault();
     if (!formState.name || !formState.email || formState.work.length < 20) return;
     setSubmitting(true);
-    // Static site — simulate submission (wire to webhook/email in production)
-    await new Promise((r) => setTimeout(r, 900));
-    setSubmitting(false);
-    setSubmitted(true);
+    try {
+      // ── WEBHOOK: replace the URL below with your Zapier / Make / Formspree endpoint ──
+      // Example: https://hooks.zapier.com/hooks/catch/XXXXXXX/XXXXXXX/
+      // Example: https://formspree.io/f/XXXXXXX
+      // Leave as-is for now — submissions are logged to console until wired up.
+      const WEBHOOK_URL = ""; // ← paste your webhook URL here
+      if (WEBHOOK_URL) {
+        await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: formState.name,
+            email: formState.email,
+            work: formState.work,
+            source: "lifewoven-founding-member-form",
+            submitted_at: new Date().toISOString(),
+          }),
+        });
+      } else {
+        // Fallback: log to console until webhook is configured
+        console.log("[Founding Member Application]", formState);
+        await new Promise((r) => setTimeout(r, 900));
+      }
+    } catch (err) {
+      console.error("Form submission error:", err);
+    } finally {
+      setSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (

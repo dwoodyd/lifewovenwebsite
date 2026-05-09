@@ -29,11 +29,12 @@ import AuditSection from "../components/sections/AuditSection";
 import LuminSection from "../components/sections/LuminSection";
 import BuiltOnSection from "../components/sections/BuiltOnSection";
 import PricingSection from "../components/sections/PricingSection";
-import { TrustRow, Footer } from "../components/sections/TrustFooter";
+import { TrustRow, PWAInstallFAQ, Footer } from "../components/sections/TrustFooter";
 import SocialProofSection from "../components/sections/SocialProofSection";
 import ClosingCTA from "../components/sections/ClosingCTA";
 import PWAStrip from "../components/sections/PWAStrip";
 import VaultSection from "../components/sections/VaultSection";
+import AppPreviewSection from "../components/sections/AppPreviewSection";
 
 export default function Home() {
   // Initialize scroll reveal for all .reveal elements
@@ -101,6 +102,9 @@ export default function Home() {
         {/* 6. The Audit */}
         <AuditSection />
 
+        {/* 6b. App Preview — "What you'll see when you open it" */}
+        <AppPreviewSection />
+
         {/* 7. Lumin — Meet Lumin (full-bleed mascot) */}
         <LuminSection />
 
@@ -112,6 +116,9 @@ export default function Home() {
 
         {/* 10. Trust Row */}
         <TrustRow />
+
+        {/* 10b. PWA Install FAQ */}
+        <PWAInstallFAQ />
 
         {/* 11. Closing CTA */}
         <ClosingCTA />
