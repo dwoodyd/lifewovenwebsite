@@ -29,11 +29,11 @@ export default function SocialProofSection() {
       aria-label="The book that started this"
     >
       <div className="container">
-        {/* Two-column layout: left content | right video */}
-        <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-16">
+        {/* Two-column layout: left content | right video — mirrors AuditSection pattern */}
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
           {/* Left column — book + quote + copy + CTAs */}
-          <div className="flex flex-col justify-center" style={{ flex: "1 1 0", minWidth: 0 }}>
+          <div className="flex-1 flex flex-col justify-center" style={{ minWidth: 0, maxWidth: "540px" }}>
 
             <p className="eyebrow mb-8">The book that started this</p>
 
@@ -47,7 +47,7 @@ export default function SocialProofSection() {
                   transform: "rotate(-3deg)",
                   filter: "drop-shadow(0 30px 60px rgba(0,0,0,0.55))",
                   transition: "transform 0.4s ease, filter 0.4s ease",
-                  width: "clamp(220px, 28vw, 360px)",
+                  width: "clamp(180px, 22vw, 300px)",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.transform = "rotate(0deg) scale(1.03)";
@@ -117,7 +117,7 @@ export default function SocialProofSection() {
           {/* Right column — Woven lady reading video (tall, commanding) */}
           <div
             className="flex-shrink-0 flex flex-col items-center justify-center w-full lg:w-auto"
-            style={{ maxWidth: "520px", margin: "0 auto" }}
+            style={{ maxWidth: "380px", margin: "0 auto" }}
             aria-label="A woven figure reading Before the Words"
           >
             <div
