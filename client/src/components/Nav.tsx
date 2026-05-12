@@ -48,7 +48,7 @@ export default function Nav() {
            style={{ color: "var(--lw-text-muted)" }}>
           The Five
         </a>
-        <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           The Audit
         </a>
@@ -56,7 +56,7 @@ export default function Nav() {
            style={{ color: "var(--lw-text-muted)" }}>
           Founding Members
         </a>
-        <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="https://app.lifewoven.click" target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           Sign in
         </a>
@@ -64,7 +64,7 @@ export default function Nav() {
 
       {/* CTA */}
       <div className="flex items-center gap-3">
-        <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex">
+        <a href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex">
           Take the Audit
         </a>
 
@@ -96,9 +96,9 @@ export default function Nav() {
         >
           {[
             { label: "The Five", href: "#the-five", external: false },
-            { label: "The Audit", href: "https://lifewoven.click", external: true },
+            { label: "The Audit", href: "https://app.lifewoven.click/audit", external: true },
             { label: "Founding Members", href: "#pricing", external: false },
-            { label: "Sign in", href: "https://lifewoven.click", external: true },
+            { label: "Sign in", href: "https://app.lifewoven.click", external: true },
           ].map((item) => (
             <a
               key={item.label}
@@ -116,7 +116,7 @@ export default function Nav() {
             </a>
           ))}
           <div className="px-6 py-4">
-            <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
+            <a href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
               Take the Audit
             </a>
           </div>

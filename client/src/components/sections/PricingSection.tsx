@@ -268,7 +268,7 @@ export default function PricingSection() {
               ))}
             </ul>
             <a
-              href="https://lifewoven.click"
+              href="https://app.lifewoven.click"
               target="_blank"
               rel="noopener noreferrer"
               style={{

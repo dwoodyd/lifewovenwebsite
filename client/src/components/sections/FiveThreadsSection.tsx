@@ -288,7 +288,7 @@ export default function FiveThreadsSection() {
               {/* CTA */}
               <div className="mt-6">
                 <a
-                  href="https://lifewoven.click" target="_blank" rel="noopener noreferrer"
+                  href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer"
                   style={{
                     display: "inline-block",
                     fontFamily: "'Lato', sans-serif",

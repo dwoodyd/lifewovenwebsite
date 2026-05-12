@@ -91,7 +91,7 @@ export default function AuditSection() {
             >
               The Audit shows you which thread to pick up first.
             </p>
-            <a href="https://lifewoven.click" target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer" className="btn-primary">
               Take the Audit →
             </a>
           </div>

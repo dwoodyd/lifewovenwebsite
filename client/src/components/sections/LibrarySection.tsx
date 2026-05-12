@@ -286,7 +286,7 @@ export default function LibrarySection() {
             Get all of it with Oracle →
           </a>
           <a
-            href="https://lifewoven.click"
+            href="https://app.lifewoven.click"
             target="_blank"
             rel="noopener noreferrer"
             style={{

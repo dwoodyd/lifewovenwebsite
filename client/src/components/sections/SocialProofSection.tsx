@@ -112,7 +112,7 @@ export default function SocialProofSection() {
                 Get the book →
               </a>
               <a
-                href="https://lifewoven.click"
+                href="https://app.lifewoven.click/audit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary"
