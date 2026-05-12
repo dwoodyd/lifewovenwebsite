@@ -237,10 +237,22 @@ export default function HeroSection() {
               A daily practice — in your pocket or on the web.
               Install on iOS, Android, or open in any browser.
             </p>
+            {/* Oracle library chip — small, non-dominant */}
+            <p
+              style={{
+                fontFamily: "'Lato', sans-serif",
+                fontSize: "12px",
+                color: "rgba(212,175,100,0.55)",
+                marginTop: "1rem",
+                lineHeight: 1.5,
+                maxWidth: "44ch",
+              }}
+            >
+              Founding members at Oracle tier get the complete Library — 9 products, $607 retail value, included.
+            </p>
           </div>
         </div>
       </div>
-
       {/* Scroll indicator */}
       <div
         className="absolute bottom-8 left-1/2 z-10"

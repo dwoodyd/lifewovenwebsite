@@ -35,6 +35,7 @@ import ClosingCTA from "../components/sections/ClosingCTA";
 import PWAStrip from "../components/sections/PWAStrip";
 import VaultSection from "../components/sections/VaultSection";
 import AppPreviewSection from "../components/sections/AppPreviewSection";
+import LibrarySection from "../components/sections/LibrarySection";
 
 export default function Home() {
   // Initialize scroll reveal for all .reveal elements
@@ -111,6 +112,8 @@ export default function Home() {
         {/* 8. Social Proof — the book */}
         <SocialProofSection />
 
+        {/* 8b. The Library — 9-product grid */}
+        <LibrarySection />
         {/* 9. Founding Members — application form */}
         <PricingSection />
 
