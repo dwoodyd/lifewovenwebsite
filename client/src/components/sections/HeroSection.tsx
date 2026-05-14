@@ -10,19 +10,40 @@ import { useEffect, useRef, useState } from "react";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
+    const section = sectionRef.current;
     const v = videoRef.current;
-    if (!v) return;
-    const onReady = () => setVideoReady(true);
-    v.addEventListener("canplaythrough", onReady);
-    v.load();
-    return () => v.removeEventListener("canplaythrough", onReady);
+    if (!section || !v) return;
+
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const startVideo = () => {
+      const onReady = () => {
+        clearTimeout(timeout);
+        setVideoReady(true);
+      };
+      // canplay fires earlier than canplaythrough — better for iOS
+      v.addEventListener("canplay", onReady, { once: true });
+      v.addEventListener("loadeddata", onReady, { once: true });
+      v.load();
+      // Fallback: if video hasn't signalled ready in 3s, show it anyway
+      timeout = setTimeout(() => setVideoReady(true), 3000);
+    };
+
+    // Hero is above the fold — load immediately but defer one tick
+    const raf = requestAnimationFrame(startVideo);
+    return () => {
+      cancelAnimationFrame(raf);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
     <section
+      ref={sectionRef}
       id="hero"
       className="relative w-full overflow-hidden"
       style={{ minHeight: "100svh" }}
@@ -52,6 +73,7 @@ export default function HeroSection() {
           muted
           loop
           playsInline
+          preload="none"
           poster="/manus-storage/poster_man_book_411dec88.jpg"
           style={{
             position: "absolute",

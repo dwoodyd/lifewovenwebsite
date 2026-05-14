@@ -37,15 +37,22 @@ export default function LuminSection() {
     return () => observer.disconnect();
   }, []);
 
-  // Video load
+  // Video load — deferred until section is in view
   useEffect(() => {
+    if (!inView) return;
     const v = videoRef.current;
     if (!v) return;
-    const onReady = () => setVideoReady(true);
-    v.addEventListener("canplaythrough", onReady);
+    let timeout: ReturnType<typeof setTimeout>;
+    const onReady = () => {
+      clearTimeout(timeout);
+      setVideoReady(true);
+    };
+    v.addEventListener("canplay", onReady, { once: true });
+    v.addEventListener("loadeddata", onReady, { once: true });
     v.load();
-    return () => v.removeEventListener("canplaythrough", onReady);
-  }, []);
+    timeout = setTimeout(() => setVideoReady(true), 3000);
+    return () => clearTimeout(timeout);
+  }, [inView]);
 
   // Word-by-word stagger helper
   const WordReveal = ({
@@ -129,6 +136,7 @@ export default function LuminSection() {
             muted
             loop
             playsInline
+            preload="none"
             poster="/manus-storage/poster_lumin_mascot_e748fb1e.jpg"
             style={{
               position: "absolute",

@@ -14,12 +14,38 @@ export default function SocialProofSection() {
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
+    const section = sectionRef.current;
     const v = videoRef.current;
-    if (!v) return;
-    const onReady = () => setVideoReady(true);
-    v.addEventListener("canplaythrough", onReady);
-    v.load();
-    return () => v.removeEventListener("canplaythrough", onReady);
+    if (!section || !v) return;
+
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const startVideo = () => {
+      const onReady = () => {
+        clearTimeout(timeout);
+        setVideoReady(true);
+      };
+      v.addEventListener("canplay", onReady, { once: true });
+      v.addEventListener("loadeddata", onReady, { once: true });
+      v.load();
+      timeout = setTimeout(() => setVideoReady(true), 3000);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          startVideo();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
@@ -161,6 +187,7 @@ export default function SocialProofSection() {
                 muted
                 loop
                 playsInline
+                preload="none"
                 poster="/manus-storage/poster_woven_reading_b555a69d.jpg"
                 style={{
                   position: "absolute",

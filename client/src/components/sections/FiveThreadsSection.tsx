@@ -55,12 +55,38 @@ export default function FiveThreadsSection() {
   const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
+    const section = sectionRef.current;
     const v = videoRef.current;
-    if (!v) return;
-    const onReady = () => setVideoReady(true);
-    v.addEventListener("canplaythrough", onReady);
-    v.load();
-    return () => v.removeEventListener("canplaythrough", onReady);
+    if (!section || !v) return;
+
+    let timeout: ReturnType<typeof setTimeout>;
+
+    const startVideo = () => {
+      const onReady = () => {
+        clearTimeout(timeout);
+        setVideoReady(true);
+      };
+      v.addEventListener("canplay", onReady, { once: true });
+      v.addEventListener("loadeddata", onReady, { once: true });
+      v.load();
+      timeout = setTimeout(() => setVideoReady(true), 3000);
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          startVideo();
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(section);
+
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeout);
+    };
   }, []);
 
   const thread = THREADS[active];
@@ -96,6 +122,7 @@ export default function FiveThreadsSection() {
           muted
           loop
           playsInline
+          preload="none"
           poster="/manus-storage/poster_woman_bench_fba43ab2.jpg"
           style={{
             position: "absolute",
