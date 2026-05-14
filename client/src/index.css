@@ -517,7 +517,7 @@
 
   /* ---- Vault pillars: stack on mobile ---- */
   @media (max-width: 600px) {
-    .vault-pillars {
+    .weave-pillars {
       grid-template-columns: 1fr !important;
       max-width: 320px !important;
     }

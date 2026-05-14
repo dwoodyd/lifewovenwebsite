@@ -65,7 +65,7 @@ const explorerFeatures = [
 export default function PricingSection() {
   const sectionRef = useReveal(0.1) as React.RefObject<HTMLElement>;
   const [annualToggle, setAnnualToggle] = useState(false);
-  const [formState, setFormState] = useState({ name: "", email: "", work: "", tier: "" });
+  const [formState, setFormState] = useState({ name: "", email: "", application_text: "", tier: "" });
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -75,7 +75,7 @@ export default function PricingSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formState.name || !formState.email || formState.work.length < 20) return;
+    if (!formState.name || !formState.email || formState.application_text.length < 200) return;
     setSubmitting(true);
     setSubmitError("");
     try {
@@ -85,7 +85,7 @@ export default function PricingSection() {
         body: JSON.stringify({
           name: formState.name,
           email: formState.email,
-          work: formState.work,
+          application_text: formState.application_text,
           tier: formState.tier || "Not specified",
           source: "lifewoven-marketing-site",
           submitted_at: new Date().toISOString(),
@@ -100,7 +100,7 @@ export default function PricingSection() {
     } catch (err) {
       console.error("[Founding Member Application] submission error:", err);
       setSubmitError(
-        "Something went wrong sending your application. Please try again or email us directly at hello@lifewoven.click."
+        "Something went wrong sending your application. Please try again or email us directly at dewayne@lifewoven.click."
       );
     } finally {
       setSubmitting(false);
@@ -679,9 +679,21 @@ export default function PricingSection() {
                   fontSize: "15px",
                   color: "var(--lw-text-muted)",
                   lineHeight: 1.65,
+                  marginBottom: "0.5rem",
                 }}
               >
                 Lumin will be in touch within 48 hours.
+              </p>
+              <p
+                style={{
+                  fontFamily: "'Lato', sans-serif",
+                  fontSize: "13px",
+                  color: "rgba(245,240,232,0.4)",
+                  lineHeight: 1.6,
+                }}
+              >
+                Check your inbox — and your spam folder, just in case. If you don't hear back, reach out directly at{" "}
+                <a href="mailto:dewayne@lifewoven.click" style={{ color: "rgba(212,175,100,0.7)", textDecoration: "none" }}>dewayne@lifewoven.click</a>.
               </p>
             </div>
           ) : (
@@ -832,9 +844,11 @@ export default function PricingSection() {
                   onBlur={(e) => { (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,100,0.2)"; }}
                 >
                   <option value="" disabled>Select a tier…</option>
+                  <option value="Explorer">Explorer — Free (start here)</option>
                   <option value="Seeker">Seeker — $10/mo founding</option>
                   <option value="Oracle">Oracle — $25/mo founding (includes Library)</option>
                   <option value="Either">Either — I'm open to both</option>
+                  <option value="Not sure">Not sure yet</option>
                 </select>
               </div>
 
@@ -857,11 +871,11 @@ export default function PricingSection() {
                   id="fm-work"
                   required
                   minLength={20}
-                  value={formState.work}
+                  value={formState.application_text}
                   onChange={(e) => {
                     const val = e.target.value;
                     if (val.length <= 600) {
-                      setFormState((s) => ({ ...s, work: val }));
+                      setFormState((s) => ({ ...s, application_text: val }));
                     }
                   }}
                   placeholder="Tell us where you are. There's no wrong answer."
@@ -886,14 +900,14 @@ export default function PricingSection() {
                   style={{
                     fontFamily: "'Lato', sans-serif",
                     fontSize: "12px",
-                    color: formState.work.length >= 200 ? "rgba(212,175,100,0.5)" : "rgba(245,240,232,0.3)",
+                    color: formState.application_text.length >= 200 ? "rgba(212,175,100,0.5)" : "rgba(245,240,232,0.3)",
                     textAlign: "right",
                     transition: "color 0.3s ease",
                   }}
                 >
-                  {formState.work.length < 200
-                    ? `${formState.work.length} / 200 minimum`
-                    : `✓ ${formState.work.length} characters`}
+                  {formState.application_text.length < 200
+                    ? `${formState.application_text.length} / 200 minimum`
+                    : `✓ ${formState.application_text.length} characters`}
                 </p>
               </div>
 
@@ -919,10 +933,10 @@ export default function PricingSection() {
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", alignItems: "center" }}>
                 <button
                   type="submit"
-                  disabled={submitting || formState.work.length < 20}
+                  disabled={submitting || formState.application_text.length < 200}
                   style={{
                     width: "100%",
-                    background: submitting || formState.work.length < 20 ? "rgba(212,175,100,0.4)" : "#D4AF64",
+                    background: submitting || formState.application_text.length < 200 ? "rgba(212,175,100,0.4)" : "#D4AF64",
                     color: "#0F1023",
                     fontFamily: "'Lato', sans-serif",
                     fontWeight: 700,
@@ -931,18 +945,18 @@ export default function PricingSection() {
                     padding: "0.9rem 2rem",
                     borderRadius: "9999px",
                     border: "none",
-                    cursor: submitting || formState.work.length < 20 ? "not-allowed" : "pointer",
+                    cursor: submitting || formState.application_text.length < 200 ? "not-allowed" : "pointer",
                     transition: "background 0.2s, transform 0.15s",
                   }}
                   onMouseEnter={(e) => {
-                    if (!submitting && formState.work.length >= 20) {
+                    if (!submitting && formState.application_text.length >= 200) {
                       (e.currentTarget as HTMLElement).style.background = "#c49d4e";
                       (e.currentTarget as HTMLElement).style.transform = "translateY(-1px)";
                     }
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLElement).style.background =
-                      submitting || formState.work.length < 20 ? "rgba(212,175,100,0.4)" : "#D4AF64";
+                      submitting || formState.application_text.length < 200 ? "rgba(212,175,100,0.4)" : "#D4AF64";
                     (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                   }}
                 >

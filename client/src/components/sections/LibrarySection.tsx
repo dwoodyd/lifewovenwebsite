@@ -286,7 +286,7 @@ export default function LibrarySection() {
             Get all of it with Oracle →
           </a>
           <a
-            href="https://app.lifewoven.click"
+            href="https://soulengineer.online/shop"
             target="_blank"
             rel="noopener noreferrer"
             style={{

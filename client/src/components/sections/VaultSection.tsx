@@ -1,6 +1,6 @@
 /**
- * VaultSection — "Where the work is kept."
- * Fix 5b: fills the empty section between 5S Framework and Audit.
+ * WeaveSection — "Where the work is kept."
+ * (renamed from VaultSection — "The Vault" → "The Weave" per brand lock)
  * 
  * Headline: "Where the work is kept."
  * Body: privacy/data promise copy
@@ -43,7 +43,7 @@ const pillars = [
   },
 ];
 
-export default function VaultSection() {
+export default function VaultSection() { // component name kept for import compatibility
   const sectionRef = useReveal(0.1) as React.RefObject<HTMLElement>;
 
   return (
@@ -66,7 +66,7 @@ export default function VaultSection() {
           }}
         >
           {/* Eyebrow */}
-          <p className="eyebrow mb-4">The Vault</p>
+          <p className="eyebrow mb-4">The Weave</p>
 
           {/* Headline */}
           <h2
@@ -95,16 +95,16 @@ export default function VaultSection() {
             }}
           >
             Every entry, every Woven Self portrait, every reflection — kept in your private
-            vault. Searchable. Exportable. Yours.{" "}
+            weave. Searchable. Exportable. Yours.{" "}
             <span style={{ color: "rgba(245,240,232,0.55)" }}>
               We don't read it, we don't train on it, we don't sell it.
             </span>{" "}
-            The vault is the receipt that you're doing the work.
+            The Weave is the receipt that you're doing the work.
           </p>
 
           {/* Three pillars */}
           <div
-            className="vault-pillars"
+            className="weave-pillars"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
