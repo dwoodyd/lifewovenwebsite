@@ -1,7 +1,7 @@
 /**
  * SocialProofSection — "The Companion Book"
  * Layout: 50/50 two-column grid on desktop — left: book + quote + CTAs | right: woven figure reading video
- * Book: Build a Life That Doesn't Break You (coming soon) — no retail link, single CTA: Start with the Audit
+ * Book: Build a Life That Does Not Break You (coming soon) — no retail link, single CTA: Start with the Audit
  * On mobile: stacks vertically — copy → video.
  */
 
@@ -70,7 +70,7 @@ export default function SocialProofSection() {
             <p className="eyebrow mb-8">The companion book</p>
 
             {/* Book mockup */}
-            <div className="mb-10" aria-label="Build a Life That Doesn't Break You — the companion book">
+            <div className="mb-10" aria-label="Build a Life That Does Not Break You — the companion book">
               <div
                 style={{
                   transform: "rotate(-3deg)",
@@ -91,7 +91,7 @@ export default function SocialProofSection() {
               >
                 <img
                   src="/manus-storage/build_a_life_book_b9b9ff99.jpg"
-                  alt="Build a Life That Doesn't Break You — the book this practice is built around, by DeWayne Woods"
+                  alt="Build a Life That Does Not Break You — the book this practice is built around, by DeWayne Woods"
                   style={{ width: "100%", borderRadius: "4px", display: "block" }}
                   loading="lazy"
                 />
@@ -123,7 +123,7 @@ export default function SocialProofSection() {
                 maxWidth: "420px",
               }}
             >
-              <em>Build a Life That Doesn't Break You</em> is the book this practice is built around. Written by DeWayne Woods. Coming soon.
+              <em>Build a Life That Does Not Break You</em> is the book this practice is built around. Written by DeWayne Woods. Coming soon.
             </p>
 
             <p

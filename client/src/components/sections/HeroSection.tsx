@@ -54,7 +54,7 @@ export default function HeroSection() {
         {/* Poster / fallback */}
         <img
           src="/manus-storage/poster_build_a_life_hero_c0872244.jpg"
-          alt=""
+          alt="A Woven Self, reading Build a Life That Does Not Break You"
           aria-hidden="true"
           style={{
             position: "absolute",
