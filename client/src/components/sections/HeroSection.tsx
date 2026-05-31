@@ -53,7 +53,7 @@ export default function HeroSection() {
       <div className="absolute inset-0 z-0">
         {/* Poster / fallback */}
         <img
-          src="/manus-storage/poster_man_book_411dec88.jpg"
+          src="/manus-storage/poster_build_a_life_hero_c0872244.jpg"
           alt=""
           aria-hidden="true"
           style={{
@@ -74,7 +74,7 @@ export default function HeroSection() {
           loop
           playsInline
           preload="none"
-          poster="/manus-storage/poster_man_book_411dec88.jpg"
+          poster="/manus-storage/poster_build_a_life_hero_c0872244.jpg"
           style={{
             position: "absolute",
             inset: 0,
