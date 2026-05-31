@@ -1,7 +1,7 @@
 /**
- * SocialProofSection — "The book that started this"
- * Layout: 50/50 two-column grid on desktop — left: book + quote + CTAs | right: woven lady reading video
- * Both columns are equal visual weight. Video fills the full column height.
+ * SocialProofSection — "The Companion Book"
+ * Layout: 50/50 two-column grid on desktop — left: book + quote + CTAs | right: woven figure reading video
+ * Book: Build a Life That Doesn't Break You (coming soon) — no retail link, single CTA: Start with the Audit
  * On mobile: stacks vertically — copy → video.
  */
 
@@ -52,7 +52,7 @@ export default function SocialProofSection() {
     <section
       ref={sectionRef}
       className="section reveal"
-      aria-label="The book that started this"
+      aria-label="The companion book"
     >
       <div className="container">
         {/* 50/50 grid — equal columns, vertically centered */}
@@ -65,12 +65,12 @@ export default function SocialProofSection() {
           }}
           className="social-proof-grid"
         >
-          {/* ── LEFT: Book + copy + CTAs ── */}
+          {/* ── LEFT: Book + copy + CTA ── */}
           <div className="flex flex-col justify-center">
-            <p className="eyebrow mb-8">The book that started this</p>
+            <p className="eyebrow mb-8">The companion book</p>
 
             {/* Book mockup */}
-            <div className="mb-10" aria-label="Before the Words — the book">
+            <div className="mb-10" aria-label="Build a Life That Doesn't Break You — the companion book">
               <div
                 style={{
                   transform: "rotate(-3deg)",
@@ -90,8 +90,8 @@ export default function SocialProofSection() {
                 }}
               >
                 <img
-                  src="/manus-storage/book_mockup_before_the_words_1778253763210_0a5dbe61.png"
-                  alt="Before the Words — the book that started Lifewoven"
+                  src="/manus-storage/build_a_life_book_b9b9ff99.jpg"
+                  alt="Build a Life That Doesn't Break You — the book this practice is built around, by DeWayne Woods"
                   style={{ width: "100%", borderRadius: "4px", display: "block" }}
                   loading="lazy"
                 />
@@ -119,29 +119,34 @@ export default function SocialProofSection() {
                 fontSize: "16px",
                 color: "var(--lw-text-muted)",
                 lineHeight: 1.7,
+                marginBottom: "0.75rem",
+                maxWidth: "420px",
+              }}
+            >
+              <em>Build a Life That Doesn't Break You</em> is the book this practice is built around. Written by DeWayne Woods. Coming soon.
+            </p>
+
+            <p
+              style={{
+                fontSize: "15px",
+                color: "var(--lw-text-muted)",
+                lineHeight: 1.7,
                 marginBottom: "2rem",
                 maxWidth: "420px",
               }}
             >
-              <em>Before the Words</em> is the book that asked the question.
-              Lifewoven is where the answer lives.
+              The book gives you the philosophy. Lifewoven gives you the practice.{" "}
+              <span style={{ color: "rgba(212,175,100,0.85)" }}>
+                Founding members will receive a download the moment it releases.
+              </span>
             </p>
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://www.soulengineer.online/book-shop"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline"
-                style={{ fontSize: "15px" }}
-              >
-                Get the book →
-              </a>
-              <a
                 href="https://app.lifewoven.click/audit"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary"
+                className="btn-primary"
                 style={{ fontSize: "15px" }}
               >
                 Start with the Audit
@@ -149,10 +154,10 @@ export default function SocialProofSection() {
             </div>
           </div>
 
-          {/* ── RIGHT: Woven lady reading video — fills the full column ── */}
+          {/* ── RIGHT: Woven figure reading video — fills the full column ── */}
           <div
             className="flex flex-col items-center"
-            aria-label="A woven figure reading Before the Words"
+            aria-label="A woven figure reading the companion book"
           >
             <div
               style={{
@@ -165,22 +170,6 @@ export default function SocialProofSection() {
                 maxHeight: "70vh",
               }}
             >
-              {/* Poster */}
-              <img
-                src="/manus-storage/poster_woven_reading_b555a69d.jpg"
-                alt=""
-                aria-hidden="true"
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  objectPosition: "center top",
-                  opacity: videoReady ? 0 : 1,
-                  transition: "opacity 0.6s ease",
-                }}
-              />
               <video
                 ref={videoRef}
                 autoPlay
@@ -188,7 +177,6 @@ export default function SocialProofSection() {
                 loop
                 playsInline
                 preload="none"
-                poster="/manus-storage/poster_woven_reading_b555a69d.jpg"
                 style={{
                   position: "absolute",
                   inset: 0,
@@ -200,11 +188,28 @@ export default function SocialProofSection() {
                   transition: "opacity 0.6s ease",
                 }}
               >
+                {/* Shorter 1.5MB clip first for fast mobile load */}
                 <source
-                  src="/manus-storage/woven_lady_reading_v64_9f719457.mp4"
+                  src="/manus-storage/knit_reading_1351_3d7b6a4b.mp4"
+                  type="video/mp4"
+                />
+                {/* Longer alternate as fallback */}
+                <source
+                  src="/manus-storage/knit_reading_1420_6b0ed7e5.mp4"
                   type="video/mp4"
                 />
               </video>
+              {/* Dark gradient overlay so video edges blend into the card */}
+              <div
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  borderRadius: "20px",
+                  background: "linear-gradient(to bottom, transparent 60%, rgba(10,10,30,0.35) 100%)",
+                  pointerEvents: "none",
+                }}
+              />
               {/* Subtle amber glow ring */}
               <div
                 aria-hidden="true"
@@ -232,8 +237,7 @@ export default function SocialProofSection() {
                 lineHeight: 1.5,
               }}
             >
-              A Woven Self, reading{" "}
-              <em style={{ color: "rgba(212,175,100,0.95)" }}>Before the Words</em>
+              A Woven Self, reading the book that started this practice
             </p>
           </div>
         </div>

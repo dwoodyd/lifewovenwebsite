@@ -4,7 +4,7 @@
  * Design: Deep indigo / Cormorant Garamond display, Lato body
  * Amber (#D4AF64) accents, warm ivory text on dark background
  *
- * Positioned between SocialProofSection (Before the Words) and PricingSection (Founding Members)
+ * Positioned between SocialProofSection (The Companion Book) and PricingSection (Founding Members)
  * 9-product grid with "Included with Oracle" badges
  * Two CTAs: "Get all of it with Oracle" + "Browse standalone"
  * Closing footnote about independent creation

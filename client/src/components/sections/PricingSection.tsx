@@ -39,7 +39,6 @@ const seekerFeatures = [
   "Decision journal & analysis",
   "Energy audit & trends",
   "Belief rewrite system",
-  "Before the Words full practice suite",
   "Priority support",
   "30% off all standalone library products",
 ];

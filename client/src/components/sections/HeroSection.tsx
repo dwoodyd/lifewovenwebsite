@@ -1,5 +1,5 @@
 /**
- * HeroSection — Full-bleed video background: man holding "Before the Words" book to his chest
+ * HeroSection — Full-bleed video background: man holding a book to his chest
  * Design: Deep indigo overlay on warm dark-navy video. Copy floats left-aligned over the video.
  * Video: Man_holding_book_stillness — knit elder figure, dark starfield background
  * Typography: Cormorant Garamond display, Lato body
