@@ -87,7 +87,7 @@ export default function HeroSection() {
           }}
         >
           <source
-            src="/manus-storage/Man_holding_book_stillness_202605080830_f5f1c8f8.mp4"
+            src="/manus-storage/man_holding_book_b43e91a0.mp4"
             type="video/mp4"
           />
         </video>
