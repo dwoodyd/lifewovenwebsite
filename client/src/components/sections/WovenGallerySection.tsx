@@ -152,7 +152,7 @@ function ArchetypeCard({
       >
         <p
           style={{
-            fontFamily: "'Lato', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "14px",
             fontWeight: 600,
             letterSpacing: "0.1em",
@@ -187,7 +187,7 @@ function ArchetypeCard({
       >
         <p
           style={{
-            fontFamily: "'Lato', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "11px",
             fontWeight: 700,
             letterSpacing: "0.18em",

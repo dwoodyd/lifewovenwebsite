@@ -3,7 +3,7 @@
  * Sits between Hero and Five Threads.
  * Three abstract device frames (iPhone / Android / Browser) with one-line captions.
  * Under 200px tall on desktop. Warm taupe / cream palette.
- * Design: Cormorant Garamond captions, Lato labels, amber accent lines
+ * Design: Cormorant Garamond captions, DM Sans labels, amber accent lines
  */
 
 export default function PWAStrip() {

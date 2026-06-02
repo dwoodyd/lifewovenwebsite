@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="theme-color" content="#0F1023" />
+    <link rel="canonical" href="https://lifewoven.click/" />
     <title>Lifewoven — The wisdom you carry becomes who you are</title>
     <meta name="description" content="For people who've read the books. The wisdom you've already gathered doesn't need more reading. It needs a place to land." />
     <!-- Open Graph -->
@@ -10,10 +13,13 @@
     <meta property="og:url" content="https://lifewoven.click" />
     <meta property="og:title" content="Lifewoven — The wisdom you carry becomes who you are" />
     <meta property="og:description" content="For people who've read the books. The wisdom you've already gathered doesn't need more reading. It needs a place to land." />
+    <meta property="og:image" content="https://lifewoven.click/og-image.jpg" />
+    <meta property="og:site_name" content="Lifewoven" />
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Lifewoven — The wisdom you carry becomes who you are" />
     <meta name="twitter:description" content="For people who've read the books. The wisdom you've already gathered doesn't need more reading. It needs a place to land." />
+    <meta name="twitter:image" content="https://lifewoven.click/og-image.jpg" />
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,9 +31,6 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script
-      defer
-      src="%VITE_ANALYTICS_ENDPOINT%/umami"
-      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    <!-- Analytics: re-enable once VITE_ANALYTICS_ENDPOINT and VITE_ANALYTICS_WEBSITE_ID are defined in the build env. -->
   </body>
 </html>

@@ -1,7 +1,7 @@
 /*
  * LIFEWOVEN Library Section — "Nine practices. One Library. Yours with Oracle."
  *
- * Design: Deep indigo / Cormorant Garamond display, Lato body
+ * Design: Deep indigo / Cormorant Garamond display, DM Sans body
  * Amber (#D4AF64) accents, warm ivory text on dark background
  *
  * Positioned between SocialProofSection (The Companion Book) and PricingSection (Founding Members)
@@ -114,7 +114,7 @@ export default function LibrarySection() {
           </h2>
           <p
             style={{
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(15px, 1.8vw, 17px)",
               color: "var(--lw-text-muted)",
               maxWidth: "56ch",
@@ -177,7 +177,7 @@ export default function LibrarySection() {
                   </p>
                   <p
                     style={{
-                      fontFamily: "'Lato', sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                       fontSize: "12px",
                       color: "rgba(212,175,100,0.6)",
                       letterSpacing: "0.04em",
@@ -191,7 +191,7 @@ export default function LibrarySection() {
               {/* Description */}
               <p
                 style={{
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "13px",
                   color: "rgba(245,240,232,0.55)",
                   lineHeight: 1.6,
@@ -216,7 +216,7 @@ export default function LibrarySection() {
               >
                 <span
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "13px",
                     color: "rgba(245,240,232,0.35)",
                     textDecoration: "line-through",
@@ -226,7 +226,7 @@ export default function LibrarySection() {
                 </span>
                 <span
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "11px",
                     fontWeight: 700,
                     letterSpacing: "0.1em",
@@ -266,7 +266,7 @@ export default function LibrarySection() {
               borderRadius: "9999px",
               background: "#D4AF64",
               color: "#0F1023",
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontWeight: 700,
               fontSize: "14px",
               letterSpacing: "0.05em",
@@ -297,7 +297,7 @@ export default function LibrarySection() {
               borderRadius: "9999px",
               border: "1px solid rgba(212,175,100,0.4)",
               color: "rgba(212,175,100,0.85)",
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontWeight: 600,
               fontSize: "14px",
               letterSpacing: "0.04em",
@@ -320,7 +320,7 @@ export default function LibrarySection() {
         {/* ── Closing footnote ── */}
         <p
           style={{
-            fontFamily: "'Lato', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "12px",
             color: "rgba(245,240,232,0.25)",
             textAlign: "center",

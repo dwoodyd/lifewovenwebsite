@@ -1,7 +1,7 @@
 /*
  * LIFEWOVEN Pricing Section — "Choose your path."
  *
- * Design: Deep indigo / Cormorant Garamond display, Lato body
+ * Design: Deep indigo / Cormorant Garamond display, DM Sans body
  * Amber (#D4AF64) accents, warm ivory text on dark background
  *
  * Three cards: Explorer (free) | Seeker (founding $10/mo) | Oracle (founding $25/mo, MOST POPULAR)
@@ -16,7 +16,7 @@ const SLOTS_CLAIMED = 23;
 const TOTAL_SLOTS = 100;
 // ↑↑↑ UPDATE THIS NUMBER MANUALLY AS SLOTS ARE CLAIMED ↑↑↑
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
 
 const libraryItems = [
@@ -68,6 +68,9 @@ export default function PricingSection() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
+  // Spam protection: honeypot input + minimum time-on-form
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const loadedAt = useRef(Date.now());
 
   // ── Endpoint — update if the API route changes ──
   const APPLY_ENDPOINT = "https://api.lifewoven.click/apply";
@@ -75,6 +78,12 @@ export default function PricingSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formState.name || !formState.email || formState.application_text.length < 200) return;
+    // Bots fill hidden fields and submit almost instantly. Quietly accept
+    // (show success) without hitting the API so we don't tip them off.
+    if (honeypotRef.current?.value || Date.now() - loadedAt.current < 2500) {
+      setSubmitted(true);
+      return;
+    }
     setSubmitting(true);
     setSubmitError("");
     try {
@@ -131,7 +140,7 @@ export default function PricingSection() {
           </h2>
           <p
             style={{
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(15px, 1.8vw, 17px)",
               color: "var(--lw-text-muted)",
               maxWidth: "54ch",
@@ -162,7 +171,7 @@ export default function PricingSection() {
                 borderRadius: "9999px",
                 border: "none",
                 cursor: "pointer",
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "13px",
                 fontWeight: 600,
                 letterSpacing: "0.04em",
@@ -180,7 +189,7 @@ export default function PricingSection() {
                 borderRadius: "9999px",
                 border: "none",
                 cursor: "pointer",
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "13px",
                 fontWeight: 600,
                 letterSpacing: "0.04em",
@@ -219,7 +228,7 @@ export default function PricingSection() {
             <div>
               <p
                 style={{
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "11px",
                   fontWeight: 700,
                   letterSpacing: "0.16em",
@@ -250,7 +259,7 @@ export default function PricingSection() {
             </div>
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "14px",
                 color: "var(--lw-text-muted)",
                 lineHeight: 1.65,
@@ -262,7 +271,7 @@ export default function PricingSection() {
               {explorerFeatures.map((f) => (
                 <li key={f} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start" }}>
                   <span style={{ color: "#D4AF64", fontSize: "13px", marginTop: "2px", flexShrink: 0 }}>✓</span>
-                  <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.65)", lineHeight: 1.5 }}>{f}</span>
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.65)", lineHeight: 1.5 }}>{f}</span>
                 </li>
               ))}
             </ul>
@@ -277,7 +286,7 @@ export default function PricingSection() {
                 borderRadius: "9999px",
                 border: "1px solid rgba(212,175,100,0.35)",
                 color: "rgba(212,175,100,0.85)",
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 600,
                 fontSize: "14px",
                 letterSpacing: "0.04em",
@@ -313,7 +322,7 @@ export default function PricingSection() {
             <div>
               <p
                 style={{
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "11px",
                   fontWeight: 700,
                   letterSpacing: "0.16em",
@@ -331,12 +340,12 @@ export default function PricingSection() {
                 >
                   {annualToggle ? "$99" : "$10"}
                 </p>
-                <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.5)" }}>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.5)" }}>
                   {annualToggle ? "/yr founding" : "/mo founding"}
                 </span>
                 <span
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "13px",
                     color: "rgba(245,240,232,0.3)",
                     textDecoration: "line-through",
@@ -359,7 +368,7 @@ export default function PricingSection() {
             </div>
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "14px",
                 color: "var(--lw-text-muted)",
                 lineHeight: 1.65,
@@ -368,12 +377,12 @@ export default function PricingSection() {
               Lumin opens the full system to you. Every tool, every pathway, every module — fully unlocked.
             </p>
             <div>
-              <p style={{ fontFamily: "'Lato', sans-serif", fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(212,175,100,0.5)", marginBottom: "0.75rem" }}>Everything in Explorer, plus:</p>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(212,175,100,0.5)", marginBottom: "0.75rem" }}>Everything in Explorer, plus:</p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                 {seekerFeatures.map((f) => (
                   <li key={f} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start" }}>
                     <span style={{ color: "#D4AF64", fontSize: "13px", marginTop: "2px", flexShrink: 0 }}>✓</span>
-                    <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.65)", lineHeight: 1.5 }}>{f}</span>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.65)", lineHeight: 1.5 }}>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -388,7 +397,7 @@ export default function PricingSection() {
                 borderRadius: "9999px",
                 border: "1px solid rgba(212,175,100,0.5)",
                 color: "#D4AF64",
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 600,
                 fontSize: "14px",
                 letterSpacing: "0.04em",
@@ -430,7 +439,7 @@ export default function PricingSection() {
                 transform: "translateX(-50%)",
                 background: "#D4AF64",
                 color: "#0F1023",
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: "11px",
                 letterSpacing: "0.14em",
@@ -446,7 +455,7 @@ export default function PricingSection() {
             <div>
               <p
                 style={{
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "11px",
                   fontWeight: 700,
                   letterSpacing: "0.16em",
@@ -464,12 +473,12 @@ export default function PricingSection() {
                 >
                   {annualToggle ? "$249" : "$25"}
                 </p>
-                <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.5)" }}>
+                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.5)" }}>
                   {annualToggle ? "/yr founding" : "/mo founding"}
                 </span>
                 <span
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "13px",
                     color: "rgba(245,240,232,0.3)",
                     textDecoration: "line-through",
@@ -493,7 +502,7 @@ export default function PricingSection() {
 
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "14px",
                 color: "var(--lw-text-muted)",
                 lineHeight: 1.65,
@@ -504,12 +513,12 @@ export default function PricingSection() {
             </p>
 
             <div>
-              <p style={{ fontFamily: "'Lato', sans-serif", fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(212,175,100,0.6)", marginBottom: "0.75rem" }}>Everything in Seeker, plus:</p>
+              <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(212,175,100,0.6)", marginBottom: "0.75rem" }}>Everything in Seeker, plus:</p>
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem", marginBottom: "1.5rem" }}>
                 {oracleExtras.map((f) => (
                   <li key={f} style={{ display: "flex", gap: "0.6rem", alignItems: "flex-start" }}>
                     <span style={{ color: "#D4AF64", fontSize: "13px", marginTop: "2px", flexShrink: 0 }}>✓</span>
-                    <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.65)", lineHeight: 1.5 }}>{f}</span>
+                    <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.65)", lineHeight: 1.5 }}>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -525,7 +534,7 @@ export default function PricingSection() {
               >
                 <p
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "11px",
                     fontWeight: 700,
                     letterSpacing: "0.14em",
@@ -539,11 +548,11 @@ export default function PricingSection() {
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.55rem" }}>
                   {libraryItems.map((item) => (
                     <li key={item.title} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "0.5rem" }}>
-                      <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "13px", color: "rgba(245,240,232,0.7)", lineHeight: 1.4 }}>
+                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "13px", color: "rgba(245,240,232,0.7)", lineHeight: 1.4 }}>
                         {item.icon} <em style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>{item.title}</em>
                         <span style={{ color: "rgba(245,240,232,0.35)", fontSize: "12px" }}> · {item.format}</span>
                       </span>
-                      <span style={{ fontFamily: "'Lato', sans-serif", fontSize: "12px", color: "rgba(245,240,232,0.3)", textDecoration: "line-through", flexShrink: 0 }}>{item.price}</span>
+                      <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", color: "rgba(245,240,232,0.3)", textDecoration: "line-through", flexShrink: 0 }}>{item.price}</span>
                     </li>
                   ))}
                 </ul>
@@ -572,7 +581,7 @@ export default function PricingSection() {
                 borderRadius: "9999px",
                 background: "#D4AF64",
                 color: "#0F1023",
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: "14px",
                 letterSpacing: "0.05em",
@@ -615,7 +624,7 @@ export default function PricingSection() {
           </p>
           <p
             style={{
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "14px",
               color: "rgba(245,240,232,0.5)",
               lineHeight: 1.7,
@@ -632,7 +641,7 @@ export default function PricingSection() {
           {/* Scarcity counter */}
           <p
             style={{
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "15px",
               color: "rgba(212,175,100,0.85)",
               textAlign: "center",
@@ -674,7 +683,7 @@ export default function PricingSection() {
               </p>
               <p
                 style={{
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "15px",
                   color: "var(--lw-text-muted)",
                   lineHeight: 1.65,
@@ -685,7 +694,7 @@ export default function PricingSection() {
               </p>
               <p
                 style={{
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "13px",
                   color: "rgba(245,240,232,0.4)",
                   lineHeight: 1.6,
@@ -708,6 +717,19 @@ export default function PricingSection() {
                 gap: "1.25rem",
               }}
             >
+              {/* Honeypot — must stay empty; hidden from people and screen readers */}
+              <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+                <label htmlFor="fm-company">Company (leave this field empty)</label>
+                <input
+                  id="fm-company"
+                  ref={honeypotRef}
+                  type="text"
+                  name="company"
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div style={{ textAlign: "center", marginBottom: "0.5rem" }}>
                 <h3
                   className="font-display"
@@ -717,7 +739,7 @@ export default function PricingSection() {
                 </h3>
                 <p
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "14px",
                     color: "var(--lw-text-muted)",
                     lineHeight: 1.6,
@@ -732,7 +754,7 @@ export default function PricingSection() {
                 <label
                   htmlFor="fm-name"
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "11px",
                     fontWeight: 700,
                     letterSpacing: "0.14em",
@@ -755,7 +777,7 @@ export default function PricingSection() {
                     borderRadius: "8px",
                     padding: "0.75rem 1rem",
                     color: "#F5F0E8",
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "15px",
                     outline: "none",
                     transition: "border-color 0.2s",
@@ -770,7 +792,7 @@ export default function PricingSection() {
                 <label
                   htmlFor="fm-email"
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "11px",
                     fontWeight: 700,
                     letterSpacing: "0.14em",
@@ -793,7 +815,7 @@ export default function PricingSection() {
                     borderRadius: "8px",
                     padding: "0.75rem 1rem",
                     color: "#F5F0E8",
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "15px",
                     outline: "none",
                     transition: "border-color 0.2s",
@@ -808,7 +830,7 @@ export default function PricingSection() {
                 <label
                   htmlFor="fm-tier"
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "11px",
                     fontWeight: 700,
                     letterSpacing: "0.14em",
@@ -828,7 +850,7 @@ export default function PricingSection() {
                     borderRadius: "8px",
                     padding: "0.75rem 1rem",
                     color: formState.tier ? "#F5F0E8" : "rgba(245,240,232,0.4)",
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "15px",
                     outline: "none",
                     cursor: "pointer",
@@ -856,7 +878,7 @@ export default function PricingSection() {
                 <label
                   htmlFor="fm-work"
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "11px",
                     fontWeight: 700,
                     letterSpacing: "0.14em",
@@ -869,7 +891,7 @@ export default function PricingSection() {
                 <textarea
                   id="fm-work"
                   required
-                  minLength={20}
+                  minLength={200}
                   value={formState.application_text}
                   onChange={(e) => {
                     const val = e.target.value;
@@ -885,7 +907,7 @@ export default function PricingSection() {
                     borderRadius: "8px",
                     padding: "0.75rem 1rem",
                     color: "#F5F0E8",
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "15px",
                     outline: "none",
                     resize: "vertical",
@@ -897,7 +919,7 @@ export default function PricingSection() {
                 />
                 <p
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "12px",
                     color: formState.application_text.length >= 200 ? "rgba(212,175,100,0.5)" : "rgba(245,240,232,0.3)",
                     textAlign: "right",
@@ -914,7 +936,7 @@ export default function PricingSection() {
               {submitError && (
                 <p
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "13px",
                     color: "rgba(255,100,100,0.85)",
                     lineHeight: 1.55,
@@ -937,7 +959,7 @@ export default function PricingSection() {
                     width: "100%",
                     background: submitting || formState.application_text.length < 200 ? "rgba(212,175,100,0.4)" : "#D4AF64",
                     color: "#0F1023",
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 700,
                     fontSize: "0.95rem",
                     letterSpacing: "0.04em",
@@ -963,7 +985,7 @@ export default function PricingSection() {
                 </button>
                 <p
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "13px",
                     color: "rgba(245,240,232,0.4)",
                     textAlign: "center",

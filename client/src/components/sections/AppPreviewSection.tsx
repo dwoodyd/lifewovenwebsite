@@ -1,7 +1,7 @@
 /*
  * LIFEWOVEN App Preview Section — "What you'll see when you open it"
  *
- * Design philosophy: Deep indigo / Cormorant Garamond display, Lato body
+ * Design philosophy: Deep indigo / Cormorant Garamond display, DM Sans body
  * Amber (#D4AF64) accents, warm ivory text on dark background
  *
  * Desktop: 2×2 + 1 centered grid (5 screens)

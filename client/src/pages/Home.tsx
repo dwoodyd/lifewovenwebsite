@@ -2,7 +2,7 @@
  * LIFEWOVEN Home Page — "Monastery Library at Dusk"
  * 
  * Design: Deep indigo (#0F1023) + amber (#E9B96E) + cream (#F0E8D8)
- * Typography: Cormorant Garamond (display) + Lato (body)
+ * Typography: Cormorant Garamond (display) + DM Sans (body)
  * Mood: Quiet, wise, attentive — a library at dusk
  * 
  * Section order (Fix 5c applied):
@@ -81,7 +81,7 @@ export default function Home() {
       <Nav />
 
       {/* Main content */}
-      <main>
+      <main id="main-content" tabIndex={-1} style={{ outline: "none" }}>
         {/* 1. Hero — full-bleed man holding book */}
         <HeroSection />
 

@@ -8,7 +8,7 @@
  * Copy animates in word-by-word as the section enters the viewport:
  *   "Meet" fades in first → then "Lumin." slides up 300ms later → body text follows → pills → CTA
  * 
- * Typography: Cormorant Garamond display, Lato body
+ * Typography: Cormorant Garamond display, DM Sans body
  * Palette: cream/ivory text, amber "Lumin." italic highlight
  */
 
@@ -204,7 +204,7 @@ export default function LuminSection() {
           {/* Eyebrow */}
           <p
             style={{
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontWeight: 500,
               fontSize: "13px",
               letterSpacing: "0.18em",
@@ -262,7 +262,7 @@ export default function LuminSection() {
           {/* Body */}
           <p
             style={{
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(1rem, 1.6vw, 1.05rem)",
               color: "rgba(245,240,232,0.78)",
               lineHeight: 1.75,
@@ -305,7 +305,7 @@ export default function LuminSection() {
                   style={{
                     color: "#F5F0E8",
                     fontSize: "13px",
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 500,
                     letterSpacing: "0.02em",
                   }}
@@ -321,7 +321,7 @@ export default function LuminSection() {
             href="#pricing"
             style={{
               display: "inline-block",
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontWeight: 600,
               fontSize: "0.9rem",
               color: "#D4AF64",

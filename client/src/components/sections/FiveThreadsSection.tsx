@@ -3,7 +3,7 @@
  * Design: Warm overlay on bright library video. Copy floats right-aligned over the video.
  * The 5S tabs sit in a semi-transparent card over the video.
  * Video: Woman_smiling_on_bench — knit figure in warm library, light background
- * Typography: Cormorant Garamond display, Lato body
+ * Typography: Cormorant Garamond display, DM Sans body
  * Palette: dark text on light overlay (video is warm/bright), amber accents
  */
 
@@ -178,7 +178,7 @@ export default function FiveThreadsSection() {
             <div className="lg:w-5/12 section reveal">
               <p
                 className="uppercase tracking-[0.18em] font-medium mb-5"
-                style={{ color: "#D4AF64", fontFamily: "'Lato', sans-serif", fontSize: "13px" }}
+                style={{ color: "#D4AF64", fontFamily: "'DM Sans', sans-serif", fontSize: "13px" }}
               >
                 The 5S Framework
               </p>
@@ -200,7 +200,7 @@ export default function FiveThreadsSection() {
               </h2>
               <p
                 style={{
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontSize: "1rem",
                   color: "rgba(245,240,232,0.72)",
                   lineHeight: 1.7,
@@ -239,7 +239,7 @@ export default function FiveThreadsSection() {
                     aria-selected={active === i}
                     onClick={() => setActive(i)}
                     style={{
-                      fontFamily: "'Lato', sans-serif",
+                      fontFamily: "'DM Sans', sans-serif",
                       fontWeight: active === i ? 700 : 400,
                       fontSize: "0.85rem",
                       letterSpacing: "0.06em",
@@ -278,7 +278,7 @@ export default function FiveThreadsSection() {
               >
                 <p
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "13px",
                     letterSpacing: "0.15em",
                     textTransform: "uppercase",
@@ -302,7 +302,7 @@ export default function FiveThreadsSection() {
                 </h3>
                 <p
                   style={{
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontSize: "1rem",
                     color: "rgba(245,240,232,0.72)",
                     lineHeight: 1.7,
@@ -318,7 +318,7 @@ export default function FiveThreadsSection() {
                   href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer"
                   style={{
                     display: "inline-block",
-                    fontFamily: "'Lato', sans-serif",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 600,
                     fontSize: "0.9rem",
                     color: "#D4AF64",

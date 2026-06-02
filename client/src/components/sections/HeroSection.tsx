@@ -2,7 +2,7 @@
  * HeroSection — Full-bleed video background: man holding a book to his chest
  * Design: Deep indigo overlay on warm dark-navy video. Copy floats left-aligned over the video.
  * Video: Man_holding_book_stillness — knit elder figure, dark starfield background
- * Typography: Cormorant Garamond display, Lato body
+ * Typography: Cormorant Garamond display, DM Sans body
  * Palette: cream/ivory text, amber "woven" italic, indigo overlay gradient
  */
 
@@ -135,7 +135,7 @@ export default function HeroSection() {
             {/* Eyebrow */}
             <p
               className="uppercase font-medium mb-6"
-              style={{ color: "rgba(212,175,100,0.9)", fontFamily: "'Lato', sans-serif", fontSize: "13px", letterSpacing: "0.18em" }}
+              style={{ color: "rgba(212,175,100,0.9)", fontFamily: "'DM Sans', sans-serif", fontSize: "13px", letterSpacing: "0.18em" }}
             >
               For people who've read the books
             </p>
@@ -178,7 +178,7 @@ export default function HeroSection() {
             {/* Sub */}
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "clamp(1rem, 2vw, 1.2rem)",
                 color: "rgba(245,240,232,0.78)",
                 lineHeight: 1.65,
@@ -198,7 +198,7 @@ export default function HeroSection() {
                   display: "inline-block",
                   background: "#D4AF64",
                   color: "#0F1023",
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: "0.95rem",
                   letterSpacing: "0.04em",
@@ -219,11 +219,11 @@ export default function HeroSection() {
                 Take the Audit →
               </a>
               <a
-                href="#five-threads"
+                href="#the-five"
                 style={{
                   display: "inline-block",
                   color: "rgba(245,240,232,0.7)",
-                  fontFamily: "'Lato', sans-serif",
+                  fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 400,
                   fontSize: "0.9rem",
                   letterSpacing: "0.02em",
@@ -248,7 +248,7 @@ export default function HeroSection() {
             {/* PWA descriptor — quiet clarifier, not a feature box */}
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "14px",
                 color: "rgba(245,240,232,0.55)",
                 marginTop: "1.25rem",
@@ -262,7 +262,7 @@ export default function HeroSection() {
             {/* Oracle library chip — small, non-dominant */}
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "12px",
                 color: "rgba(212,175,100,0.55)",
                 marginTop: "1rem",
@@ -292,7 +292,7 @@ export default function HeroSection() {
         >
           <span
             style={{
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "0.65rem",
               letterSpacing: "0.2em",
               color: "#F5F0E8",

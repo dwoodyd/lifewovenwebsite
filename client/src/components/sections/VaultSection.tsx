@@ -85,7 +85,7 @@ export default function VaultSection() { // component name kept for import compa
           {/* Body */}
           <p
             style={{
-              fontFamily: "'Lato', sans-serif",
+              fontFamily: "'DM Sans', sans-serif",
               fontSize: "clamp(15px, 1.6vw, 17px)",
               color: "var(--lw-text-muted)",
               lineHeight: 1.75,

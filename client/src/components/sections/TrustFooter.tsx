@@ -69,7 +69,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       >
         <span
           style={{
-            fontFamily: "'Lato', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "15px",
             fontWeight: 600,
             color: "var(--lw-text)",
@@ -107,7 +107,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
       >
         <p
           style={{
-            fontFamily: "'Lato', sans-serif",
+            fontFamily: "'DM Sans', sans-serif",
             fontSize: "14px",
             color: "var(--lw-text-muted)",
             lineHeight: 1.65,
@@ -202,7 +202,7 @@ export function PWAInstallFAQ() {
             </h2>
             <p
               style={{
-                fontFamily: "'Lato', sans-serif",
+                fontFamily: "'DM Sans', sans-serif",
                 fontSize: "14px",
                 color: "var(--lw-text-muted)",
                 lineHeight: 1.6,
