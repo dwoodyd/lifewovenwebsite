@@ -1,0 +1,5 @@
+The video shows a web browser where the user is attempting to load the URL **`app.lifewoven.com`**. 
+
+For almost the entire duration of the video, the actual application content is **not rendering**. Instead, the screen displays a dark background with a single, continuously **spinning element** in the center. This element is a white, rounded square containing a gold, patterned logo, acting as a loading indicator.
+
+Based on the URL (`app.lifewoven.com`) and a brief moment at the 00:16 mark where the page successfully loads to reveal a personalized dashboard ("Good evening, DeWayne"), this is clearly the **Lifewoven app** itself, not the marketing site. Furthermore, because it loads into a populated user dashboard, it appears to be a standard login or loading state for an existing user rather than an initial onboarding sequence.

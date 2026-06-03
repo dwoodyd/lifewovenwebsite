@@ -30,6 +30,20 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Unregister any stale service workers (e.g. from a previous PWA deployment at this domain) -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (var r of registrations) { r.unregister(); }
+        });
+        // Also clear all caches so the old app shell doesn't serve stale assets
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            for (var name of names) { caches.delete(name); }
+          });
+        }
+      }
+    </script>
     <script type="module" src="/src/main.tsx"></script>
     <!-- Analytics: re-enable once VITE_ANALYTICS_ENDPOINT and VITE_ANALYTICS_WEBSITE_ID are defined in the build env. -->
   </body>
