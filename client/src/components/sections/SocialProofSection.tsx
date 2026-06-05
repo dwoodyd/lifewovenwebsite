@@ -7,6 +7,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
+import { AUDIT_URL } from "../../config";
 
 export default function SocialProofSection() {
   const sectionRef = useReveal(0.12) as React.RefObject<HTMLElement>;
@@ -143,7 +144,7 @@ export default function SocialProofSection() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://app.lifewoven.click/audit"
+                href={AUDIT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

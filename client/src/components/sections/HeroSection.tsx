@@ -7,6 +7,7 @@
  */
 
 import { useEffect, useRef, useState } from "react";
+import { AUDIT_URL } from "../../config";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -193,7 +194,7 @@ export default function HeroSection() {
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4">
               <a
-                href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer"
+                href={AUDIT_URL} target="_blank" rel="noopener noreferrer"
                 style={{
                   display: "inline-block",
                   background: "#D4AF64",

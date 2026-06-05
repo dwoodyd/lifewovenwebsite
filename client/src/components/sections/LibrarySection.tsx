@@ -11,6 +11,7 @@
  */
 
 import { useReveal } from "../../hooks/useReveal";
+import { SHOP_URL } from "../../config";
 
 const products = [
   {
@@ -286,7 +287,7 @@ export default function LibrarySection() {
             Get all of it with Oracle →
           </a>
           <a
-            href="https://soulengineer.online/shop"
+            href={SHOP_URL}
             target="_blank"
             rel="noopener noreferrer"
             style={{

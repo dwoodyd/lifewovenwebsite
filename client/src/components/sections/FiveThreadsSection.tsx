@@ -9,6 +9,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { useReveal } from "../../hooks/useReveal";
+import { AUDIT_URL } from "../../config";
 
 const THREADS = [
   {
@@ -315,7 +316,7 @@ export default function FiveThreadsSection() {
               {/* CTA */}
               <div className="mt-6">
                 <a
-                  href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer"
+                  href={AUDIT_URL} target="_blank" rel="noopener noreferrer"
                   style={{
                     display: "inline-block",
                     fontFamily: "'DM Sans', sans-serif",

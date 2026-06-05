@@ -18,6 +18,7 @@ const TOTAL_SLOTS = 100;
 
 import { useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
+import { APPLY_ENDPOINT, APP_URL } from "../../config";
 
 const libraryItems = [
   { icon: "📐", title: "Alignment Fundamentals", format: "6-week course", price: "$97" },
@@ -72,8 +73,7 @@ export default function PricingSection() {
   const honeypotRef = useRef<HTMLInputElement>(null);
   const loadedAt = useRef(Date.now());
 
-  // ── Endpoint — update if the API route changes ──
-  const APPLY_ENDPOINT = "https://api.lifewoven.click/apply";
+  // ── Endpoint is imported from src/config.ts ──
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -276,7 +276,7 @@ export default function PricingSection() {
               ))}
             </ul>
             <a
-              href="https://app.lifewoven.click"
+              href={APP_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{

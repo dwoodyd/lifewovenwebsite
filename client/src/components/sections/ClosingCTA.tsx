@@ -5,6 +5,7 @@
  * The final invitation before the footer
  */
 import { useReveal } from "../../hooks/useReveal";
+import { AUDIT_URL } from "../../config";
 
 export default function ClosingCTA() {
   const sectionRef = useReveal(0.15) as React.RefObject<HTMLElement>;
@@ -90,7 +91,7 @@ export default function ClosingCTA() {
           </p>
 
           <div className="flex flex-wrap justify-center gap-5">
-            <a href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>
+            <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>
               Take the Audit →
             </a>
             <a href="#pricing" className="btn-outline" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>

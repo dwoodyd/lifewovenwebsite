@@ -6,6 +6,7 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
+import { AUDIT_URL } from "../../config";
 
 const auditQuestions = [
   {
@@ -91,7 +92,7 @@ export default function AuditSection() {
             >
               The Audit shows you which thread to pick up first.
             </p>
-            <a href="https://app.lifewoven.click/audit" target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
               Take the Audit →
             </a>
           </div>

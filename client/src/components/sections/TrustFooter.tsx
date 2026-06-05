@@ -7,6 +7,7 @@
  */
 import { useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
+import { AUDIT_URL } from "../../config";
 
 const trustChips = [
   "Logotherapy",
@@ -272,7 +273,7 @@ export function Footer() {
             <div className="flex flex-wrap gap-6">
               {[
                 { label: "The Five", href: "#the-five" },
-                { label: "The Audit", href: "https://app.lifewoven.click/audit" },
+                { label: "The Audit", href: AUDIT_URL },
                 { label: "Founding Members", href: "#pricing" },
                 { label: "Install Guide", href: "#install-guide" },
                 { label: "Privacy", href: "/privacy" },
