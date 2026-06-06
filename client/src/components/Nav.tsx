@@ -53,6 +53,10 @@ export default function Nav() {
            style={{ color: "var(--lw-text-muted)" }}>
           The Audit
         </a>
+        <a href="#the-library" className="text-sm font-medium transition-colors hover:text-amber-400"
+           style={{ color: "var(--lw-text-muted)" }}>
+          The Library
+        </a>
         <a href="#pricing" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           Founding Members
@@ -98,6 +102,7 @@ export default function Nav() {
           {[
             { label: "The Five", href: "#the-five", external: false },
             { label: "The Audit", href: AUDIT_URL, external: true },
+            { label: "The Library", href: "#the-library", external: false },
             { label: "Founding Members", href: "#pricing", external: false },
             { label: "Sign in", href: SIGNIN_URL, external: true },
           ].map((item) => (
