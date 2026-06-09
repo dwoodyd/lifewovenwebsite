@@ -1,7 +1,7 @@
 /*
  * LIFEWOVEN Home Page — "Monastery Library at Dusk"
  * 
- * Design: Deep indigo (#0F1023) + amber (#E9B96E) + cream (#F0E8D8)
+ * Design: Deep indigo (#1A140E) + amber (#B0832F) + cream (#F0E8D8)
  * Typography: Cormorant Garamond (display) + DM Sans (body)
  * Mood: Quiet, wise, attentive — a library at dusk
  * 

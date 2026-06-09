@@ -1,9 +1,9 @@
 /*
- * LIFEWOVEN — Design Philosophy: "Monastery Library at Dusk"
+ * LIFEWOVEN — Design Philosophy: "Woven Craft at Firelight"
  * 
- * Color: Deep indigo ground (#0F1023) with amber warmth (#E9B96E) and cream text (#F0E8D8)
+ * Color: Warm bark/espresso ground (#1A140E) with woven gold (#B0832F) and parchment text (#EFE7D6)
  * Typography: Cormorant Garamond (display) + DM Sans (body)
- * Mood: Quiet, wise, attentive — a library at dusk
+ * Mood: Earthy, handcrafted, wise — knit by firelight
  * Layout: Asymmetric, mascot-anchored, generous vertical rhythm
  */
 
@@ -41,25 +41,26 @@
    LIFEWOVEN DESIGN TOKENS
    ============================================================ */
 :root {
-  /* Core palette */
-  --lw-bg:           #0F1023;   /* deep indigo — the ground */
-  --lw-bg-elevated:  #1A1B33;   /* card backgrounds */
-  --lw-bg-lumin:     #0A0B1A;   /* Lumin section — pull the indigo down */
-  --lw-text:         #F0E8D8;   /* warm cream */
-  --lw-text-muted:   #989AB0;   /* secondary text */
-  --lw-amber:        #E9B96E;   /* amber accent — CTAs, highlights */
-  --lw-amber-soft:   rgba(233, 185, 110, 0.18); /* soft amber for highlight blocks */
-  --lw-amber-glow:   rgba(233, 185, 110, 0.08); /* very soft amber for backgrounds */
-  --lw-rose:         #C97B7B;   /* rose — Stewardship thread */
-  --lw-border:       #2D2E48;
-  --lw-border-soft:  rgba(45, 46, 72, 0.6);
+  /* Core palette — earthy/woven direction (matches app) */
+  --lw-bg:           #1A140E;   /* warm bark/espresso — the ground */
+  --lw-bg-elevated:  #262019;   /* card backgrounds — ink */
+  --lw-bg-lumin:     #110D08;   /* Lumin section — pull bark deeper */
+  --lw-text:         #EFE7D6;   /* parchment */
+  --lw-text-muted:   #A89880;   /* warm muted parchment */
+  --lw-amber:        #B0832F;   /* woven gold — CTAs, highlights */
+  --lw-amber-soft:   rgba(176, 131, 47, 0.18); /* soft gold for highlight blocks */
+  --lw-amber-glow:   rgba(176, 131, 47, 0.08); /* very soft gold for backgrounds */
+  --lw-rose:         #B5653F;   /* clay — Stewardship thread */
+  --lw-forest:       #4F6157;   /* forest — Standards thread */
+  --lw-border:       #3A2E22;
+  --lw-border-soft:  rgba(58, 46, 34, 0.7);
 
-  /* Thread colors for 5S */
-  --thread-state:        #7BA7C9;  /* blue */
-  --thread-story:        #E9B96E;  /* amber */
-  --thread-standards:    #7BC99A;  /* green */
-  --thread-strategy:     #7B7BC9;  /* indigo */
-  --thread-stewardship:  #C97B7B;  /* rose */
+  /* Thread colors for 5S — earthy palette */
+  --thread-state:        #8AABBA;  /* dusty blue */
+  --thread-story:        #B0832F;  /* woven gold */
+  --thread-standards:    #4F6157;  /* forest */
+  --thread-strategy:     #8A7B6A;  /* warm taupe */
+  --thread-stewardship:  #B5653F;  /* clay */
 
   /* Typography */
   --font-display: 'Cormorant Garamond', 'Georgia', serif;
@@ -70,26 +71,26 @@
   --max-width: 1280px;
   --content-width: 720px;
 
-  /* Tailwind/shadcn compatibility */
+  /* Tailwind/shadcn compatibility — warm bark ground */
   --radius: 0.5rem;
-  --background: oklch(0.12 0.02 265);
-  --foreground: oklch(0.93 0.02 75);
-  --card: oklch(0.16 0.02 265);
-  --card-foreground: oklch(0.93 0.02 75);
-  --popover: oklch(0.16 0.02 265);
-  --popover-foreground: oklch(0.93 0.02 75);
-  --primary: oklch(0.78 0.12 75);
-  --primary-foreground: oklch(0.12 0.02 265);
-  --secondary: oklch(0.20 0.02 265);
-  --secondary-foreground: oklch(0.93 0.02 75);
-  --muted: oklch(0.20 0.02 265);
-  --muted-foreground: oklch(0.62 0.03 265);
-  --accent: oklch(0.78 0.12 75);
-  --accent-foreground: oklch(0.12 0.02 265);
+  --background: oklch(0.13 0.02 50);
+  --foreground: oklch(0.93 0.03 75);
+  --card: oklch(0.17 0.02 50);
+  --card-foreground: oklch(0.93 0.03 75);
+  --popover: oklch(0.17 0.02 50);
+  --popover-foreground: oklch(0.93 0.03 75);
+  --primary: oklch(0.65 0.10 60);
+  --primary-foreground: oklch(0.13 0.02 50);
+  --secondary: oklch(0.20 0.02 50);
+  --secondary-foreground: oklch(0.93 0.03 75);
+  --muted: oklch(0.20 0.02 50);
+  --muted-foreground: oklch(0.60 0.03 60);
+  --accent: oklch(0.65 0.10 60);
+  --accent-foreground: oklch(0.13 0.02 50);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.25 0.02 265);
-  --input: oklch(0.25 0.02 265);
-  --ring: oklch(0.78 0.12 75);
+  --border: oklch(0.26 0.03 50);
+  --input: oklch(0.26 0.03 50);
+  --ring: oklch(0.65 0.10 60);
 }
 
 /* ============================================================
@@ -219,7 +220,7 @@
     align-items: center;
     gap: 0.5rem;
     background-color: var(--lw-amber);
-    color: #0F1023;
+    color: #1A140E;
     font-family: var(--font-body);
     font-size: 15px;
     font-weight: 600;
@@ -232,9 +233,9 @@
   }
 
   .btn-primary:hover {
-    background-color: #f0c87a;
+    background-color: #C9972E;
     transform: translateY(-1px);
-    box-shadow: 0 8px 24px rgba(233, 185, 110, 0.3);
+    box-shadow: 0 8px 24px rgba(176, 131, 47, 0.35);
   }
 
   .btn-secondary {
@@ -367,13 +368,13 @@
   }
 
   .pricing-card:hover {
-    border-color: rgba(233, 185, 110, 0.4);
+    border-color: rgba(176, 131, 47, 0.4);
     transform: translateY(-4px);
   }
 
   .pricing-card.featured {
     border-color: var(--lw-amber);
-    background: linear-gradient(135deg, #1A1B33 0%, #1F1D38 100%);
+    background: linear-gradient(135deg, #262019 0%, #2E2518 100%);
   }
 
   .pricing-card.featured::before {
@@ -391,7 +392,7 @@
     display: inline-flex;
     align-items: center;
     padding: 0.35rem 0.85rem;
-    background: rgba(45, 46, 72, 0.6);
+    background: rgba(38, 32, 25, 0.6);
     border: 1px solid var(--lw-border);
     border-radius: 100px;
     font-size: 13px;
@@ -401,7 +402,7 @@
   }
 
   .trust-chip:hover {
-    border-color: rgba(233, 185, 110, 0.4);
+    border-color: rgba(176, 131, 47, 0.4);
     color: var(--lw-text);
   }
 
@@ -426,7 +427,7 @@
   }
 
   .nav.scrolled {
-    background: rgba(15, 16, 35, 0.92);
+    background: rgba(26, 20, 14, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--lw-border);
@@ -434,12 +435,12 @@
 
   /* ---- Woven figure images ---- */
   .woven-figure {
-    filter: drop-shadow(0 20px 60px rgba(233, 185, 110, 0.15));
+    filter: drop-shadow(0 20px 60px rgba(176, 131, 47, 0.15));
     transition: filter 0.4s ease;
   }
 
   .woven-figure:hover {
-    filter: drop-shadow(0 20px 80px rgba(233, 185, 110, 0.25));
+    filter: drop-shadow(0 20px 80px rgba(176, 131, 47, 0.25));
   }
 
   /* ---- Lumin section ---- */
@@ -493,7 +494,7 @@
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(8px);
-    background: rgba(26, 27, 51, 0.95);
+    background: rgba(38, 32, 25, 0.95);
     border: 1px solid var(--lw-border);
     border-radius: 12px;
     padding: 1rem 1.25rem;

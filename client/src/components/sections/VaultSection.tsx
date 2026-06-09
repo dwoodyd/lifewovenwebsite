@@ -6,7 +6,7 @@
  * Body: privacy/data promise copy
  * Three icon+label pairs: Lock / Download / Eye-slash
  * 
- * Design: deep indigo background, amber accent, Cormorant Garamond display
+ * Design: warm bark background, woven gold accent, Cormorant Garamond display
  */
 
 import { useReveal } from "../../hooks/useReveal";
@@ -52,9 +52,9 @@ export default function VaultSection() { // component name kept for import compa
       className="section reveal"
       aria-label="Where the work is kept"
       style={{
-        borderTop: "1px solid rgba(212,175,100,0.1)",
-        borderBottom: "1px solid rgba(212,175,100,0.1)",
-        background: "rgba(10,10,30,0.6)",
+        borderTop: "1px solid rgba(176,131,47,0.15)",
+        borderBottom: "1px solid rgba(176,131,47,0.15)",
+        background: "rgba(26,20,14,0.7)",
       }}
     >
       <div className="container">
@@ -96,7 +96,7 @@ export default function VaultSection() { // component name kept for import compa
           >
             Every entry, every Woven Self portrait, every reflection — kept in your private
             weave. Searchable. Exportable. Yours.{" "}
-            <span style={{ color: "rgba(245,240,232,0.55)" }}>
+            <span style={{ color: "var(--lw-text-muted)" }}>
               We don't read it, we don't train on it, we don't sell it.
             </span>{" "}
             The Weave is the receipt that you're doing the work.

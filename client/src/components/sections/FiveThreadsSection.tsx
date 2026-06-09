@@ -147,7 +147,7 @@ export default function FiveThreadsSection() {
           className="absolute inset-0"
           style={{
             background:
-              "linear-gradient(105deg, rgba(15,16,35,0.08) 0%, rgba(15,16,35,0.30) 38%, rgba(15,16,35,0.80) 62%, rgba(15,16,35,0.92) 100%)",
+              "linear-gradient(105deg, rgba(26,20,14,0.08) 0%, rgba(26,20,14,0.30) 38%, rgba(26,20,14,0.80) 62%, rgba(26,20,14,0.92) 100%)",
           }}
         />
         {/* Top and bottom fades */}
@@ -155,14 +155,14 @@ export default function FiveThreadsSection() {
           className="absolute top-0 left-0 right-0"
           style={{
             height: "12%",
-            background: "linear-gradient(to bottom, rgba(10,10,30,0.95), transparent)",
+            background: "linear-gradient(to bottom, rgba(26,20,14,0.95), transparent)",
           }}
         />
         <div
           className="absolute bottom-0 left-0 right-0"
           style={{
             height: "12%",
-            background: "linear-gradient(to bottom, transparent, rgba(10,10,30,0.95))",
+            background: "linear-gradient(to bottom, transparent, rgba(26,20,14,0.95))",
           }}
         />
       </div>
@@ -179,7 +179,7 @@ export default function FiveThreadsSection() {
             <div className="lg:w-5/12 section reveal">
               <p
                 className="uppercase tracking-[0.18em] font-medium mb-5"
-                style={{ color: "#D4AF64", fontFamily: "'DM Sans', sans-serif", fontSize: "13px" }}
+                style={{ color: "#B0832F", fontFamily: "'DM Sans', sans-serif", fontSize: "13px" }}
               >
                 The 5S Framework
               </p>
@@ -195,9 +195,9 @@ export default function FiveThreadsSection() {
                 }}
               >
                 Five dimensions.{" "}
-                <em style={{ fontStyle: "italic", color: "#D4AF64" }}>One</em>
+                <em style={{ fontStyle: "italic", color: "#B0832F" }}>One</em>
                 <br />
-                <em style={{ fontStyle: "italic", color: "#D4AF64" }}>life, woven.</em>
+                <em style={{ fontStyle: "italic", color: "#B0832F" }}>life, woven.</em>
               </h2>
               <p
                 style={{
@@ -248,12 +248,12 @@ export default function FiveThreadsSection() {
                       padding: "0.5rem 1.1rem",
                       borderRadius: "9999px",
                       border: active === i
-                        ? "1px solid #D4AF64"
+                        ? "1px solid #B0832F"
                         : "1px solid rgba(245,240,232,0.2)",
                       background: active === i
-                        ? "rgba(212,175,100,0.15)"
-                        : "rgba(15,16,35,0.4)",
-                      color: active === i ? "#D4AF64" : "rgba(245,240,232,0.55)",
+                        ? "rgba(176,131,47,0.15)"
+                        : "rgba(26,20,14,0.4)",
+                      color: active === i ? "#B0832F" : "rgba(245,240,232,0.55)",
                       cursor: "pointer",
                       transition: "all 0.2s ease",
                       backdropFilter: "blur(8px)",
@@ -269,9 +269,9 @@ export default function FiveThreadsSection() {
                 key={thread.id}
                 role="tabpanel"
                 style={{
-                  background: "rgba(10,10,30,0.65)",
+                  background: "rgba(26,20,14,0.65)",
                   backdropFilter: "blur(16px)",
-                  border: "1px solid rgba(212,175,100,0.2)",
+                  border: "1px solid rgba(176,131,47,0.2)",
                   borderRadius: "16px",
                   padding: "2rem 2.25rem",
                   animation: "fadeInUp 0.35s ease",
@@ -283,7 +283,7 @@ export default function FiveThreadsSection() {
                     fontSize: "13px",
                     letterSpacing: "0.15em",
                     textTransform: "uppercase",
-                    color: "#D4AF64",
+                    color: "#B0832F",
                     marginBottom: "0.75rem",
                   }}
                 >
@@ -313,6 +313,28 @@ export default function FiveThreadsSection() {
                 </p>
               </div>
 
+              {/* The Ground callout */}
+              <div
+                style={{
+                  marginTop: "1.5rem",
+                  padding: "1rem 1.5rem",
+                  background: "rgba(79,97,87,0.15)",
+                  border: "1px solid rgba(79,97,87,0.35)",
+                  borderRadius: "10px",
+                  display: "flex",
+                  gap: "0.75rem",
+                  alignItems: "flex-start",
+                }}
+              >
+                <span style={{ fontSize: "1.1rem", marginTop: "2px" }}>🌿</span>
+                <div>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", letterSpacing: "0.12em", textTransform: "uppercase", color: "#4F6157", marginBottom: "0.3rem", fontWeight: 600 }}>The Ground</p>
+                  <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "0.9rem", color: "rgba(239,231,214,0.75)", lineHeight: 1.6, margin: 0 }}>
+                    A faith-rooted, contemplative layer woven through all five threads — for those whose practice is anchored in something larger than self.
+                  </p>
+                </div>
+              </div>
+
               {/* CTA */}
               <div className="mt-6">
                 <a
@@ -322,18 +344,18 @@ export default function FiveThreadsSection() {
                     fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 600,
                     fontSize: "0.9rem",
-                    color: "#D4AF64",
+                    color: "#B0832F",
                     textDecoration: "none",
-                    borderBottom: "1px solid rgba(212,175,100,0.4)",
+                    borderBottom: "1px solid rgba(176,131,47,0.4)",
                     paddingBottom: "2px",
                     letterSpacing: "0.04em",
                     transition: "border-color 0.2s",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "#D4AF64";
+                    (e.currentTarget as HTMLElement).style.borderColor = "#B0832F";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,100,0.4)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "rgba(176,131,47,0.4)";
                   }}
                 >
                   Take the Audit →

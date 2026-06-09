@@ -94,7 +94,7 @@ export default function Nav() {
         <div
           className="absolute top-full left-0 right-0 flex flex-col gap-0 md:hidden"
           style={{
-            background: "rgba(15, 16, 35, 0.97)",
+            background: "rgba(26, 20, 14, 0.97)",
             backdropFilter: "blur(12px)",
             borderBottom: "1px solid var(--lw-border)",
           }}

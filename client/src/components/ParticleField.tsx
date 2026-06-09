@@ -70,7 +70,7 @@ export default function ParticleField() {
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(233, 185, 110, ${pulseOpacity})`;
+        ctx.fillStyle = `rgba(176, 131, 47, ${pulseOpacity})`;
         ctx.fill();
       });
 

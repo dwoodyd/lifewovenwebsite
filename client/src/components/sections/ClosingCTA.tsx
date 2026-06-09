@@ -26,7 +26,7 @@ export default function ClosingCTA() {
         aria-hidden="true"
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(233,185,110,0.05) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 50% 60% at 50% 50%, rgba(176,131,47,0.05) 0%, transparent 70%)",
         }}
       />
 

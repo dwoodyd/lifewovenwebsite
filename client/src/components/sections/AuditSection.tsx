@@ -19,7 +19,7 @@ const auditQuestions = [
     number: "02",
     question: "What story do you tell yourself about why you haven't made the change you want?",
     thread: "Story",
-    threadColor: "#E9B96E",
+    threadColor: "#B0832F",
   },
   {
     number: "03",
@@ -215,7 +215,7 @@ export default function AuditSection() {
                   className="w-full text-center py-3 rounded-xl text-sm font-medium"
                   style={{
                     background: "var(--lw-amber)",
-                    color: "#0F1023",
+                    color: "#1A140E",
                     fontFamily: "var(--font-body)",
                   }}
                 >

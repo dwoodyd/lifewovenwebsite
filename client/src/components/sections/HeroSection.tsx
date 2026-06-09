@@ -198,7 +198,7 @@ export default function HeroSection() {
                 style={{
                   display: "inline-block",
                   background: "#D4AF64",
-                  color: "#0F1023",
+                  color: "#1A140E",
                   fontFamily: "'DM Sans', sans-serif",
                   fontWeight: 700,
                   fontSize: "0.95rem",

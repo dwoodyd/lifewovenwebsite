@@ -279,6 +279,11 @@ export default function LuminSection() {
               text="Marks the moments that matter — and waits for the ones that don't."
               baseDelay={1050}
             />
+            <br />
+            <WordReveal
+              text="Lumin is your guide. The Oracle is the AI layer that reads your patterns and names what you cannot yet see."
+              baseDelay={1350}
+            />
           </p>
 
           {/* Feature pills */}
@@ -292,15 +297,15 @@ export default function LuminSection() {
                 key={item.label}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-full"
                 style={{
-                  background: "rgba(212,175,100,0.1)",
-                  border: "1px solid rgba(212,175,100,0.25)",
+                  background: "rgba(176,131,47,0.1)",
+                  border: "1px solid rgba(176,131,47,0.25)",
                   backdropFilter: "blur(8px)",
                   opacity: inView ? 1 : 0,
                   transform: inView ? "translateY(0) scale(1)" : "translateY(12px) scale(0.96)",
                   transition: `opacity 0.5s ease ${item.delay}ms, transform 0.5s cubic-bezier(0.22,1,0.36,1) ${item.delay}ms`,
                 }}
               >
-                <span style={{ color: "#D4AF64", fontSize: "13px" }}>{item.icon}</span>
+                <span style={{ color: "#B0832F", fontSize: "13px" }}>{item.icon}</span>
                 <span
                   style={{
                     color: "#F5F0E8",
@@ -324,9 +329,9 @@ export default function LuminSection() {
               fontFamily: "'DM Sans', sans-serif",
               fontWeight: 600,
               fontSize: "0.9rem",
-              color: "#D4AF64",
+              color: "#B0832F",
               textDecoration: "none",
-              borderBottom: "1px solid rgba(212,175,100,0.4)",
+              borderBottom: "1px solid rgba(176,131,47,0.4)",
               paddingBottom: "2px",
               letterSpacing: "0.04em",
               transition: "border-color 0.2s, opacity 0.5s ease 1800ms",
@@ -335,10 +340,10 @@ export default function LuminSection() {
               alignSelf: "flex-start",
             }}
             onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#D4AF64";
+              (e.currentTarget as HTMLElement).style.borderColor = "#B0832F";
             }}
             onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,100,0.4)";
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(176,131,47,0.4)";
             }}
           >
             See what Lumin unlocks →

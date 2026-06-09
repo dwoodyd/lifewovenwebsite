@@ -176,7 +176,7 @@ export default function PricingSection() {
                 fontWeight: 600,
                 letterSpacing: "0.04em",
                 background: !annualToggle ? "#D4AF64" : "transparent",
-                color: !annualToggle ? "#0F1023" : "rgba(245,240,232,0.55)",
+                color: !annualToggle ? "#1A140E" : "rgba(245,240,232,0.55)",
                 transition: "all 0.2s ease",
               }}
             >
@@ -194,7 +194,7 @@ export default function PricingSection() {
                 fontWeight: 600,
                 letterSpacing: "0.04em",
                 background: annualToggle ? "#D4AF64" : "transparent",
-                color: annualToggle ? "#0F1023" : "rgba(245,240,232,0.55)",
+                color: annualToggle ? "#1A140E" : "rgba(245,240,232,0.55)",
                 transition: "all 0.2s ease",
               }}
             >
@@ -438,7 +438,7 @@ export default function PricingSection() {
                 left: "50%",
                 transform: "translateX(-50%)",
                 background: "#D4AF64",
-                color: "#0F1023",
+                color: "#1A140E",
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: "11px",
@@ -580,7 +580,7 @@ export default function PricingSection() {
                 padding: "0.85rem 1.5rem",
                 borderRadius: "9999px",
                 background: "#D4AF64",
-                color: "#0F1023",
+                color: "#1A140E",
                 fontFamily: "'DM Sans', sans-serif",
                 fontWeight: 700,
                 fontSize: "14px",
@@ -958,7 +958,7 @@ export default function PricingSection() {
                   style={{
                     width: "100%",
                     background: submitting || formState.application_text.length < 200 ? "rgba(212,175,100,0.4)" : "#D4AF64",
-                    color: "#0F1023",
+                    color: "#1A140E",
                     fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 700,
                     fontSize: "0.95rem",
