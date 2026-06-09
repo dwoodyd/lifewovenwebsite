@@ -5,17 +5,20 @@
  * Typography: Cormorant Garamond (display) + DM Sans (body)
  * Mood: Quiet, wise, attentive — a library at dusk
  * 
- * Section order (Fix 5c applied):
+ * Section order:
  * 0. Nav (sticky)
  * 1. Hero — full-bleed man holding book
  * 1b. PWA device strip
  * 2. Five Threads — 5S Framework (full-bleed woman on bench)
- * 3. Built On — wisdom traditions (moved up from below Lumin)
+ * 3. Built On — wisdom traditions
  * 4. Vault — "Where the work is kept."
  * 5. Woven Gallery — archetype portraits
  * 6. Audit — 12 questions, free
+ * 6b. App Preview
  * 7. Lumin — Meet Lumin (full-bleed mascot)
  * 8. Social Proof — the book
+ * 8b. Library — 9-product grid
+ * 8c. 7 Pathways — compact strip
  * 9. Founding Members — application form
  * 10. Trust Row → Closing CTA → Footer
  */
@@ -36,6 +39,7 @@ import PWAStrip from "../components/sections/PWAStrip";
 import VaultSection from "../components/sections/VaultSection";
 import AppPreviewSection from "../components/sections/AppPreviewSection";
 import LibrarySection from "../components/sections/LibrarySection";
+import PathwaysSection from "../components/sections/PathwaysSection";
 
 export default function Home() {
   // Initialize scroll reveal for all .reveal elements
@@ -114,6 +118,10 @@ export default function Home() {
 
         {/* 8b. The Library — 9-product grid */}
         <LibrarySection />
+
+        {/* 8c. 7 Pathways — compact strip */}
+        <PathwaysSection />
+
         {/* 9. Founding Members — application form */}
         <PricingSection />
 
