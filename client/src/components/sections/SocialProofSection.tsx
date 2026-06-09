@@ -91,8 +91,8 @@ export default function SocialProofSection() {
                 }}
               >
                 <img
-                  src="/manus-storage/book_mockup_before_the_words_1778253763210_54bcbd34.png"
-                  alt="Before the Words — The Hidden Posture That Shapes Prayer, Peace, and Daily Life, by DeWayne Woods"
+                  src="/manus-storage/build_a_life_cover_mockup_785fec56.jpg"
+                  alt="Build a Life That Does Not Break You — the book this practice is built around, by DeWayne Woods"
                   style={{ width: "100%", borderRadius: "6px", display: "block" }}
                   loading="lazy"
                 />
@@ -124,7 +124,7 @@ export default function SocialProofSection() {
                 maxWidth: "420px",
               }}
             >
-              <em>Before the Words</em> — The Hidden Posture That Shapes Prayer, Peace, and Daily Life. Written by DeWayne Woods.
+              <em>Build a Life That Does Not Break You</em> is the book this practice is built around. Written by DeWayne Woods. Coming soon.
             </p>
 
             <p
