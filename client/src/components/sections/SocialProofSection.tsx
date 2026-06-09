@@ -91,9 +91,9 @@ export default function SocialProofSection() {
                 }}
               >
                 <img
-                  src="/manus-storage/build_a_life_book_b9b9ff99.jpg"
-                  alt="Build a Life That Does Not Break You — the book this practice is built around, by DeWayne Woods"
-                  style={{ width: "100%", borderRadius: "4px", display: "block" }}
+                  src="/manus-storage/book_mockup_before_the_words_1778253763210_54bcbd34.png"
+                  alt="Before the Words — The Hidden Posture That Shapes Prayer, Peace, and Daily Life, by DeWayne Woods"
+                  style={{ width: "100%", borderRadius: "6px", display: "block" }}
                   loading="lazy"
                 />
               </div>
@@ -124,7 +124,7 @@ export default function SocialProofSection() {
                 maxWidth: "420px",
               }}
             >
-              <em>Build a Life That Does Not Break You</em> is the book this practice is built around. Written by DeWayne Woods. Coming soon.
+              <em>Before the Words</em> — The Hidden Posture That Shapes Prayer, Peace, and Daily Life. Written by DeWayne Woods.
             </p>
 
             <p
@@ -137,7 +137,7 @@ export default function SocialProofSection() {
               }}
             >
               The book gives you the philosophy. Lifewoven gives you the practice.{" "}
-              <span style={{ color: "rgba(212,175,100,0.85)" }}>
+              <span style={{ color: "rgba(176,131,47,0.9)" }}>
                 Founding members will receive a download the moment it releases.
               </span>
             </p>
@@ -166,7 +166,7 @@ export default function SocialProofSection() {
                 width: "100%",
                 borderRadius: "20px",
                 overflow: "hidden",
-                boxShadow: "0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(212,175,100,0.15)",
+                boxShadow: "0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(176,131,47,0.15)",
                 aspectRatio: "9/16",
                 maxHeight: "70vh",
               }}
@@ -207,7 +207,7 @@ export default function SocialProofSection() {
                   position: "absolute",
                   inset: 0,
                   borderRadius: "20px",
-                  background: "linear-gradient(to bottom, transparent 60%, rgba(10,10,30,0.35) 100%)",
+                  background: "linear-gradient(to bottom, transparent 60%, rgba(26,20,14,0.35) 100%)",
                   pointerEvents: "none",
                 }}
               />
@@ -218,7 +218,7 @@ export default function SocialProofSection() {
                   position: "absolute",
                   inset: 0,
                   borderRadius: "20px",
-                  boxShadow: "inset 0 0 60px rgba(212,175,100,0.08)",
+                  boxShadow: "inset 0 0 60px rgba(176,131,47,0.08)",
                   pointerEvents: "none",
                 }}
               />
@@ -231,7 +231,7 @@ export default function SocialProofSection() {
                 fontStyle: "italic",
                 fontWeight: 400,
                 fontSize: "14px",
-                color: "rgba(212,175,100,0.75)",
+                color: "rgba(176,131,47,0.85)",
                 textAlign: "center",
                 marginTop: "1rem",
                 letterSpacing: "0.01em",

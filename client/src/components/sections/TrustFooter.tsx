@@ -275,6 +275,7 @@ export function Footer() {
                 { label: "The Five", href: "#the-five" },
                 { label: "The Audit", href: AUDIT_URL },
                 { label: "The Library", href: "#the-library" },
+                { label: "Pathways", href: "#pathways" },
                 { label: "Founding Members", href: "#pricing" },
                 { label: "Install Guide", href: "#install-guide" },
                 { label: "Privacy", href: "/privacy" },
