@@ -95,7 +95,7 @@ export default function LuminSection() {
         position: "relative",
         width: "100%",
         overflow: "hidden",
-        background: "rgba(10,10,30,0.98)",
+        background: "rgba(17,13,8,0.98)",
       }}
     >
       {/* ── Desktop: two-column grid. Mobile: stacked ── */}
@@ -116,7 +116,7 @@ export default function LuminSection() {
         >
           {/* Poster */}
           <img
-            src="/manus-storage/poster_lumin_mascot_e748fb1e.jpg"
+            src="/manus-storage/mascot_poster_5f6e568a.jpg"
             alt=""
             aria-hidden="true"
             style={{
@@ -137,7 +137,7 @@ export default function LuminSection() {
             loop
             playsInline
             preload="none"
-            poster="/manus-storage/poster_lumin_mascot_e748fb1e.jpg"
+            poster="/manus-storage/mascot_poster_5f6e568a.jpg"
             style={{
               position: "absolute",
               inset: 0,
@@ -161,7 +161,7 @@ export default function LuminSection() {
               right: 0,
               bottom: 0,
               width: "20%",
-              background: "linear-gradient(to right, transparent, rgba(10,10,30,0.98))",
+              background: "linear-gradient(to right, transparent, rgba(17,13,8,0.98))",
             }}
           />
           {/* Top fade */}
@@ -173,7 +173,7 @@ export default function LuminSection() {
               left: 0,
               right: 0,
               height: "12%",
-              background: "linear-gradient(to bottom, rgba(10,10,30,0.9), transparent)",
+              background: "linear-gradient(to bottom, rgba(17,13,8,0.9), transparent)",
             }}
           />
           {/* Bottom fade */}
@@ -185,7 +185,7 @@ export default function LuminSection() {
               left: 0,
               right: 0,
               height: "12%",
-              background: "linear-gradient(to bottom, transparent, rgba(10,10,30,0.9))",
+              background: "linear-gradient(to bottom, transparent, rgba(17,13,8,0.9))",
             }}
           />
         </div>
