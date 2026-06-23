@@ -358,7 +358,7 @@ export default function FiveThreadsSection() {
                     (e.currentTarget as HTMLElement).style.borderColor = "rgba(176,131,47,0.4)";
                   }}
                 >
-                  Take the Audit →
+                  Take the Capacity Audit →
                 </a>
               </div>
             </div>

@@ -126,7 +126,7 @@ export default function PathwaysSection() {
             }}
           >
             Lifewoven is not a curriculum you complete in order. Each pathway meets you at a specific
-            moment — and the app routes you to the right one based on your Audit.
+            moment — and the app routes you to the right one based on your Capacity Audit.
           </p>
         </div>
 
@@ -263,7 +263,7 @@ export default function PathwaysSection() {
               maxWidth: "48ch",
             }}
           >
-            The Alignment Audit identifies which pathway fits your current moment — and routes you
+            The Capacity Audit identifies which pathway fits your current moment — and routes you
             directly into it. Free, 12 questions, no account required.
           </p>
           <a

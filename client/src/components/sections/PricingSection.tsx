@@ -18,10 +18,11 @@ const TOTAL_SLOTS = 100;
 
 import { useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { APPLY_ENDPOINT, APP_URL } from "../../config";
+import { APP_URL } from "../../config";
+import { trpc } from "../../lib/trpc";
 
 const libraryItems = [
-  { icon: "📐", title: "Alignment Fundamentals", format: "6-week course", price: "$97" },
+  { icon: "📐", title: "Soul Engineer Fundamentals", format: "6-week course", price: "$97" },
   { icon: "🌀", title: "The Alignment Current", format: "4-week course", price: "$147" },
   { icon: "⚛️", title: "Identity in Motion", format: "Course", price: "$127" },
   { icon: "🔍", title: "The Meaning Foundation", format: "4-week course", price: "$97" },
@@ -55,7 +56,7 @@ const oracleExtras = [
 ];
 
 const explorerFeatures = [
-  "Alignment Audit diagnostic",
+  "Capacity Audit diagnostic",
   "Daily emotional check-in",
   "Journal (up to 30 entries in The Weave)",
   "Align & Uplift pathways",
@@ -73,7 +74,17 @@ export default function PricingSection() {
   const honeypotRef = useRef<HTMLInputElement>(null);
   const loadedAt = useRef(Date.now());
 
-  // ── Endpoint is imported from src/config.ts ──
+  // ── tRPC mutation — writes to Notion database ──
+  const applyMutation = trpc.foundingApply.submit.useMutation({
+    onSuccess: () => setSubmitted(true),
+    onError: (err) => {
+      console.error("[Founding Member Application] submission error:", err);
+      setSubmitError(
+        "Something went wrong sending your application. Please try again or email us directly at dewayne@lifewoven.click."
+      );
+      setSubmitting(false);
+    },
+  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -86,33 +97,14 @@ export default function PricingSection() {
     }
     setSubmitting(true);
     setSubmitError("");
-    try {
-      const res = await fetch(APPLY_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: formState.name,
-          email: formState.email,
-          application_text: formState.application_text,
-          tier: formState.tier || "Not specified",
-          source: "lifewoven-marketing-site",
-          submitted_at: new Date().toISOString(),
-        }),
-      });
-      // Accept 2xx responses as success; treat everything else as an error
-      if (!res.ok) {
-        const text = await res.text().catch(() => "");
-        throw new Error(`Server responded ${res.status}: ${text}`);
-      }
-      setSubmitted(true);
-    } catch (err) {
-      console.error("[Founding Member Application] submission error:", err);
-      setSubmitError(
-        "Something went wrong sending your application. Please try again or email us directly at dewayne@lifewoven.click."
-      );
-    } finally {
-      setSubmitting(false);
-    }
+    applyMutation.mutate({
+      name: formState.name,
+      email: formState.email,
+      application_text: formState.application_text,
+      tier: formState.tier || "Not specified",
+      source: "lifewoven-marketing-site",
+      submitted_at: new Date().toISOString(),
+    });
   };
 
   return (

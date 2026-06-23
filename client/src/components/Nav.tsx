@@ -51,7 +51,7 @@ export default function Nav() {
         </a>
         <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
-          The Audit
+          The Capacity Audit
         </a>
         <a href="#the-library" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
@@ -74,7 +74,7 @@ export default function Nav() {
       {/* CTA */}
       <div className="flex items-center gap-3">
         <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex">
-          Take the Audit
+          Take the Capacity Audit
         </a>
 
         {/* Mobile hamburger */}
@@ -105,7 +105,7 @@ export default function Nav() {
         >
           {[
             { label: "The Five", href: "#the-five", external: false },
-            { label: "The Audit", href: AUDIT_URL, external: true },
+            { label: "The Capacity Audit", href: AUDIT_URL, external: true },
             { label: "The Library", href: "#the-library", external: false },
             { label: "Pathways", href: "#pathways", external: false },
             { label: "Founding Members", href: "#pricing", external: false },
@@ -128,7 +128,7 @@ export default function Nav() {
           ))}
           <div className="px-6 py-4">
             <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
-              Take the Audit
+              Take the Capacity Audit
             </a>
           </div>
         </div>

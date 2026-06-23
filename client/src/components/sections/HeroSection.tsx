@@ -176,6 +176,21 @@ export default function HeroSection() {
               </em>
             </h1>
 
+            {/* Soul Engineer subtext line */}
+            <p
+              style={{
+                fontFamily: "'DM Sans', sans-serif",
+                fontSize: "clamp(0.85rem, 1.5vw, 1rem)",
+                color: "rgba(212,175,100,0.8)",
+                lineHeight: 1.5,
+                marginBottom: "1rem",
+                maxWidth: "44ch",
+                letterSpacing: "0.01em",
+              }}
+            >
+              The official practice companion to the Soul Engineer Method.
+            </p>
+
             {/* Sub */}
             <p
               style={{
@@ -187,7 +202,7 @@ export default function HeroSection() {
                 maxWidth: "38ch",
               }}
             >
-              The wisdom you've already gathered doesn't need more reading.
+              The wisdom you’ve already gathered doesn’t need more reading.
               It needs a place to land.
             </p>
 
@@ -217,7 +232,7 @@ export default function HeroSection() {
                   (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                 }}
               >
-                Take the Audit →
+                Take the Capacity Audit →
               </a>
               <a
                 href="#the-five"

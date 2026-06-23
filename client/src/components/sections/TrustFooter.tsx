@@ -10,6 +10,7 @@ import { useReveal } from "../../hooks/useReveal";
 import { AUDIT_URL } from "../../config";
 
 const trustChips = [
+  "Soul Engineer Method",
   "Logotherapy",
   "Atomic Habits",
   "7 Habits",
@@ -18,6 +19,14 @@ const trustChips = [
   "ACT",
   "IFS",
   "Stoic ethics",
+];
+
+const informedByAuthors = [
+  "Viktor Frankl",
+  "James Clear",
+  "Stephen Covey",
+  "Brené Brown",
+  "Russ Harris",
 ];
 
 const pwaFaqs = [
@@ -155,6 +164,23 @@ export function TrustRow() {
               </span>
             ))}
           </div>
+          <p
+            style={{
+              marginTop: "1.5rem",
+              fontSize: "13px",
+              color: "var(--lw-text-muted)",
+              fontFamily: "'DM Sans', sans-serif",
+              letterSpacing: "0.04em",
+            }}
+          >
+            Informed by the work of{" "}
+            {informedByAuthors.map((name, i) => (
+              <span key={name}>
+                <em>{name}</em>
+                {i < informedByAuthors.length - 1 ? ", " : "."}
+              </span>
+            ))}
+          </p>
         </div>
       </div>
     </section>
@@ -266,6 +292,16 @@ export function Footer() {
             >
               The wisdom you carry becomes who you are.
             </p>
+            <p
+              style={{
+                fontSize: "12px",
+                color: "rgba(176,131,47,0.65)",
+                fontFamily: "'DM Sans', sans-serif",
+                marginTop: "0.25rem",
+              }}
+            >
+              Lifewoven is part of the Soul Engineer system. By DeWayne Woods.
+            </p>
           </div>
 
           {/* Links */}
@@ -273,7 +309,7 @@ export function Footer() {
             <div className="flex flex-wrap gap-6">
               {[
                 { label: "The Five", href: "#the-five" },
-                { label: "The Audit", href: AUDIT_URL },
+                { label: "The Capacity Audit", href: AUDIT_URL },
                 { label: "The Library", href: "#the-library" },
                 { label: "Pathways", href: "#pathways" },
                 { label: "Founding Members", href: "#pricing" },

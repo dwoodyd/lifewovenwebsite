@@ -7,7 +7,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { AUDIT_URL } from "../../config";
+import { AUDIT_URL, APP_URL } from "../../config";
 
 export default function SocialProofSection() {
   const sectionRef = useReveal(0.12) as React.RefObject<HTMLElement>;
@@ -53,7 +53,7 @@ export default function SocialProofSection() {
     <section
       ref={sectionRef}
       className="section reveal"
-      aria-label="The companion book"
+      aria-label="The Soul Engineer Book"
     >
       <div className="container">
         {/* 50/50 grid — equal columns, vertically centered */}
@@ -66,12 +66,12 @@ export default function SocialProofSection() {
           }}
           className="social-proof-grid"
         >
-          {/* ── LEFT: Book + copy + CTA ── */}
+          {/* ── LEFT: Book + copy + CTAs ── */}
           <div className="flex flex-col justify-center">
-            <p className="eyebrow mb-8">The companion book</p>
+            <p className="eyebrow mb-8">The Soul Engineer Book</p>
 
             {/* Book mockup */}
-            <div className="mb-10" aria-label="Build a Life That Does Not Break You — the companion book">
+            <div className="mb-10" aria-label="Build a Life That Does Not Break You — the Soul Engineer Book">
               <div
                 style={{
                   transform: "rotate(-3deg)",
@@ -99,11 +99,36 @@ export default function SocialProofSection() {
               </div>
             </div>
 
+            {/* Title + author + availability */}
+            <h3
+              className="font-display"
+              style={{
+                fontSize: "clamp(20px, 2.5vw, 30px)",
+                fontWeight: 600,
+                color: "var(--lw-text)",
+                marginBottom: "0.25rem",
+                lineHeight: 1.2,
+              }}
+            >
+              Build a Life That Does Not Break You
+            </h3>
+            <p
+              style={{
+                fontSize: "14px",
+                color: "rgba(176,131,47,0.85)",
+                fontFamily: "'DM Sans', sans-serif",
+                marginBottom: "1.5rem",
+                letterSpacing: "0.02em",
+              }}
+            >
+              DeWayne Woods · <span style={{ color: "rgba(176,131,47,1)" }}>Available now</span>
+            </p>
+
             <blockquote
               className="font-display mb-6"
               style={{
-                fontSize: "clamp(18px, 2vw, 26px)",
-                lineHeight: 1.4,
+                fontSize: "clamp(17px, 1.8vw, 23px)",
+                lineHeight: 1.45,
                 color: "var(--lw-text)",
                 fontStyle: "italic",
                 fontWeight: 400,
@@ -112,7 +137,7 @@ export default function SocialProofSection() {
                 maxWidth: "480px",
               }}
             >
-              "The wisdom you carry becomes who you are — but only if you give it a place to land."
+              “The wisdom you carry becomes who you are — but only if you give it a place to land.”
             </blockquote>
 
             <p
@@ -124,33 +149,56 @@ export default function SocialProofSection() {
                 maxWidth: "420px",
               }}
             >
-              <em>Build a Life That Does Not Break You</em> is the book this practice is built around. Written by DeWayne Woods. Coming soon.
+              The book gives you the philosophy. Lifewoven gives you the practice.
             </p>
 
             <p
               style={{
                 fontSize: "15px",
-                color: "var(--lw-text-muted)",
+                color: "rgba(176,131,47,0.85)",
                 lineHeight: 1.7,
                 marginBottom: "2rem",
                 maxWidth: "420px",
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontStyle: "italic",
               }}
             >
-              The book gives you the philosophy. Lifewoven gives you the practice.{" "}
-              <span style={{ color: "rgba(176,131,47,0.9)" }}>
-                Founding members will receive a download the moment it releases.
+              The Six Dimensions. The Capacity Math. The First Honest Week.
+              <br />
+              <span style={{ color: "var(--lw-text-muted)", fontStyle: "normal", fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
+                This is where the book comes alive.
               </span>
             </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col gap-3" style={{ maxWidth: "360px" }}>
+              <a
+                href={`${APP_URL}/first-honest-week`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+                style={{ fontSize: "15px", textAlign: "center" }}
+              >
+                Already have the book? Start with The First Honest Week. ›
+              </a>
               <a
                 href={AUDIT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary"
-                style={{ fontSize: "15px" }}
+                style={{
+                  display: "inline-block",
+                  fontSize: "15px",
+                  color: "var(--lw-text-muted)",
+                  fontFamily: "'DM Sans', sans-serif",
+                  textDecoration: "none",
+                  borderBottom: "1px solid rgba(245,240,232,0.25)",
+                  paddingBottom: "2px",
+                  transition: "color 0.2s",
+                  alignSelf: "flex-start",
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text-muted)"; }}
               >
-                Start with the Audit
+                Don’t have it yet? Start with the Capacity Audit. ›
               </a>
             </div>
           </div>

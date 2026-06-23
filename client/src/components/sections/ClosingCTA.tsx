@@ -84,7 +84,7 @@ export default function ClosingCTA() {
               margin: "0 auto 2.5rem",
             }}
           >
-            The audit takes three minutes.
+            The Capacity Audit takes three minutes.
             The practice takes a lifetime.
             <br />
             <em style={{ color: "var(--lw-text)" }}>Both begin with the same first step.</em>
@@ -92,7 +92,7 @@ export default function ClosingCTA() {
 
           <div className="flex flex-wrap justify-center gap-5">
             <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>
-              Take the Audit →
+              Take the Capacity Audit →
             </a>
             <a href="#pricing" className="btn-outline" style={{ fontSize: "16px", padding: "0.9rem 2.25rem" }}>
               Founding Members →

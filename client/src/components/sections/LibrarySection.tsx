@@ -16,8 +16,8 @@ import { SHOP_URL } from "../../config";
 const products = [
   {
     icon: "📐",
-    title: "Alignment Fundamentals",
-    description: "The 5S Framework in practice. Six weeks, five dimensions, one coherent life.",
+    title: "Soul Engineer Fundamentals",
+    description: "The 5S Framework in practice — working across all six dimensions. Six weeks, one coherent life.",
     format: "6-week course",
     price: "$97",
   },
@@ -31,7 +31,7 @@ const products = [
   {
     icon: "⚛️",
     title: "Identity in Motion",
-    description: "Habit architecture for the whole self. Behavior science applied to who you are becoming.",
+    description: "Building for Decades — habit architecture for the whole self. Behavior science applied to who you are becoming.",
     format: "Course",
     price: "$127",
   },

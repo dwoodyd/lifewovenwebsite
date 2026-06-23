@@ -40,6 +40,8 @@ import VaultSection from "../components/sections/VaultSection";
 import AppPreviewSection from "../components/sections/AppPreviewSection";
 import LibrarySection from "../components/sections/LibrarySection";
 import PathwaysSection from "../components/sections/PathwaysSection";
+import SixDimensionsSection from "../components/sections/SixDimensionsSection";
+import FirstHonestWeekSection from "../components/sections/FirstHonestWeekSection";
 
 export default function Home() {
   // Initialize scroll reveal for all .reveal elements
@@ -95,13 +97,16 @@ export default function Home() {
         {/* 2. Five Threads — 5S Framework */}
         <FiveThreadsSection />
 
-        {/* 3. Built On — wisdom traditions (Fix 5c: moved up before Audit) */}
-        <BuiltOnSection />
+        {/* 2b. The 6 Dimensions — inserted below 5S Framework per brief */}
+        <SixDimensionsSection />
 
-        {/* 4. Vault — "Where the work is kept." (Fix 5b: fills empty section) */}
+        {/* 3. Vault — "Where the work is kept." */}
         <VaultSection />
 
-        {/* 5. Woven Gallery — archetype portraits */}
+        {/* 3b. The First Honest Week — bridge between Weave and Woven */}
+        <FirstHonestWeekSection />
+
+        {/* 4. Woven Gallery — archetype portraits */}
         <WovenGallerySection />
 
         {/* 6. The Audit */}

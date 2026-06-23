@@ -1,8 +1,8 @@
 /*
- * LIFEWOVEN Audit Section — "Twelve questions. Three to five minutes."
+ * LIFEWOVEN Audit Section — "Your Capacity Math — 12 questions, 3 to 5 minutes."
  * 
  * Visual: Phone mockup with example audit questions cycling
- * CTA: Take the Audit →
+ * CTA: Take the Capacity Audit →
  */
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
@@ -59,14 +59,14 @@ export default function AuditSection() {
       id="audit"
       ref={sectionRef}
       className="section reveal"
-      aria-label="The Alignment Audit"
+      aria-label="The Capacity Audit"
     >
       <div className="container">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
           {/* Left — Copy */}
           <div className="flex-1 max-w-[540px]">
-            <p className="eyebrow mb-6">The Alignment Audit</p>
+            <p className="eyebrow mb-6">The Capacity Audit</p>
             <h2
               className="font-display mb-6"
               style={{
@@ -76,9 +76,9 @@ export default function AuditSection() {
                 color: "var(--lw-text)",
               }}
             >
-              Twelve questions.
+              Your Capacity Math —
               <br />
-              Three to five minutes.
+              12 questions, 3 to 5 minutes.
               <br />
               <span className="highlight-amber">Free, no account required.</span>
             </h2>
@@ -90,10 +90,10 @@ export default function AuditSection() {
                 color: "var(--lw-text-muted)",
               }}
             >
-              The Audit shows you which thread to pick up first.
+              The Capacity Audit shows you which thread to pick up first.
             </p>
             <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Take the Audit →
+              Take the Capacity Audit →
             </a>
           </div>
 
@@ -130,7 +130,7 @@ export default function AuditSection() {
                   className="font-display font-semibold"
                   style={{ fontSize: "16px", color: "var(--lw-text)" }}
                 >
-                  Alignment Audit
+                  Capacity Audit
                 </span>
                 <span
                   className="text-xs"
