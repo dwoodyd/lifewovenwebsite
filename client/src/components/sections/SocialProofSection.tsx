@@ -7,7 +7,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { AUDIT_URL, APP_URL } from "../../config";
+import { AUDIT_URL, FIRST_HONEST_WEEK_URL } from "../../config";
 
 export default function SocialProofSection() {
   const sectionRef = useReveal(0.12) as React.RefObject<HTMLElement>;
@@ -172,7 +172,7 @@ export default function SocialProofSection() {
 
             <div className="flex flex-col gap-3" style={{ maxWidth: "360px" }}>
               <a
-                href={`${APP_URL}/first-honest-week`}
+                href={FIRST_HONEST_WEEK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"

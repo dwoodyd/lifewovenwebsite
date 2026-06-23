@@ -309,6 +309,8 @@ export function Footer() {
             <div className="flex flex-wrap gap-6">
               {[
                 { label: "The Five", href: "#the-five" },
+                { label: "6 Dimensions", href: "#six-dimensions" },
+                { label: "First Honest Week", href: "#first-honest-week" },
                 { label: "The Capacity Audit", href: AUDIT_URL },
                 { label: "The Library", href: "#the-library" },
                 { label: "Pathways", href: "#pathways" },

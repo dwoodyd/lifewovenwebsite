@@ -6,7 +6,7 @@
  */
 
 import { useReveal } from "../../hooks/useReveal";
-import { APP_URL } from "../../config";
+import { FIRST_HONEST_WEEK_URL } from "../../config";
 
 const days = [
   { day: "Day 1", title: "Name the Load", body: "What are you actually carrying? Not what you're supposed to be carrying. What is actually in your hands right now." },
@@ -165,7 +165,7 @@ export default function FirstHonestWeekSection() {
           {/* CTA */}
           <div className="flex flex-wrap gap-4 items-center">
             <a
-              href={`${APP_URL}/first-honest-week`}
+              href={FIRST_HONEST_WEEK_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary"

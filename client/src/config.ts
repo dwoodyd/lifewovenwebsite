@@ -30,3 +30,11 @@ export const APPLY_ENDPOINT =
 /** Standalone product shop URL. */
 export const SHOP_URL =
   (import.meta.env.VITE_SHOP_URL as string | undefined) ?? "https://soulengineer.online/shop";
+
+/**
+ * URL for The First Honest Week in the Lifewoven app.
+ * P3 item: set VITE_FIRST_HONEST_WEEK_URL once app.lifewoven.click/first-honest-week is live.
+ * Falls back to the Capacity Audit until the app route is confirmed.
+ */
+export const FIRST_HONEST_WEEK_URL: string =
+  (import.meta.env.VITE_FIRST_HONEST_WEEK_URL as string | undefined) ?? AUDIT_URL;

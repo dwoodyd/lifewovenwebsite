@@ -49,6 +49,14 @@ export default function Nav() {
            style={{ color: "var(--lw-text-muted)" }}>
           The Five
         </a>
+        <a href="#six-dimensions" className="text-sm font-medium transition-colors hover:text-amber-400"
+           style={{ color: "var(--lw-text-muted)" }}>
+          6 Dimensions
+        </a>
+        <a href="#first-honest-week" className="text-sm font-medium transition-colors hover:text-amber-400"
+           style={{ color: "var(--lw-text-muted)" }}>
+          First Honest Week
+        </a>
         <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           The Capacity Audit
@@ -105,6 +113,8 @@ export default function Nav() {
         >
           {[
             { label: "The Five", href: "#the-five", external: false },
+            { label: "6 Dimensions", href: "#six-dimensions", external: false },
+            { label: "First Honest Week", href: "#first-honest-week", external: false },
             { label: "The Capacity Audit", href: AUDIT_URL, external: true },
             { label: "The Library", href: "#the-library", external: false },
             { label: "Pathways", href: "#pathways", external: false },
