@@ -14,7 +14,7 @@ const archetypes = [
     src: "/manus-storage/lumen_woc_1_1778193478991_20efeace.jpg",
     alt: "A woven figure — The Returner, a confident professional woman with natural locs wearing a cream blazer and carrying an amber and navy woven bag",
     label: "The Returner",
-    subtitle: "The one who came back.",
+    subtitle: "In the book: Renée. She kept starting over until she stopped calling it starting over.",
     reveal: "Started six times. This is the time it sticks — because something has to.",
   },
   {
@@ -22,7 +22,7 @@ const archetypes = [
     src: "/manus-storage/woven_self_friendly_older_man_1778129131618_3207e35f.jpg",
     alt: "A woven figure — The Builder, a smiling older man in a warm striped cardigan and knit cap, hands clasped, steady and present",
     label: "The Builder",
-    subtitle: "Building for decades.",
+    subtitle: "In the book: Marcus. Being needed is not the same as being known.",
     reveal: "Putting down the next layer of who they're becoming, one quiet day at a time.",
   },
   {
@@ -30,7 +30,7 @@ const archetypes = [
     src: "/manus-storage/lumen_woc_2_1778193490329_44613554.jpg",
     alt: "A woven figure — The Seeker, a woman in a warm patterned cardigan with braided updo, holding a small bag, gazing upward with quiet curiosity",
     label: "The Seeker",
-    subtitle: "The reader who is ready to practice.",
+    subtitle: "In the book: Elise. She had read everything. She was ready to live one of them.",
     reveal: "Has read everything. Is finally ready to live one of them.",
   },
   {
@@ -38,7 +38,7 @@ const archetypes = [
     src: "/manus-storage/woven_self_friendly_androgynous_1778129147155_53e73059.jpg",
     alt: "A woven figure — The One Who Almost Stopped, an androgynous figure in a knit sweater and scarf, still here",
     label: "The One Who Almost Stopped",
-    subtitle: "Still here.",
+    subtitle: "Still here. That is the whole practice.",
     reveal: "Came back the next morning anyway. That's the whole practice.",
   },
   {
@@ -46,7 +46,7 @@ const archetypes = [
     src: "/manus-storage/lumen_woc_3_1778193506312_621e5511.jpg",
     alt: "A woven figure — The Witness, a woman in an amber cable-knit blazer standing in a gallery, bearing quiet witness to her own story",
     label: "The Witness",
-    subtitle: "Sitting with the story.",
+    subtitle: "No longer running from the story. Sitting with it. Letting it speak.",
     reveal: "No longer running from the story. Sitting with it. Letting it speak.",
   },
   {
@@ -54,7 +54,7 @@ const archetypes = [
     src: "/manus-storage/lumen_father_3_1778193897365_a6b6eec6.jpg",
     alt: "A woven figure — The Elder, a grey-haired man with a beard in a cable-knit sweater, arms folded, carrying the stillness of someone who has lived deeply",
     label: "The Elder",
-    subtitle: "Honoring what remains.",
+    subtitle: "In the book: David. He had lived enough to know what mattered. Now the work was to honor it.",
     reveal: "Has lived enough to know what matters. Now the work is to honor it.",
   },
   {
@@ -62,7 +62,7 @@ const archetypes = [
     src: "/manus-storage/woven_self_friendly_mature_woman_1778129160816_e0f50b41.jpg",
     alt: "A woven figure — The Bearer, a smiling mature woman in warm braided knitwear, holding space for what she carries",
     label: "The Bearer",
-    subtitle: "Carrying what must be carried.",
+    subtitle: "Carrying something — a loss, a name, a debt of love. The thread holds it.",
     reveal: "Carrying something — a loss, a name, a debt of love. The thread holds it.",
   },
   {
@@ -70,7 +70,7 @@ const archetypes = [
     src: "/manus-storage/woven_self_friendly_young_man_1778129174681_a3e50f13.jpg",
     alt: "A woven figure — The Beginner Again, a young man in a knit cardigan gesturing openly, ready to start fresh",
     label: "The Beginner Again",
-    subtitle: "Not afraid this time. Mostly.",
+    subtitle: "Forty-three. Starting over. Not afraid this time. Mostly.",
     reveal: "Forty-three. Starting over. Not afraid this time. Mostly.",
   },
 ];
@@ -298,18 +298,21 @@ export default function WovenGallerySection() {
             Hover one to meet them.
           </span>
         </p>
-        {/* Bridge paragraph per brief */}
+        {/* Bridge paragraph per brief — references book characters by name */}
         <p
           style={{
             fontFamily: "'DM Sans', sans-serif",
             fontSize: "clamp(14px, 1.5vw, 16px)",
             color: "var(--lw-text-muted)",
-            maxWidth: "52ch",
-            lineHeight: 1.65,
+            maxWidth: "56ch",
+            lineHeight: 1.7,
           }}
         >
+          David, Renée, Marcus, Elise — they appear in the book as composites,
+          not case studies. If you met them in those pages, you already know
+          what they are carrying. The archetypes here are where they live now.
+          <br /><br />
           They don't have it figured out. They have a practice. That's the difference.
-          Lifewoven is built for the person who is still in the middle of becoming.
         </p>
       </div>
 

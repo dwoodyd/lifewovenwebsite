@@ -30,7 +30,6 @@ import FiveThreadsSection from "../components/sections/FiveThreadsSection";
 import WovenGallerySection from "../components/sections/WovenGallerySection";
 import AuditSection from "../components/sections/AuditSection";
 import LuminSection from "../components/sections/LuminSection";
-import BuiltOnSection from "../components/sections/BuiltOnSection";
 import PricingSection from "../components/sections/PricingSection";
 import { TrustRow, PWAInstallFAQ, Footer } from "../components/sections/TrustFooter";
 import SocialProofSection from "../components/sections/SocialProofSection";

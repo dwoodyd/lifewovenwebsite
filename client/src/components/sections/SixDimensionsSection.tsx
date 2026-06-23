@@ -11,40 +11,46 @@ import { AUDIT_URL } from "../../config";
 
 const dimensions = [
   {
-    icon: "🧠",
-    name: "Mental Clarity",
-    description: "How clearly you think, decide, and discern what matters.",
-    thread: "#4F6157", // forest
-  },
-  {
-    icon: "💪",
-    name: "Physical Vitality",
-    description: "The energy your body has to sustain the life you're building.",
-    thread: "#B5653F", // clay
-  },
-  {
-    icon: "❤️",
-    name: "Emotional Depth",
-    description: "Your capacity to feel, process, and stay present with others.",
+    icon: "◯",
+    name: "Emotional",
+    mapsTo: "State",
+    description: "Your ability to feel, process, and be present to your interior life without suppressing it or being overwhelmed by it.",
     thread: "#8B6F9E", // violet
   },
   {
-    icon: "🤝",
-    name: "Relational Health",
-    description: "The quality of the connections that carry you through hard seasons.",
-    thread: "#B0832F", // gold
+    icon: "▢",
+    name: "Physical",
+    mapsTo: "State",
+    description: "The quality of your relationship with your body — receiving its signals, honoring its requirements, sustaining rather than depleting.",
+    thread: "#B5653F", // clay
   },
   {
-    icon: "🎯",
-    name: "Purposeful Work",
-    description: "Whether your daily effort is aligned with who you are becoming.",
+    icon: "△",
+    name: "Spiritual",
+    mapsTo: "Standards",
+    description: "Connection to meaning that is not dependent on performance or output. Somewhere to be when the external structures fall away.",
     thread: "#4F6157", // forest
   },
   {
-    icon: "✝️",
-    name: "Spiritual Groundedness",
-    description: "The Ground beneath everything — faith, meaning, and the unshakeable.",
+    icon: "◇",
+    name: "Creative",
+    mapsTo: "Story",
+    description: "The deep human impulse to bring something into being that was not there before. Requires safety, surplus, and freedom from obligation.",
+    thread: "#B0832F", // gold
+  },
+  {
+    icon: "⬡",
+    name: "Identity",
+    mapsTo: "Story",
+    description: "Who you are beneath and beyond what you produce. The self that remains when the role is removed and the audience is gone.",
     thread: "#B5653F", // clay
+  },
+  {
+    icon: "→",
+    name: "Purpose",
+    mapsTo: "Standards",
+    description: "The sense of something you are building toward that is larger than any single project or season. Direction across time.",
+    thread: "#4F6157", // forest
   },
 ];
 
@@ -72,9 +78,9 @@ export default function SixDimensionsSection() {
               marginBottom: "1.25rem",
             }}
           >
-            A whole life needs{" "}
+            Six dimensions.{" "}
             <em style={{ color: "var(--lw-amber)", fontStyle: "italic" }}>
-              all six.
+              One life.
             </em>
           </h2>
           <p
@@ -82,13 +88,16 @@ export default function SixDimensionsSection() {
               fontSize: "clamp(16px, 1.8vw, 20px)",
               color: "var(--lw-text-muted)",
               lineHeight: 1.7,
-              maxWidth: "560px",
+              maxWidth: "600px",
               margin: "0 auto",
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            Most people optimise one or two and wonder why everything still feels off.
-            The Soul Engineer Method works across all six — simultaneously.
+            The Soul Engineer Method names six dimensions of the self —
+            not as metaphysics, but as a practical map for what you are
+            building when you are building a life.
+            <br /><br />
+            The 5S is how you work on them, one thread at a time.
           </p>
         </div>
 
@@ -134,7 +143,20 @@ export default function SixDimensionsSection() {
                     flexShrink: 0,
                   }}
                 />
-                <span style={{ fontSize: "24px" }}>{dim.icon}</span>
+                <span style={{ fontSize: "22px", color: "var(--lw-text-muted)" }}>{dim.icon}</span>
+                <span
+                  style={{
+                    fontSize: "10px",
+                    fontFamily: "'DM Sans', sans-serif",
+                    fontWeight: 700,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: "rgba(176,131,47,0.55)",
+                    marginLeft: "auto",
+                  }}
+                >
+                  Maps to {dim.mapsTo}
+                </span>
               </div>
 
               {/* Name */}
@@ -176,10 +198,7 @@ export default function SixDimensionsSection() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            The Capacity Audit measures where you are across all six.{" "}
-            <span style={{ color: "var(--lw-text)" }}>
-              It takes 12 minutes.
-            </span>
+            The Capacity Audit shows you which dimension to pick up first.
           </p>
           <a
             href={AUDIT_URL}

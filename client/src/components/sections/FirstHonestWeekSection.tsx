@@ -8,22 +8,14 @@
 import { useReveal } from "../../hooks/useReveal";
 import { APP_URL } from "../../config";
 
-const steps = [
-  {
-    number: "01",
-    heading: "Take stock across all six dimensions.",
-    body: "A 12-minute honest audit of where you actually are — not where you want to be.",
-  },
-  {
-    number: "02",
-    heading: "Name what's pulling the most weight.",
-    body: "The Capacity Math shows you which dimension is costing you the most and why.",
-  },
-  {
-    number: "03",
-    heading: "Start one practice. Just one.",
-    body: "Lumin surfaces the right first move from the 7 Pathways. You don't need a plan. You need a start.",
-  },
+const days = [
+  { day: "Day 1", title: "Name the Load", body: "What are you actually carrying? Not what you're supposed to be carrying. What is actually in your hands right now." },
+  { day: "Day 2", title: "Read One Signal", body: "Your body has been trying to tell you something. Today you listen to one signal you have been ignoring." },
+  { day: "Day 3", title: "Remove One Nonessential Demand", body: "Not a goal. Not a commitment. One thing you agreed to that is costing more than it is worth." },
+  { day: "Day 4", title: "Name the Relationship That Needs Attention", body: "One relationship. Not a list. The one that, if you are honest, you know you have been managing instead of tending." },
+  { day: "Day 5", title: "Locate Your Ground", body: "Where do you go when everything else falls away? Today you name it and return to it deliberately." },
+  { day: "Day 6", title: "Make One Thing", body: "Not a task. Not a deliverable. Something that exists because you made it and for no other reason." },
+  { day: "Day 7", title: "Write the Sentence", body: "One sentence about who you are becoming. Not who you were. Not who you are supposed to be. Who you are becoming." },
 ];
 
 export default function FirstHonestWeekSection() {
@@ -64,7 +56,7 @@ export default function FirstHonestWeekSection() {
           />
 
           {/* Header */}
-          <div style={{ marginBottom: "clamp(2rem, 4vw, 3.5rem)", maxWidth: "640px" }}>
+          <div style={{ marginBottom: "clamp(2rem, 4vw, 3.5rem)", maxWidth: "680px" }}>
             <p className="eyebrow mb-4">The First Honest Week</p>
             <h2
               className="font-display"
@@ -89,76 +81,82 @@ export default function FirstHonestWeekSection() {
                 fontFamily: "'DM Sans', sans-serif",
               }}
             >
-              The First Honest Week is the bridge between the book and the practice.
-              Three moves. Seven days. The whole system comes alive.
+              The last chapter of the book ends with a program. Seven days.
+              Each one named. Each one asking something specific of you.
+              Lifewoven is where you live them.
             </p>
           </div>
 
-          {/* 3-step process */}
+          {/* 7-day grid */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "clamp(1.5rem, 3vw, 2.5rem)",
+              gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+              gap: "clamp(1rem, 2vw, 1.5rem)",
               marginBottom: "clamp(2rem, 4vw, 3.5rem)",
             }}
           >
-            {steps.map((step) => (
+            {days.map((d, i) => (
               <div
-                key={step.number}
+                key={d.day}
                 style={{
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid var(--lw-border)",
+                  borderRadius: "12px",
+                  padding: "clamp(1rem, 2vw, 1.5rem)",
                   display: "flex",
                   flexDirection: "column",
-                  gap: "0.75rem",
+                  gap: "0.6rem",
                 }}
               >
-                {/* Step number */}
+                {/* Day label */}
                 <span
-                  className="font-display"
                   style={{
-                    fontSize: "clamp(36px, 4vw, 52px)",
+                    fontSize: "11px",
+                    fontFamily: "'DM Sans', sans-serif",
                     fontWeight: 700,
-                    color: "rgba(176,131,47,0.25)",
-                    lineHeight: 1,
-                    letterSpacing: "-0.02em",
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: "rgba(176,131,47,0.65)",
                   }}
                 >
-                  {step.number}
+                  {d.day}
                 </span>
 
-                {/* Divider */}
+                {/* Amber rule */}
                 <div
                   style={{
-                    width: "32px",
+                    width: "24px",
                     height: "2px",
                     background: "var(--lw-amber)",
                     borderRadius: "2px",
+                    opacity: 0.5 + i * 0.07,
                   }}
                 />
 
-                {/* Heading */}
+                {/* Title */}
                 <h3
                   className="font-display"
                   style={{
-                    fontSize: "clamp(17px, 1.7vw, 21px)",
+                    fontSize: "clamp(15px, 1.5vw, 18px)",
                     fontWeight: 600,
                     color: "var(--lw-text)",
                     lineHeight: 1.25,
                   }}
                 >
-                  {step.heading}
+                  {d.title}
                 </h3>
 
                 {/* Body */}
                 <p
                   style={{
-                    fontSize: "15px",
+                    fontSize: "13px",
                     color: "var(--lw-text-muted)",
-                    lineHeight: 1.65,
+                    lineHeight: 1.6,
                     fontFamily: "'DM Sans', sans-serif",
                   }}
                 >
-                  {step.body}
+                  {d.body}
                 </p>
               </div>
             ))}
