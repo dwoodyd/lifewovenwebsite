@@ -170,13 +170,13 @@ export default function SocialProofSection() {
               </span>
             </p>
 
-            <div className="flex flex-col gap-3" style={{ maxWidth: "360px" }}>
+            <div className="flex flex-col gap-3" style={{ maxWidth: "480px" }}>
               <a
                 href={FIRST_HONEST_WEEK_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
-                style={{ fontSize: "15px", textAlign: "center" }}
+                style={{ fontSize: "15px", whiteSpace: "nowrap" }}
               >
                 Already have the book? Start with The First Honest Week. ›
               </a>
