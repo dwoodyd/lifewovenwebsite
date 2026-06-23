@@ -12,10 +12,10 @@ const days = [
   { day: "Day 1", title: "Name the Load", body: "What are you actually carrying? Not what you're supposed to be carrying. What is actually in your hands right now." },
   { day: "Day 2", title: "Read One Signal", body: "Your body has been trying to tell you something. Today you listen to one signal you have been ignoring." },
   { day: "Day 3", title: "Remove One Nonessential Demand", body: "Not a goal. Not a commitment. One thing you agreed to that is costing more than it is worth." },
-  { day: "Day 4", title: "Name the Relationship That Needs Attention", body: "One relationship. Not a list. The one that, if you are honest, you know you have been managing instead of tending." },
-  { day: "Day 5", title: "Locate Your Ground", body: "Where do you go when everything else falls away? Today you name it and return to it deliberately." },
-  { day: "Day 6", title: "Make One Thing", body: "Not a task. Not a deliverable. Something that exists because you made it and for no other reason." },
-  { day: "Day 7", title: "Write the Sentence", body: "One sentence about who you are becoming. Not who you were. Not who you are supposed to be. Who you are becoming." },
+  { day: "Day 4", title: "Tell One Safe Person the Truth", body: "Name one person you trust and tell them something true about how you are doing that you have not said aloud." },
+  { day: "Day 5", title: "Restore Without Earning It", body: "Do one restoring thing today not because you finished something but because restoration is part of the design." },
+  { day: "Day 6", title: "Ask What No Longer Fits", body: "Look at your life with honest eyes. Name one role, commitment, or relationship that has drifted out of fit." },
+  { day: "Day 7", title: "Make One Design Change", body: "Choose one thing that needs to change. Write what it is, what the change looks like, and when you will begin." },
 ];
 
 export default function FirstHonestWeekSection() {
