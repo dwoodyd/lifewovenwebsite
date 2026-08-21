@@ -35,6 +35,13 @@ describe("marketing launch-trust source policy", () => {
     expect(lumen).not.toContain("<img\n            src=\"/manus-storage/mascot_poster");
   });
 
+  it("keeps a clear account-first door beside the account-free survey path", () => {
+    const audit = source("client/src/components/sections/AuditSection.tsx");
+    expect(audit).toContain('import { AUDIT_URL, SIGNIN_URL } from "../../config"');
+    expect(audit).toContain("Rather set up first? Create your account →");
+    expect(audit).toContain("href={SIGNIN_URL}");
+  });
+
   it("keeps the honeypot out of the rendered layout and uses the current app login URL", () => {
     const pricing = source("client/src/components/sections/PricingSection.tsx");
     const config = source("client/src/config.ts");

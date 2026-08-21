@@ -6,7 +6,7 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { AUDIT_URL } from "../../config";
+import { AUDIT_URL, SIGNIN_URL } from "../../config";
 
 const auditQuestions = [
   {
@@ -92,9 +92,26 @@ export default function AuditSection() {
             >
               The Load-Bearing Survey shows you which thread to tend first.
             </p>
-            <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Take the Load-Bearing Survey →
-            </a>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1rem" }}>
+              <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Take the Load-Bearing Survey →
+              </a>
+              <a
+                href={SIGNIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "14px",
+                  color: "var(--lw-text-muted)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid rgba(212,175,100,0.28)",
+                  paddingBottom: "0.2rem",
+                }}
+              >
+                Rather set up first? Create your account →
+              </a>
+            </div>
           </div>
 
           {/* Right — Phone mockup with cycling questions */}
