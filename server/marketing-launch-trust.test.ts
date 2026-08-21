@@ -38,8 +38,9 @@ describe("marketing launch-trust source policy", () => {
   it("keeps a clear account-first door beside the account-free survey path", () => {
     const audit = source("client/src/components/sections/AuditSection.tsx");
     expect(audit).toContain('import { AUDIT_URL, SIGNIN_URL } from "../../config"');
-    expect(audit).toContain("Rather set up first? Create your account →");
+    expect(audit).toContain("Take me into the app →");
     expect(audit).toContain("href={SIGNIN_URL}");
+    expect(audit).toContain("your completed reading follows you into Lifewoven");
   });
 
   it("keeps the honeypot out of the rendered layout and uses the current app login URL", () => {

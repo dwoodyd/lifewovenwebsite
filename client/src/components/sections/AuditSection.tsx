@@ -90,7 +90,7 @@ export default function AuditSection() {
                 color: "var(--lw-text-muted)",
               }}
             >
-              The Load-Bearing Survey shows you which thread to tend first.
+              The Load-Bearing Survey shows you which thread to tend first. Take it without an account; if you choose to create one afterward, your completed reading follows you into Lifewoven.
             </p>
             <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1rem" }}>
               <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
@@ -109,7 +109,7 @@ export default function AuditSection() {
                   paddingBottom: "0.2rem",
                 }}
               >
-                Rather set up first? Create your account →
+                Take me into the app →
               </a>
             </div>
           </div>
