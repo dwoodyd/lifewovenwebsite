@@ -4,7 +4,7 @@ const sections: LegalSection[] = [
   {
     heading: "Using Lifewoven",
     body: [
-      "Lifewoven gives you tools for reflection, journaling, and personal practice. By creating an account or applying for a founding seat, you agree to these terms. You must be at least 16 years old to use the service.",
+      "Lifewoven gives you tools for reflection, journaling, and personal practice. By creating an account or applying for a founding seat, you agree to these terms. You must be at least 18 years old to use the service.",
     ],
   },
   {
@@ -23,13 +23,13 @@ const sections: LegalSection[] = [
   {
     heading: "Payments",
     body: [
-      "Paid subscriptions are billed in advance on a recurring basis until cancelled. You can cancel at any time; cancellation takes effect at the end of the current billing period. Except where required by law, payments are non-refundable.",
+      "Paid subscriptions are billed in advance on a recurring basis until cancelled. You can cancel at any time; cancellation takes effect at the end of the current billing period. A first paid subscription is eligible for a full refund within 7 days of the initial charge. After that period, payments are non-refundable except where required by law.",
     ],
   },
   {
     heading: "Your content",
     body: [
-      "You own what you create in Lifewoven. You grant us only the limited permission needed to store, process, and display your content back to you so the service can function. We do not claim ownership of your journal entries, check-ins, or portraits.",
+      "You own what you create in Lifewoven. You grant us only the limited permission needed to store, process, and display your content back to you so the service can function, including optional AI features you choose to use. We do not claim ownership of your journal entries, check-ins, or portraits, and we do not use personal content to train general AI models without your explicit consent.",
     ],
   },
   {

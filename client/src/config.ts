@@ -16,11 +16,11 @@
 export const APP_URL =
   (import.meta.env.VITE_APP_URL as string | undefined) ?? "https://app.lifewoven.click";
 
-/** Full URL of the Alignment Audit page. */
+/** Full URL of the Load-Bearing Survey page. */
 export const AUDIT_URL = `${APP_URL}/audit`;
 
 /** Sign-in page URL. */
-export const SIGNIN_URL = `${APP_URL}/signin`;
+export const SIGNIN_URL = `${APP_URL}/login`;
 
 /** API endpoint for the Founding Member application form POST. */
 export const APPLY_ENDPOINT =
@@ -33,8 +33,7 @@ export const SHOP_URL =
 
 /**
  * URL for The First Honest Week in the Lifewoven app.
- * P3 item: set VITE_FIRST_HONEST_WEEK_URL once app.lifewoven.click/first-honest-week is live.
- * Falls back to the Capacity Audit until the app route is confirmed.
+ * Falls back to the Load-Bearing Survey until a dedicated app route is confirmed.
  */
 export const FIRST_HONEST_WEEK_URL: string =
   (import.meta.env.VITE_FIRST_HONEST_WEEK_URL as string | undefined) ?? AUDIT_URL;

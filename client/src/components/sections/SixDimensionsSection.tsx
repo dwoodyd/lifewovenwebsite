@@ -3,7 +3,7 @@
  * Brief: Inserted below the 5S Framework section.
  * Layout: eyebrow + headline + 6 dimension cards in a 2-col or 3-col grid
  * Each dimension: icon, name, one-line description, thread colour dot
- * Closing line: "The Capacity Audit measures where you are across all six."
+ * Closing line: "The Load-Bearing Survey measures where you are across all six."
  */
 
 import { useReveal } from "../../hooks/useReveal";
@@ -198,7 +198,7 @@ export default function SixDimensionsSection() {
               fontFamily: "'DM Sans', sans-serif",
             }}
           >
-            The Capacity Audit shows you which dimension to pick up first.
+            The Load-Bearing Survey shows you which dimension to pick up first.
           </p>
           <a
             href={AUDIT_URL}
@@ -206,7 +206,7 @@ export default function SixDimensionsSection() {
             rel="noopener noreferrer"
             className="btn-primary"
           >
-            Take the Capacity Audit →
+            Take the Load-Bearing Survey →
           </a>
         </div>
       </div>

@@ -28,13 +28,14 @@ export default function Nav() {
       </a>
 
       {/* Logo */}
-      <a href="/" className="flex items-center gap-2.5 group" aria-label="Lifewoven home">
-        <img
-          src="/manus-storage/lifewoven_mark_25b1dd02.svg"
-          alt="Lifewoven woven mark"
-          className="w-7 h-7 opacity-90 group-hover:opacity-100 transition-opacity"
-          style={{ filter: "brightness(0) invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(1.1)" }}
-        />
+      <a href="/" className="flex items-center gap-2.5 group shrink-0" aria-label="Lifewoven home">
+        <span
+          aria-hidden="true"
+          className="flex h-9 w-9 items-center justify-center rounded-md border font-bold transition-opacity group-hover:opacity-100"
+          style={{ borderColor: "rgba(212,175,100,0.8)", color: "#D4AF64", background: "rgba(212,175,100,0.14)", fontFamily: "'DM Sans', sans-serif", fontSize: "11px", letterSpacing: "0.04em", lineHeight: 1 }}
+        >
+          LW
+        </span>
         <span
           className="font-display text-xl font-semibold tracking-tight"
           style={{ color: "var(--lw-text)", fontFamily: "var(--font-display)" }}
@@ -44,36 +45,36 @@ export default function Nav() {
       </a>
 
       {/* Desktop links */}
-      <div className="hidden md:flex items-center gap-8">
-        <a href="#the-five" className="text-sm font-medium transition-colors hover:text-amber-400"
+      <div className="hidden 2xl:flex min-w-0 items-center gap-3 2xl:gap-4 whitespace-nowrap">
+        <a href="#the-five" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           The Five
         </a>
-        <a href="#six-dimensions" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="#six-dimensions" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           6 Dimensions
         </a>
-        <a href="#first-honest-week" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="#first-honest-week" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           First Honest Week
         </a>
-        <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
-          The Capacity Audit
+          Load-Bearing Survey
         </a>
-        <a href="#the-library" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="#the-library" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           The Library
         </a>
-        <a href="#pathways" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="#pathways" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           Pathways
         </a>
-        <a href="#pricing" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href="#pricing" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           Founding Members
         </a>
-        <a href={SIGNIN_URL} target="_blank" rel="noopener noreferrer" className="text-sm font-medium transition-colors hover:text-amber-400"
+        <a href={SIGNIN_URL} target="_blank" rel="noopener noreferrer" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           Sign in
         </a>
@@ -81,13 +82,13 @@ export default function Nav() {
 
       {/* CTA */}
       <div className="flex items-center gap-3">
-        <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex">
-          Take the Capacity Audit
+        <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex whitespace-nowrap">
+          Take the Survey
         </a>
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="2xl:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
@@ -104,7 +105,7 @@ export default function Nav() {
       {/* Mobile menu */}
       {menuOpen && (
         <div
-          className="absolute top-full left-0 right-0 flex flex-col gap-0 md:hidden"
+          className="absolute top-full left-0 right-0 flex flex-col gap-0 2xl:hidden"
           style={{
             background: "rgba(26, 20, 14, 0.97)",
             backdropFilter: "blur(12px)",
@@ -115,7 +116,7 @@ export default function Nav() {
             { label: "The Five", href: "#the-five", external: false },
             { label: "6 Dimensions", href: "#six-dimensions", external: false },
             { label: "First Honest Week", href: "#first-honest-week", external: false },
-            { label: "The Capacity Audit", href: AUDIT_URL, external: true },
+            { label: "Load-Bearing Survey", href: AUDIT_URL, external: true },
             { label: "The Library", href: "#the-library", external: false },
             { label: "Pathways", href: "#pathways", external: false },
             { label: "Founding Members", href: "#pricing", external: false },
@@ -138,7 +139,7 @@ export default function Nav() {
           ))}
           <div className="px-6 py-4">
             <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
-              Take the Capacity Audit
+              Take the Survey
             </a>
           </div>
         </div>

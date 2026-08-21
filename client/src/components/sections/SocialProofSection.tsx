@@ -198,7 +198,7 @@ export default function SocialProofSection() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text-muted)"; }}
               >
-                Don’t have it yet? Start with the Capacity Audit. ›
+                Don’t have it yet? Start with the Load-Bearing Survey. ›
               </a>
             </div>
           </div>
