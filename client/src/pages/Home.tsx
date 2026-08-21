@@ -29,7 +29,7 @@ import HeroSection from "../components/sections/HeroSection";
 import FiveThreadsSection from "../components/sections/FiveThreadsSection";
 import WovenGallerySection from "../components/sections/WovenGallerySection";
 import AuditSection from "../components/sections/AuditSection";
-import LuminSection from "../components/sections/LuminSection";
+import LumenSection from "../components/sections/LuminSection";
 import PricingSection from "../components/sections/PricingSection";
 import { TrustRow, PWAInstallFAQ, Footer } from "../components/sections/TrustFooter";
 import SocialProofSection from "../components/sections/SocialProofSection";
@@ -114,8 +114,8 @@ export default function Home() {
         {/* 6b. App Preview — "What you'll see when you open it" */}
         <AppPreviewSection />
 
-        {/* 7. Lumin — Meet Lumin (full-bleed mascot) */}
-        <LuminSection />
+        {/* 7. Lumen — Meet Lumen (full-bleed mascot) */}
+        <LumenSection />
 
         {/* 8. Social Proof — the book */}
         <SocialProofSection />

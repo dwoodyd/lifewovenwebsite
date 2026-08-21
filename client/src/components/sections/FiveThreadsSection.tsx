@@ -53,24 +53,14 @@ export default function FiveThreadsSection() {
   const [active, setActive] = useState(0);
   const sectionRef = useReveal(0.1) as React.RefObject<HTMLElement>;
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
     const v = videoRef.current;
     if (!section || !v) return;
 
-    let timeout: ReturnType<typeof setTimeout>;
-
     const startVideo = () => {
-      const onReady = () => {
-        clearTimeout(timeout);
-        setVideoReady(true);
-      };
-      v.addEventListener("canplay", onReady, { once: true });
-      v.addEventListener("loadeddata", onReady, { once: true });
       v.load();
-      timeout = setTimeout(() => setVideoReady(true), 3000);
     };
 
     const observer = new IntersectionObserver(
@@ -86,7 +76,6 @@ export default function FiveThreadsSection() {
 
     return () => {
       observer.disconnect();
-      clearTimeout(timeout);
     };
   }, []);
 
@@ -102,21 +91,6 @@ export default function FiveThreadsSection() {
     >
       {/* ── Full-bleed video ── */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/manus-storage/poster_woman_bench_fba43ab2.jpg"
-          alt=""
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center center",
-            opacity: videoReady ? 0 : 1,
-            transition: "opacity 0.8s ease",
-          }}
-        />
         <video
           ref={videoRef}
           autoPlay
@@ -132,8 +106,6 @@ export default function FiveThreadsSection() {
             height: "100%",
             objectFit: "cover",
             objectPosition: "center center",
-            opacity: videoReady ? 1 : 0,
-            transition: "opacity 0.8s ease",
           }}
         >
           <source
@@ -358,7 +330,7 @@ export default function FiveThreadsSection() {
                     (e.currentTarget as HTMLElement).style.borderColor = "rgba(176,131,47,0.4)";
                   }}
                 >
-                  Take the Capacity Audit →
+                  Take the Load-Bearing Survey →
                 </a>
               </div>
             </div>

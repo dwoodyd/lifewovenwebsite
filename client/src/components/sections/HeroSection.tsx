@@ -6,39 +6,26 @@
  * Palette: cream/ivory text, amber "woven" italic, indigo overlay gradient
  */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { AUDIT_URL } from "../../config";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
-  const [videoReady, setVideoReady] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
     const v = videoRef.current;
     if (!section || !v) return;
 
-    let timeout: ReturnType<typeof setTimeout>;
-
     const startVideo = () => {
-      const onReady = () => {
-        clearTimeout(timeout);
-        setVideoReady(true);
-      };
-      // canplay fires earlier than canplaythrough — better for iOS
-      v.addEventListener("canplay", onReady, { once: true });
-      v.addEventListener("loadeddata", onReady, { once: true });
       v.load();
-      // Fallback: if video hasn't signalled ready in 3s, show it anyway
-      timeout = setTimeout(() => setVideoReady(true), 3000);
     };
 
     // Hero is above the fold — load immediately but defer one tick
     const raf = requestAnimationFrame(startVideo);
     return () => {
       cancelAnimationFrame(raf);
-      clearTimeout(timeout);
     };
   }, []);
 
@@ -52,22 +39,6 @@ export default function HeroSection() {
     >
       {/* ── Full-bleed video ── */}
       <div className="absolute inset-0 z-0">
-        {/* Poster / fallback */}
-        <img
-          src="/manus-storage/poster_build_a_life_hero_c0872244.jpg"
-          alt="A Woven Self, reading Build a Life That Does Not Break You"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            objectPosition: "center center",
-            opacity: videoReady ? 0 : 1,
-            transition: "opacity 0.8s ease",
-          }}
-        />
         <video
           ref={videoRef}
           autoPlay
@@ -83,8 +54,6 @@ export default function HeroSection() {
             height: "100%",
             objectFit: "cover",
             objectPosition: "center center",
-            opacity: videoReady ? 1 : 0,
-            transition: "opacity 0.8s ease",
           }}
         >
           <source
@@ -232,7 +201,7 @@ export default function HeroSection() {
                   (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
                 }}
               >
-                Take the Capacity Audit →
+                Take the Load-Bearing Survey →
               </a>
               <a
                 href="#the-five"

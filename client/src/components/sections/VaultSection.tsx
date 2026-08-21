@@ -39,7 +39,7 @@ const pillars = [
         <line x1="1" y1="1" x2="23" y2="23" />
       </svg>
     ),
-    label: "We don't train on your data.",
+    label: "Consent-based AI use.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function VaultSection() { // component name kept for import compa
             Every entry, every Woven Self portrait, every reflection — kept in your private
             weave. Searchable. Exportable. Yours.{" "}
             <span style={{ color: "var(--lw-text-muted)" }}>
-              We don't read it, we don't train on it, we don't sell it.
+              We do not sell your content or use it to train general AI models without your explicit consent. Optional AI features process only the records you choose to bring into the conversation.
             </span>{" "}
             The Weave is the receipt that you're doing the work.
           </p>

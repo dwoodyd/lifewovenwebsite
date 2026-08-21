@@ -16,7 +16,7 @@ import { SHOP_URL } from "../../config";
 const products = [
   {
     icon: "📐",
-    title: "Soul Engineer Fundamentals",
+    title: "Alignment Fundamentals",
     description: "The 5S Framework in practice — working across all six dimensions. Six weeks, one coherent life.",
     format: "6-week course",
     price: "$97",

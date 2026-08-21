@@ -1,23 +1,22 @@
 /**
- * LuminSection — Full-bleed Lumin mascot video with scroll-triggered word-by-word copy entrance
+ * LuminSection — Full-bleed Lumen mascot video with scroll-triggered word-by-word copy entrance
  * 
  * Layout fix (Fix 4):
  *   Desktop: two-column — video fills left 55%, copy sits in right 45% (no collision)
  *   Mobile: stacked — video top (50vh), copy below
  * 
  * Copy animates in word-by-word as the section enters the viewport:
- *   "Meet" fades in first → then "Lumin." slides up 300ms later → body text follows → pills → CTA
+ *   "Meet" fades in first → then "Lumen." slides up 300ms later → body text follows → pills → CTA
  * 
  * Typography: Cormorant Garamond display, DM Sans body
- * Palette: cream/ivory text, amber "Lumin." italic highlight
+ * Palette: cream/ivory text, amber "Lumen." italic highlight
  */
 
 import { useRef, useEffect, useState } from "react";
 
-export default function LuminSection() {
+export default function LumenSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoReady, setVideoReady] = useState(false);
   const [inView, setInView] = useState(false);
 
   // Intersection observer — triggers once when section enters viewport
@@ -42,16 +41,7 @@ export default function LuminSection() {
     if (!inView) return;
     const v = videoRef.current;
     if (!v) return;
-    let timeout: ReturnType<typeof setTimeout>;
-    const onReady = () => {
-      clearTimeout(timeout);
-      setVideoReady(true);
-    };
-    v.addEventListener("canplay", onReady, { once: true });
-    v.addEventListener("loadeddata", onReady, { once: true });
     v.load();
-    timeout = setTimeout(() => setVideoReady(true), 3000);
-    return () => clearTimeout(timeout);
   }, [inView]);
 
   // Word-by-word stagger helper
@@ -89,8 +79,8 @@ export default function LuminSection() {
   return (
     <section
       ref={sectionRef}
-      id="meet-lumin"
-      aria-label="Inside the Weave — Meet Lumin"
+      id="meet-lumen"
+      aria-label="Inside the Weave — Meet Lumen"
       style={{
         position: "relative",
         width: "100%",
@@ -114,22 +104,6 @@ export default function LuminSection() {
             overflow: "hidden",
           }}
         >
-          {/* Poster */}
-          <img
-            src="/manus-storage/mascot_poster_5f6e568a.jpg"
-            alt=""
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              inset: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center center",
-              opacity: videoReady ? 0 : 1,
-              transition: "opacity 0.8s ease",
-            }}
-          />
           <video
             ref={videoRef}
             autoPlay
@@ -145,8 +119,6 @@ export default function LuminSection() {
               height: "100%",
               objectFit: "cover",
               objectPosition: "center center",
-              opacity: videoReady ? 1 : 0,
-              transition: "opacity 0.8s ease",
             }}
           >
             <source src="/manus-storage/lumin_mascot_v58_b9df5b9e.mp4" type="video/mp4" />
@@ -255,7 +227,7 @@ export default function LuminSection() {
                 transition: "opacity 0.7s ease 380ms, transform 0.7s cubic-bezier(0.22,1,0.36,1) 380ms",
               }}
             >
-              Lumin.
+              Lumen.
             </em>
           </h2>
 
@@ -271,7 +243,7 @@ export default function LuminSection() {
             }}
           >
             <WordReveal
-              text="Lumin walks with you. Doesn't talk back."
+              text="Lumen walks with you. Doesn't talk back."
               baseDelay={700}
             />
             <br />
@@ -281,7 +253,7 @@ export default function LuminSection() {
             />
             <br />
             <WordReveal
-              text="Lumin is your guide. The Oracle is the AI layer that reads your patterns and names what you cannot yet see."
+              text="Lumen is your guide. The Oracle helps you reflect on the records you choose to bring into the conversation."
               baseDelay={1350}
             />
           </p>
@@ -346,7 +318,7 @@ export default function LuminSection() {
               (e.currentTarget as HTMLElement).style.borderColor = "rgba(176,131,47,0.4)";
             }}
           >
-            See what Lumin unlocks →
+            See what Lumen unlocks →
           </a>
         </div>
       </div>

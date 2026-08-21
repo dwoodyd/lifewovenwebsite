@@ -1,8 +1,8 @@
 /*
- * LIFEWOVEN Audit Section — "Your Capacity Math — 12 questions, 3 to 5 minutes."
+ * LIFEWOVEN Survey Section — "Your structural reading — 12 questions, 3 to 5 minutes."
  * 
  * Visual: Phone mockup with example audit questions cycling
- * CTA: Take the Capacity Audit →
+ * CTA: Take the Load-Bearing Survey →
  */
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
@@ -59,14 +59,14 @@ export default function AuditSection() {
       id="audit"
       ref={sectionRef}
       className="section reveal"
-      aria-label="The Capacity Audit"
+      aria-label="Load-Bearing Survey"
     >
       <div className="container">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
           {/* Left — Copy */}
           <div className="flex-1 max-w-[540px]">
-            <p className="eyebrow mb-6">The Capacity Audit</p>
+            <p className="eyebrow mb-6">Load-Bearing Survey</p>
             <h2
               className="font-display mb-6"
               style={{
@@ -76,7 +76,7 @@ export default function AuditSection() {
                 color: "var(--lw-text)",
               }}
             >
-              Your Capacity Math —
+              Your structural reading —
               <br />
               12 questions, 3 to 5 minutes.
               <br />
@@ -90,10 +90,10 @@ export default function AuditSection() {
                 color: "var(--lw-text-muted)",
               }}
             >
-              The Capacity Audit shows you which thread to pick up first.
+              The Load-Bearing Survey shows you which thread to tend first.
             </p>
             <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Take the Capacity Audit →
+              Take the Load-Bearing Survey →
             </a>
           </div>
 
@@ -130,7 +130,7 @@ export default function AuditSection() {
                   className="font-display font-semibold"
                   style={{ fontSize: "16px", color: "var(--lw-text)" }}
                 >
-                  Capacity Audit
+                  Load-Bearing Survey
                 </span>
                 <span
                   className="text-xs"

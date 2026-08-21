@@ -4,9 +4,9 @@
  * Design: Deep indigo / Cormorant Garamond display, DM Sans body
  * Amber (#D4AF64) accents, warm ivory text on dark background
  *
- * Three cards: Explorer (free) | Seeker (founding $10/mo) | Oracle (founding $25/mo, MOST POPULAR)
+ * Three cards: Explorer (free) | Seeker (founding $9/mo) | Oracle (founding $25/mo, MOST POPULAR)
  * Oracle card includes condensed 9-item library list
- * "Locked for life" footnote below cards
+ * Founding-rate terms footnote below cards
  * Application form preserved — routes to founding seat apply flow
  *
  * SCARCITY COUNTER — update this one line to change the number:
@@ -22,7 +22,7 @@ import { APP_URL } from "../../config";
 import { trpc } from "../../lib/trpc";
 
 const libraryItems = [
-  { icon: "📐", title: "Soul Engineer Fundamentals", format: "6-week course", price: "$97" },
+  { icon: "📐", title: "Alignment Fundamentals", format: "6-week course", price: "$97" },
   { icon: "🌀", title: "The Alignment Current", format: "4-week course", price: "$147" },
   { icon: "⚛️", title: "Identity in Motion", format: "Course", price: "$127" },
   { icon: "🔍", title: "The Meaning Foundation", format: "4-week course", price: "$97" },
@@ -56,7 +56,7 @@ const oracleExtras = [
 ];
 
 const explorerFeatures = [
-  "Capacity Audit diagnostic",
+  "Load-Bearing Survey diagnostic",
   "Daily emotional check-in",
   "Journal (up to 30 entries in The Weave)",
   "Align & Uplift pathways",
@@ -140,8 +140,8 @@ export default function PricingSection() {
               lineHeight: 1.65,
             }}
           >
-            Founding rates locked for life. Lifewoven is in closed beta — 100 seats per app.
-            Founding members lock in the rates below, even when retail rises.
+            Founding rates remain in place while an uninterrupted paid subscription stays active. Lifewoven is in closed beta — 100 seats per app.
+            See the Terms for the current founding-rate conditions.
           </p>
 
           {/* Monthly / Annual toggle */}
@@ -190,7 +190,7 @@ export default function PricingSection() {
                 transition: "all 0.2s ease",
               }}
             >
-              Annual <span style={{ fontSize: "11px", opacity: 0.8 }}>save ~47%</span>
+              Annual <span style={{ fontSize: "11px", opacity: 0.8 }}>save 17–18% vs monthly</span>
             </button>
           </div>
         </div>
@@ -257,7 +257,7 @@ export default function PricingSection() {
                 lineHeight: 1.65,
               }}
             >
-              Lumin walks with you through the core tools. Begin the weave — no commitment required.
+              Lumen walks with you through the core tools. Begin the weave — no commitment required.
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.6rem" }}>
               {explorerFeatures.map((f) => (
@@ -330,7 +330,7 @@ export default function PricingSection() {
                   className="font-display"
                   style={{ fontSize: "clamp(36px, 5vw, 52px)", fontWeight: 600, color: "var(--lw-text)", lineHeight: 1.05 }}
                 >
-                  {annualToggle ? "$99" : "$10"}
+                  {annualToggle ? "$89" : "$9"}
                 </p>
                 <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "rgba(245,240,232,0.5)" }}>
                   {annualToggle ? "/yr founding" : "/mo founding"}
@@ -343,7 +343,7 @@ export default function PricingSection() {
                     textDecoration: "line-through",
                   }}
                 >
-                  {annualToggle ? "$189/yr retail" : "$19/mo retail"}
+                  {annualToggle ? "$108/yr at monthly rate" : "$19/mo retail"}
                 </span>
               </div>
               <p
@@ -355,7 +355,7 @@ export default function PricingSection() {
                   marginTop: "0.35rem",
                 }}
               >
-                Locked at the founding rate for life.
+                Founding rate while your subscription remains active.
               </p>
             </div>
             <p
@@ -366,7 +366,7 @@ export default function PricingSection() {
                 lineHeight: 1.65,
               }}
             >
-              Lumin opens the full system to you. Every tool, every pathway, every module — fully unlocked.
+              Lumen opens the full system to you. Every tool, every pathway, every module — fully unlocked.
             </p>
             <div>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "12px", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(212,175,100,0.5)", marginBottom: "0.75rem" }}>Everything in Explorer, plus:</p>
@@ -476,7 +476,7 @@ export default function PricingSection() {
                     textDecoration: "line-through",
                   }}
                 >
-                  {annualToggle ? "$479/yr retail" : "$49/mo retail"}
+                  {annualToggle ? "$300/yr at monthly rate" : "$49/mo retail"}
                 </span>
               </div>
               <p
@@ -488,7 +488,7 @@ export default function PricingSection() {
                   marginTop: "0.35rem",
                 }}
               >
-                Locked at the founding rate for life.
+                Founding rate while your subscription remains active.
               </p>
             </div>
 
@@ -500,7 +500,7 @@ export default function PricingSection() {
                 lineHeight: 1.65,
               }}
             >
-              Lumin and the Oracle work continuously on your behalf — reading your patterns, naming what you cannot yet see.{" "}
+              Lumen and the Oracle work continuously on your behalf — reading the records you choose to bring into the conversation.{" "}
               <strong style={{ color: "rgba(245,240,232,0.8)" }}>Plus the complete Lifewoven library.</strong>
             </p>
 
@@ -596,7 +596,7 @@ export default function PricingSection() {
           </div>
         </div>
 
-        {/* ── "Locked for life" footnote ── */}
+        {/* ── Founding-rate terms footnote ── */}
         <div
           style={{
             maxWidth: "600px",
@@ -612,7 +612,7 @@ export default function PricingSection() {
             className="font-display"
             style={{ fontSize: "18px", fontWeight: 600, color: "var(--lw-text)", marginBottom: "0.6rem" }}
           >
-            What "locked for life" means.
+            How founding rates work.
           </p>
           <p
             style={{
@@ -622,9 +622,8 @@ export default function PricingSection() {
               lineHeight: 1.7,
             }}
           >
-            When the beta closes, founding members keep their rate forever — even when public pricing rises.
-            As long as your subscription remains active without interruption, the rate you locked in today
-            is the rate you'll pay in five years.
+            Your founding rate remains in place while your paid subscription stays active without interruption.
+            If you cancel or allow it to lapse, the founding rate may not be available when you return. See our Terms for the current conditions.
           </p>
         </div>
 
@@ -682,7 +681,7 @@ export default function PricingSection() {
                   marginBottom: "0.5rem",
                 }}
               >
-                Lumin will be in touch within 48 hours.
+                Lumen will be in touch within 48 hours.
               </p>
               <p
                 style={{
@@ -710,7 +709,7 @@ export default function PricingSection() {
               }}
             >
               {/* Honeypot — must stay empty; hidden from people and screen readers */}
-              <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+              <div aria-hidden="true" style={{ display: "none" }}>
                 <label htmlFor="fm-company">Company (leave this field empty)</label>
                 <input
                   id="fm-company"
@@ -737,7 +736,7 @@ export default function PricingSection() {
                     lineHeight: 1.6,
                   }}
                 >
-                  100 seats. Locked rate for life. Oracle tier includes the complete Library.
+                  100 seats. Founding rate while active. Oracle tier includes the complete Library.
                 </p>
               </div>
 
@@ -858,7 +857,7 @@ export default function PricingSection() {
                 >
                   <option value="" disabled>Select a tier…</option>
                   <option value="Explorer">Explorer — Free (start here)</option>
-                  <option value="Seeker">Seeker — $10/mo founding</option>
+                  <option value="Seeker">Seeker — $9/mo founding</option>
                   <option value="Oracle">Oracle — $25/mo founding (includes Library)</option>
                   <option value="Either">Either — I'm open to both</option>
                   <option value="Not sure">Not sure yet</option>
