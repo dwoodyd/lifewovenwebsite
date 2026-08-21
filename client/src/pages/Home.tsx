@@ -27,20 +27,13 @@ import Nav from "../components/Nav";
 import ParticleField from "../components/ParticleField";
 import HeroSection from "../components/sections/HeroSection";
 import FiveThreadsSection from "../components/sections/FiveThreadsSection";
-import WovenGallerySection from "../components/sections/WovenGallerySection";
 import AuditSection from "../components/sections/AuditSection";
 import LumenSection from "../components/sections/LuminSection";
 import PricingSection from "../components/sections/PricingSection";
 import { TrustRow, PWAInstallFAQ, Footer } from "../components/sections/TrustFooter";
 import SocialProofSection from "../components/sections/SocialProofSection";
 import ClosingCTA from "../components/sections/ClosingCTA";
-import PWAStrip from "../components/sections/PWAStrip";
-import VaultSection from "../components/sections/VaultSection";
-import AppPreviewSection from "../components/sections/AppPreviewSection";
 import LibrarySection from "../components/sections/LibrarySection";
-import PathwaysSection from "../components/sections/PathwaysSection";
-import SixDimensionsSection from "../components/sections/SixDimensionsSection";
-import FirstHonestWeekSection from "../components/sections/FirstHonestWeekSection";
 
 export default function Home() {
   // Initialize scroll reveal for all .reveal elements
@@ -90,43 +83,22 @@ export default function Home() {
         {/* 1. Hero — full-bleed man holding book */}
         <HeroSection />
 
-        {/* 1b. PWA device strip */}
-        <PWAStrip />
-
         {/* 2. Five Threads — 5S Framework */}
         <FiveThreadsSection />
 
-        {/* 2b. The 6 Dimensions — inserted below 5S Framework per brief */}
-        <SixDimensionsSection />
-
-        {/* 3. Vault — "Where the work is kept." */}
-        <VaultSection />
-
-        {/* 3b. The First Honest Week — bridge between Weave and Woven */}
-        <FirstHonestWeekSection />
-
-        {/* 4. Woven Gallery — archetype portraits */}
-        <WovenGallerySection />
-
-        {/* 6. The Audit */}
+        {/* 3. The Audit — the one primary public next step */}
         <AuditSection />
 
-        {/* 6b. App Preview — "What you'll see when you open it" */}
-        <AppPreviewSection />
-
-        {/* 7. Lumen — Meet Lumen (full-bleed mascot) */}
+        {/* 4. Lumen — Meet Lumen (full-bleed mascot) */}
         <LumenSection />
 
-        {/* 8. Social Proof — the book */}
+        {/* 5. Social Proof — the book */}
         <SocialProofSection />
 
-        {/* 8b. The Library — 9-product grid */}
+        {/* 6. The Library — 9-product grid */}
         <LibrarySection />
 
-        {/* 8c. 7 Pathways — compact strip */}
-        <PathwaysSection />
-
-        {/* 9. Founding Members — application form */}
+        {/* 7. Membership — instant Explorer or reviewed paid founding access */}
         <PricingSection />
 
         {/* 10. Trust Row */}

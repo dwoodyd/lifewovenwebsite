@@ -41,4 +41,17 @@ describe("marketing launch-trust source policy", () => {
     expect(pricing).toContain('style={{ display: "none" }}');
     expect(config).toContain('export const SIGNIN_URL = `${APP_URL}/login`;');
   });
+
+  it("makes the instant free path and reviewed paid founding path explicit", () => {
+    const pricing = source("client/src/components/sections/PricingSection.tsx");
+    const nav = source("client/src/components/Nav.tsx");
+    const home = source("client/src/pages/Home.tsx");
+    expect(pricing).toContain('import { SIGNIN_URL } from "../../config"');
+    expect(pricing).toContain("Start free — instant");
+    expect(pricing).toContain("Apply for paid founding access — 48hr review");
+    expect(nav).toContain("The Method");
+    expect(nav).toContain("Membership");
+    expect(home).not.toContain("<WovenGallerySection />");
+    expect(home).not.toContain("<PathwaysSection />");
+  });
 });

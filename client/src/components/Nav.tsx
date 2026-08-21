@@ -45,34 +45,18 @@ export default function Nav() {
       </a>
 
       {/* Desktop links */}
-      <div className="hidden 2xl:flex min-w-0 items-center gap-3 2xl:gap-4 whitespace-nowrap">
+      <div className="hidden 2xl:flex min-w-0 items-center gap-4 whitespace-nowrap">
         <a href="#the-five" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
-          The Five
-        </a>
-        <a href="#six-dimensions" className="text-[13px] font-medium transition-colors hover:text-amber-400"
-           style={{ color: "var(--lw-text-muted)" }}>
-          6 Dimensions
-        </a>
-        <a href="#first-honest-week" className="text-[13px] font-medium transition-colors hover:text-amber-400"
-           style={{ color: "var(--lw-text-muted)" }}>
-          First Honest Week
-        </a>
-        <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="text-[13px] font-medium transition-colors hover:text-amber-400"
-           style={{ color: "var(--lw-text-muted)" }}>
-          Load-Bearing Survey
+          The Method
         </a>
         <a href="#the-library" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
           The Library
         </a>
-        <a href="#pathways" className="text-[13px] font-medium transition-colors hover:text-amber-400"
-           style={{ color: "var(--lw-text-muted)" }}>
-          Pathways
-        </a>
         <a href="#pricing" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
-          Founding Members
+          Membership
         </a>
         <a href={SIGNIN_URL} target="_blank" rel="noopener noreferrer" className="text-[13px] font-medium transition-colors hover:text-amber-400"
            style={{ color: "var(--lw-text-muted)" }}>
@@ -83,7 +67,7 @@ export default function Nav() {
       {/* CTA */}
       <div className="flex items-center gap-3">
         <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex whitespace-nowrap">
-          Take the Survey
+          Take the Load-Bearing Survey
         </a>
 
         {/* Mobile hamburger */}
@@ -113,13 +97,9 @@ export default function Nav() {
           }}
         >
           {[
-            { label: "The Five", href: "#the-five", external: false },
-            { label: "6 Dimensions", href: "#six-dimensions", external: false },
-            { label: "First Honest Week", href: "#first-honest-week", external: false },
-            { label: "Load-Bearing Survey", href: AUDIT_URL, external: true },
+            { label: "The Method", href: "#the-five", external: false },
             { label: "The Library", href: "#the-library", external: false },
-            { label: "Pathways", href: "#pathways", external: false },
-            { label: "Founding Members", href: "#pricing", external: false },
+            { label: "Membership", href: "#pricing", external: false },
             { label: "Sign in", href: SIGNIN_URL, external: true },
           ].map((item) => (
             <a
@@ -139,7 +119,7 @@ export default function Nav() {
           ))}
           <div className="px-6 py-4">
             <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
-              Take the Survey
+              Take the Load-Bearing Survey
             </a>
           </div>
         </div>

@@ -18,7 +18,7 @@ const TOTAL_SLOTS = 100;
 
 import { useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { APP_URL } from "../../config";
+import { SIGNIN_URL } from "../../config";
 import { trpc } from "../../lib/trpc";
 
 const libraryItems = [
@@ -246,7 +246,7 @@ export default function PricingSection() {
                   marginTop: "0.25rem",
                 }}
               >
-                Forever free.
+                Instant account access.
               </p>
             </div>
             <p
@@ -268,7 +268,7 @@ export default function PricingSection() {
               ))}
             </ul>
             <a
-              href={APP_URL}
+              href={SIGNIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -295,7 +295,7 @@ export default function PricingSection() {
                 (e.currentTarget as HTMLElement).style.color = "rgba(212,175,100,0.85)";
               }}
             >
-              Start Free
+              Start free — instant
             </a>
           </div>
 
@@ -405,7 +405,7 @@ export default function PricingSection() {
                 (e.currentTarget as HTMLElement).style.background = "transparent";
               }}
             >
-              Apply for a Founding Seat
+              Apply for paid founding access — 48hr review
             </a>
           </div>
 
@@ -591,7 +591,7 @@ export default function PricingSection() {
                 (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
               }}
             >
-              Apply for a Founding Seat
+              Apply for paid founding access — 48hr review
             </a>
           </div>
         </div>
@@ -670,7 +670,7 @@ export default function PricingSection() {
                   marginBottom: "0.75rem",
                 }}
               >
-                Application received.
+                Paid founding application received.
               </p>
               <p
                 style={{
