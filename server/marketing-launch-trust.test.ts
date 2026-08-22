@@ -43,20 +43,31 @@ describe("marketing launch-trust source policy", () => {
     expect(audit).toContain("your completed reading follows you into Lifewoven");
   });
 
-  it("keeps the honeypot out of the rendered layout and uses the current app login URL", () => {
-    const pricing = source("client/src/components/sections/PricingSection.tsx");
+  it("uses the current app login URL for the free path", () => {
     const config = source("client/src/config.ts");
-    expect(pricing).toContain('style={{ display: "none" }}');
     expect(config).toContain('export const SIGNIN_URL = `${APP_URL}/login`;');
   });
 
-  it("makes the instant free path and reviewed paid founding path explicit", () => {
+  it("makes the instant free path and self-serve paid founding path explicit", () => {
     const pricing = source("client/src/components/sections/PricingSection.tsx");
+    const config = source("client/src/config.ts");
     const nav = source("client/src/components/Nav.tsx");
     const home = source("client/src/pages/Home.tsx");
-    expect(pricing).toContain('import { SIGNIN_URL } from "../../config"');
+    expect(pricing).toContain('import { SIGNIN_URL, SIGNUP_URL } from "../../config"');
+    expect(config).toContain('export const SIGNUP_URL = `${APP_URL}/signup`;');
     expect(pricing).toContain("Start free — instant");
-    expect(pricing).toContain("Apply for paid founding access — 48hr review");
+    expect(pricing).toContain("Claim your founding seat");
+    expect(pricing).toContain("Claim a Founding Seat.");
+    expect(pricing).toContain("Start free, then choose your tier.");
+    expect(pricing).toContain("Founding Member · {TOTAL_SLOTS} seats · {SLOTS_CLAIMED} claimed");
+    expect(pricing).toContain("const SLOTS_CLAIMED = 27;");
+    expect(pricing).toContain("Founding rate while your subscription remains active.");
+    expect(pricing).not.toContain("30% off all standalone library products");
+    expect(pricing).not.toContain("Apply for paid founding access");
+    expect(pricing).not.toContain("Apply for a Founding Seat");
+    expect(pricing).not.toContain("Apply for Founding Member access");
+    expect(pricing).not.toContain("We review every application");
+    expect(pricing).not.toContain("48 hours");
     expect(nav).toContain("The Method");
     expect(nav).toContain("Membership");
     expect(home).toContain("<WovenGallerySection />");
@@ -83,7 +94,7 @@ describe("marketing launch-trust source policy", () => {
     expect(library).toContain("every guided script");
     expect(library).toContain("$607");
     expect(pricing).toContain("$607");
-    expect(pricing).toContain('title: "The Reset Protocol", format: "45-min guided script", price: "$27"');
+    expect(pricing).toContain("The complete nine-product Library — $607 retail value, included");
     expect(hero).toContain("$607");
   });
 

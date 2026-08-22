@@ -29,3 +29,8 @@
 - [x] Restore the 7 Pathways section after the Library and before the membership section.
 - [x] Restore the distinct The Ground section between The 6 Dimensions and The Weave.
 - [x] Confirm the final homepage order satisfies the builder brief’s book-to-practice sequence, including The Ground.
+- [x] Replace the two paid-founding application CTAs with direct self-serve signup links and exact claim-seat wording.
+- [x] Remove the retired application form, submission logic, and every remaining Founding Seat or Founding Member application string from the pricing source.
+- [x] Remove every legacy review and waiting-period message, leaving only the tracked 27-claimed seat count and subscription-active rate language.
+- [x] Remove the unsupported 30% standalone Library-product benefit from the Seeker tier.
+- [x] Add regression assertions that stale application and review strings do not exist anywhere in the pricing source, then revalidate before checkpointing.

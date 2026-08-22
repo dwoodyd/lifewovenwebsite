@@ -22,6 +22,9 @@ export const AUDIT_URL = `${APP_URL}/audit`;
 /** Sign-in page URL. */
 export const SIGNIN_URL = `${APP_URL}/login`;
 
+/** Direct self-serve signup page for new Lifewoven members. */
+export const SIGNUP_URL = `${APP_URL}/signup`;
+
 /** API endpoint for the Founding Member application form POST. */
 export const APPLY_ENDPOINT =
   (import.meta.env.VITE_APPLY_ENDPOINT as string | undefined) ??
