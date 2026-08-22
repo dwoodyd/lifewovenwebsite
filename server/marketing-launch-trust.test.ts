@@ -59,8 +59,8 @@ describe("marketing launch-trust source policy", () => {
     expect(pricing).toContain("Apply for paid founding access — 48hr review");
     expect(nav).toContain("The Method");
     expect(nav).toContain("Membership");
-    expect(home).not.toContain("<WovenGallerySection />");
-    expect(home).not.toContain("<PathwaysSection />");
+    expect(home).toContain("<WovenGallerySection />");
+    expect(home).toContain("<PathwaysSection />");
   });
 
   it("prioritizes F-03 by withdrawing only recording claims while preserving verified PDFs and $607 pricing", () => {
@@ -85,5 +85,82 @@ describe("marketing launch-trust source policy", () => {
     expect(pricing).toContain("$607");
     expect(pricing).toContain('title: "The Reset Protocol", format: "45-min guided script", price: "$27"');
     expect(hero).toContain("$607");
+  });
+
+  it("gives book readers direct purchase access without adding another survey path", () => {
+    const book = source("client/src/components/sections/SocialProofSection.tsx");
+
+    expect(book).toContain('href="https://www.soulengineer.online/books"');
+    expect(book).toContain("Get the book →");
+    expect(book).toContain('href="https://a.co/d/0iwd1i2O"');
+    expect(book).toContain("Paperback on Amazon →");
+    expect(book).toContain("Already have the book? Start with The First Honest Week. ›");
+    expect(book).toContain("href={AUDIT_URL}");
+    expect(book).not.toContain("Don’t have it yet? Start with the Load-Bearing Survey.");
+  });
+
+  it("distinguishes the six dimensions of the self from the five 5S working dimensions", () => {
+    const library = source("client/src/components/sections/LibrarySection.tsx");
+    const dimensions = source("client/src/components/sections/SixDimensionsSection.tsx");
+    const book = source("client/src/components/sections/SocialProofSection.tsx");
+
+    expect(library).toContain("working across its five dimensions");
+    expect(dimensions).toContain("The Six Dimensions of the Self");
+    expect(dimensions).toContain("Six dimensions of the self.");
+    expect(dimensions).toContain("The 5S is how you work on them");
+    expect(book).toContain("The six dimensions of the self.");
+  });
+
+  it("does not direct visitors to unavailable standalone Library purchases or discounts", () => {
+    const library = source("client/src/components/sections/LibrarySection.tsx");
+
+    expect(library).not.toContain("SHOP_URL");
+    expect(library).not.toContain("Browse standalone");
+    expect(library).not.toContain("You can also buy any product standalone");
+    expect(library).not.toContain("Seekers save 30%");
+    expect(library).toContain("Combined retail value: $607, included.");
+    expect(library).toContain("retail value");
+  });
+
+  it("keeps the Reset product-platform card aligned with its Audio Scripts PDF delivery", () => {
+    const product = source("references/product-platform/reset-audio.html");
+    const correctedCard = product.split("const CORRECTED_CARD = `")[1]?.split("`;\n\nLESSONS[0]")[0] ?? "";
+
+    expect(product).toContain("<title>The Reset Protocol — Lifewoven</title>");
+    expect(product).toContain("Audio Scripts PDF · $27");
+    expect(product).toContain("45-Minute Guided Script · 7 Steps");
+    expect(product).toContain("LESSONS[0] = {");
+    expect(product).toContain("LESSONS.map(lesson=>lesson.body)");
+    expect(product).toContain('a.download="the-reset-protocol.md"');
+    expect(correctedCard).toContain("No recording is included.");
+    expect(correctedCard).not.toContain("AI-voiced");
+    expect(correctedCard).not.toContain("guided audio recording");
+    expect(correctedCard).not.toContain("narrated by an AI");
+  });
+
+  it("keeps the required book-to-practice sections in builder-brief order", () => {
+    const home = source("client/src/pages/Home.tsx");
+    const order = [
+      "<FiveThreadsSection />",
+      "<SixDimensionsSection />",
+      "<GroundSection />",
+      "<VaultSection />",
+      "<FirstHonestWeekSection />",
+      "<WovenGallerySection />",
+      "<AuditSection />",
+      "<AppPreviewSection />",
+      "<LumenSection />",
+      "<SocialProofSection />",
+      "<LibrarySection />",
+      "<PathwaysSection />",
+      "<PricingSection />",
+    ];
+
+    let previous = -1;
+    for (const section of order) {
+      const position = home.indexOf(section);
+      expect(position).toBeGreaterThan(previous);
+      previous = position;
+    }
   });
 });

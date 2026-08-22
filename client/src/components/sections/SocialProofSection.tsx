@@ -7,7 +7,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { AUDIT_URL, FIRST_HONEST_WEEK_URL } from "../../config";
+import { AUDIT_URL } from "../../config";
 
 export default function SocialProofSection() {
   const sectionRef = useReveal(0.12) as React.RefObject<HTMLElement>;
@@ -163,7 +163,7 @@ export default function SocialProofSection() {
                 fontStyle: "italic",
               }}
             >
-              The Six Dimensions. The Capacity Math. The First Honest Week.
+              The six dimensions of the self. The Capacity Math. The First Honest Week.
               <br />
               <span style={{ color: "var(--lw-text-muted)", fontStyle: "normal", fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
                 This is where the book comes alive.
@@ -172,16 +172,16 @@ export default function SocialProofSection() {
 
             <div className="flex flex-col gap-3" style={{ maxWidth: "480px" }}>
               <a
-                href={FIRST_HONEST_WEEK_URL}
+                href="https://www.soulengineer.online/books"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
                 style={{ fontSize: "15px", whiteSpace: "nowrap" }}
               >
-                Already have the book? Start with The First Honest Week. ›
+                Get the book →
               </a>
               <a
-                href={AUDIT_URL}
+                href="https://a.co/d/0iwd1i2O"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -198,7 +198,25 @@ export default function SocialProofSection() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text-muted)"; }}
               >
-                Don’t have it yet? Start with the Load-Bearing Survey. ›
+                Paperback on Amazon →
+              </a>
+              <a
+                href={AUDIT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  fontSize: "14px",
+                  color: "var(--lw-text-muted)",
+                  fontFamily: "'DM Sans', sans-serif",
+                  textDecoration: "none",
+                  opacity: 0.85,
+                  alignSelf: "flex-start",
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text-muted)"; }}
+              >
+                Already have the book? Start with The First Honest Week. ›
               </a>
             </div>
           </div>

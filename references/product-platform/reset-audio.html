@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>The Reset Protocol — Lifewoven</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--acc:#c9a96e;--acc2:#2d3561;--sidebar:290px}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:#0c0c14;color:#f0ebe4;min-height:100vh;overflow-x:hidden}
+
+/* TOPBAR */
+.topbar{position:sticky;top:0;z-index:200;background:rgba(12,12,20,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.07);height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;gap:20px}
+.topbar-brand{display:flex;align-items:center;gap:12px}
+.brand-dot{width:28px;height:28px;border-radius:8px;background:#2d3561;border:1px solid #c9a96e;display:flex;align-items:center;justify-content:center;font-size:14px;color:#c9a96e}
+.brand-name{font-family:"Space Mono",monospace;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#c9a96e}
+.topbar-title{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:400;color:#f0ebe4;flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.topbar-right{display:flex;gap:10px;align-items:center}
+.dl-btn{padding:8px 18px;border-radius:10px;font-size:12px;font-weight:500;cursor:pointer;background:#2d3561;color:#c9a96e;border:1px solid rgba(201,169,110.3);font-family:"DM Sans",sans-serif;display:flex;align-items:center;gap:7px;transition:all .2s;white-space:nowrap}
+.dl-btn:hover{opacity:.85;box-shadow:0 4px 16px rgba(0,0,0,.4)}
+
+/* LAYOUT */
+.layout{display:grid;grid-template-columns:var(--sidebar) 1fr;min-height:calc(100vh - 60px)}
+
+/* SIDEBAR */
+.sidebar{background:#0a0a12;border-right:1px solid rgba(255,255,255,.06);position:sticky;top:60px;height:calc(100vh - 60px);overflow-y:auto;display:flex;flex-direction:column}
+.sidebar::-webkit-scrollbar{width:3px}
+.sidebar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px}
+
+/* SIDEBAR COVER */
+.sidebar-cover{padding:28px 24px;border-bottom:1px solid rgba(255,255,255,.06);background:linear-gradient(135deg,#1a1a3e 0%,#2d3561 40%,#4a3728 100%);position:relative;overflow:hidden}
+.sidebar-cover::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 70%,rgba(201,169,110,0.25) 0%,transparent 60%)}
+.cover-icon-big{font-size:40px;opacity:.5;position:absolute;right:20px;top:50%;transform:translateY(-50%);filter:drop-shadow(0 0 15px #c9a96e);z-index:1}
+.sidebar-brand-tag{font-family:"Space Mono",monospace;font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:#c9a96e;margin-bottom:8px;position:relative;z-index:2}
+.sidebar-type{font-family:"Space Mono",monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:4px;position:relative;z-index:2}
+.sidebar-title{font-family:"Cormorant Garamond",serif;font-size:18px;font-weight:600;color:#f0ebe4;line-height:1.2;margin-bottom:8px;position:relative;z-index:2}
+.sidebar-price{font-family:"Space Mono",monospace;font-size:13px;font-weight:700;color:#c9a96e;position:relative;z-index:2}
+
+/* PROGRESS */
+.progress-wrap{padding:16px 24px;border-bottom:1px solid rgba(255,255,255,.06)}
+.prog-bar-outer{height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;margin-bottom:6px}
+.prog-bar-inner{height:100%;border-radius:2px;background:linear-gradient(90deg,#2d3561,#c9a96e);transition:width .4s ease;width:0%}
+.prog-text{font-family:"Space Mono",monospace;font-size:9px;color:rgba(255,255,255,.3)}
+
+/* NAV */
+.sidebar-nav{flex:1;padding:12px 0 32px}
+.nav-section-label{font-family:"Space Mono",monospace;font-size:8px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.2);padding:14px 24px 5px}
+.nav-item{padding:9px 22px;font-size:12px;cursor:pointer;transition:all .15s;display:flex;align-items:flex-start;gap:9px;color:rgba(255,255,255,.42);border-left:2px solid transparent;line-height:1.4}
+.nav-item:hover{color:rgba(255,255,255,.75);background:rgba(255,255,255,.03)}
+.nav-item.active{color:#c9a96e;border-left-color:#c9a96e;background:rgba(255,255,255,.05);padding-left:20px}
+.nav-item.done::after{content:"✓";font-size:9px;margin-left:auto;flex-shrink:0;padding-top:2px}
+.nav-item.active.done::after{color:#c9a96e}
+.nav-num{font-family:"Space Mono",monospace;font-size:8px;opacity:.4;min-width:20px;flex-shrink:0;padding-top:2px}
+
+/* CONTENT */
+.content-area{background:#0e0e1a;overflow-y:auto;min-height:calc(100vh - 60px)}
+.lesson-wrap{max-width:800px;margin:0 auto;padding:56px 52px 120px}
+
+.lesson-eyebrow{font-family:"Space Mono",monospace;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#c9a96e;margin-bottom:16px;opacity:.8}
+.lesson-title-main{font-family:"Cormorant Garamond",serif;font-size:clamp(26px,3vw,44px);font-weight:300;line-height:1.12;color:#f0ebe4;margin-bottom:36px;letter-spacing:-.01em}
+.lesson-body{font-size:15.5px;line-height:1.82;color:rgba(240,235,228,.8);font-weight:300}
+.lesson-body h1,.lesson-body h2{font-family:"Cormorant Garamond",serif;font-weight:400;color:#f0ebe4;margin:44px 0 16px;line-height:1.2}
+.lesson-body h1{font-size:30px}
+.lesson-body h2{font-size:24px}
+.lesson-body h3{font-family:"Cormorant Garamond",serif;font-size:19px;font-weight:600;color:rgba(240,235,228,.9);margin:30px 0 12px;letter-spacing:.01em}
+.lesson-body h4{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;color:rgba(240,235,228,.45);margin:24px 0 10px}
+.lesson-body p{margin-bottom:22px}
+.lesson-body strong{color:#f0ebe4;font-weight:500}
+.lesson-body em{font-style:italic;color:rgba(240,235,228,.9)}
+.lesson-body ul,.lesson-body ol{margin:4px 0 22px 24px}
+.lesson-body li{margin-bottom:9px}
+.lesson-body blockquote{border-left:3px solid #c9a96e;padding:18px 26px;margin:30px 0;border-radius:0 10px 10px 0;font-style:italic;font-family:"Cormorant Garamond",serif;font-size:19px;line-height:1.55;background:rgba(201,169,110,0.06);color:#e8d5b7}
+.lesson-body code{font-family:"Space Mono",monospace;font-size:11.5px;background:rgba(255,255,255,.07);border-radius:5px;padding:2px 7px}
+.lesson-body pre{font-family:"Space Mono",monospace;font-size:11.5px;background:rgba(255,255,255,.05);border-radius:10px;padding:22px;overflow-x:auto;margin:22px 0;line-height:1.65;border:1px solid rgba(255,255,255,.06)}
+.lesson-body hr{border:none;border-top:1px solid rgba(255,255,255,.08);margin:44px 0}
+.lesson-body table{width:100%;border-collapse:collapse;margin:26px 0;font-size:13px}
+.lesson-body th{text-align:left;padding:11px 14px;font-weight:500;border-bottom:1px solid rgba(255,255,255,.1);color:rgba(240,235,228,.6);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
+.lesson-body td{padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:top}
+
+/* NAV BAR */
+.lesson-footer{display:flex;justify-content:space-between;align-items:center;padding:44px 0 0;border-top:1px solid rgba(255,255,255,.07);margin-top:60px}
+.nav-btn{padding:10px 22px;border-radius:10px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);color:rgba(255,255,255,.5);font-family:"DM Sans",sans-serif;display:flex;align-items:center;gap:8px}
+.nav-btn:not(:disabled):hover{background:rgba(255,255,255,.09);color:#f0ebe4;border-color:rgba(255,255,255,.2)}
+.nav-btn:disabled{opacity:.2;cursor:default}
+.center-actions{display:flex;flex-direction:column;align-items:center;gap:8px}
+.complete-btn{padding:10px 22px;border-radius:10px;font-size:12px;font-weight:500;cursor:pointer;background:#2d3561;color:#c9a96e;border:1px solid #c9a96e;font-family:"DM Sans",sans-serif;transition:all .2s}
+.complete-btn:hover{opacity:.85}
+.complete-btn.done{background:rgba(100,160,100,.15);color:#8ec98e;border-color:#8ec98e}
+.lesson-counter{font-family:"Space Mono",monospace;font-size:10px;color:rgba(255,255,255,.25)}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.lesson-wrap{animation:fadeIn .3s ease}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static;height:auto;max-height:40vh;top:0}
+  .lesson-wrap{padding:32px 24px 80px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-brand">
+    <div class="brand-dot">↺</div>
+    <span class="brand-name">Lifewoven</span>
+  </div>
+  <span class="topbar-title">The Reset Protocol</span>
+  <div class="topbar-right">
+    <button class="dl-btn" onclick="dlCourse()" id="dl-btn">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      Download Full Course
+    </button>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-cover">
+      <span class="cover-icon-big">↺</span>
+      <div class="sidebar-brand-tag">Lifewoven</div>
+      <div class="sidebar-type">Audio Scripts PDF · $27</div>
+      <div class="sidebar-title">The Reset Protocol</div>
+      <div class="sidebar-price">45-Minute Guided Script · 7 Steps</div>
+    </div>
+    <div class="progress-wrap">
+      <div class="prog-bar-outer"><div class="prog-bar-inner" id="prog-bar"></div></div>
+      <div class="prog-text" id="prog-text">0 of 2 complete</div>
+    </div>
+    <div class="sidebar-nav" id="sidebar-nav"></div>
+  </aside>
+
+  <main class="content-area" id="content-area">
+    <div class="lesson-wrap" id="lesson-wrap">
+      <div class="lesson-eyebrow" id="eyebrow">Lifewoven · 1 of 2</div>
+      <h1 class="lesson-title-main" id="lesson-title">Loading...</h1>
+      <div class="lesson-body" id="lesson-body"></div>
+      <div class="lesson-footer" id="lesson-footer">
+        <button class="nav-btn" id="prev-btn" onclick="nav(-1)" disabled>← Previous</button>
+        <div class="center-actions">
+          <button class="complete-btn" id="complete-btn" onclick="markDone()">Mark Complete</button>
+          <span class="lesson-counter" id="counter">1 of 2</span>
+        </div>
+        <button class="nav-btn" id="next-btn" onclick="nav(1)">Next →</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const BRAND = "lw";
+const BRAND_NAME = "Lifewoven";
+const COURSE_TITLE = "The Reset Protocol";
+const RAW = "# Reset Audio\n**Guided Audio Script · $27**\n\n---\n\n## Store Card Description\n\nReturning is not failure. It is the practice. Includes the guided audio recording and the complete script. AI-voiced first edition included now — founder-voiced version delivered free when released. Works standalone or alongside Alignment Fundamentals. The Reset Audio is a 45-minute guided experience for the specific moment when alignment feels distant and the path forward is unclear. It meets you where you are — without judgment — and walks you back.\n\n*(Narrated audio; AI-voiced first edition, owner-voiced version coming.)*\n\n---\n\n## Product Page Description\n\nThe Reset pathway is built on a single premise: returning is not failure. It is the practice.\n\nThis guided audio experience walks you through the complete Reset protocol — a 45-minute journey from wherever you are to a place of genuine re-ground. It is not a motivational session. It is not a pep talk. It is a structured, compassionate process for the specific experience of having lost your footing and needing to find it again.\n\nThe Reset Audio is for the moments when you know something has shifted — when the alignment feels distant, when the story has gone dark, when the energy is low and the path forward is unclear. It meets you there, without judgment, and walks you back.\n\nThis is the first edition of the Reset Audio, narrated by an AI voice trained on the Lifewoven tone and pacing. A version narrated by the founder is in production and will be available to all purchasers as a free update when released.\n\n---\n\n## The Seven-Step Reset Protocol\n\nThe script walks through seven complete steps:\n1. Stop\n2. Name It\n3. Release the Judgment\n4. Find the Ground\n5. Return to Identity\n6. Choose the Return\n7. Step Forward\n\n---\n\n## Complete Script\n\n# Reset Audio — The Complete Return Protocol\n\n*[NARRATOR NOTE: This script is 45 minutes. It is the most important and most sensitive piece of audio in this series. The listener has come here because something has gone wrong — a setback, a relapse, a period of drift, a failure of some kind. They are likely carrying shame alongside whatever else brought them here. The tone must be warm without being soft, honest without being harsh, and consistently free of the language of failure. The pace is slower than the morning sessions throughout. Pauses are longer. This is not a pep talk — it is an accompaniment.]*\n\n*[NARRATOR NOTE: Steps are clearly marked. The narrator may pause briefly between steps to allow the listener to settle before the next movement begins.]*\n\n---\n\n## Opening\n\n*[Soft ambient tone — hold for 15 seconds, then fade slowly under voice]*\n\nYou came back.\n\nWhatever brought you here — whatever happened, however long you were away, whatever you are feeling right now about the gap between where you wanted to be and where you actually are — you came back. You are here. That matters more than you currently believe it does.\n\nThis audio is the Reset pathway — a complete guided experience for returning after a setback. It takes approximately 45 minutes. It has seven movements. You do not need to have done anything correctly to use it. You need only to be willing to be honest, and to stay with the practice through all seven steps.\n\n*[PAUSE]*\n\nBefore we begin: find a position that you can hold for the length of this session. Sitting is recommended — something that keeps you present rather than pulling you toward sleep. Feet on the floor. Hands resting open.\n\n*[PAUSE]*\n\nIf you are carrying significant emotion right now — grief, frustration, shame, anger at yourself or at something that happened — that is the right material for this session. Bring it in. All of it. This practice is built specifically for the person who has something real to work with.\n\n*[PAUSE]*\n\nClose your eyes.\n\n*[LONG PAUSE]*\n\nTake one breath — not to clear anything, not to manufacture calm — simply to arrive.\n\n*[PAUSE]*\n\nAnd release.\n\n*[LONG PAUSE]*\n\nThis is where the Reset begins.\n\n*[PAUSE]*\n\n---\n\n## Step One: Stop\n\n*[PAUSE]*\n\nThe first step of the Reset is the simplest and the hardest: stop.\n\nNot stop moving through your day. Stop moving away from what happened. Stop the momentum of reaction, of self-justification, of analysis, of the internal commentary that has been running since the setback occurred.\n\n*[PAUSE]*\n\nJust stop.\n\n*[PAUSE]*\n\nYou have probably been in motion since whatever happened — managing it, thinking about it, feeling about it, perhaps trying to already fix it or understand it or put enough distance between yourself and it that it hurts less. That motion is natural. It is also what this step is gently asking you to pause.\n\n*[PAUSE]*\n\nFor a few minutes, let there simply be stillness.\n\n*[LONG PAUSE]*\n\nYou are not required to do anything with what happened right now. You are not required to have a plan for how to prevent it from happening again. You are not required to feel a particular way about it or to have already forgiven yourself or to be in any condition other than the one you are actually in.\n\n*[PAUSE]*\n\nRight now, in this moment, there is only this: stillness. The breath. The body. The room you are in.\n\n*[PAUSE]*\n\nTake three deliberate breaths — each one an invitation to stop.\n\nBreathe in —\n\n*[PAUSE]*\n\nAnd release. Stopping.\n\n*[PAUSE]*\n\nBreathe in —\n\n*[PAUSE]*\n\nAnd release. Here.\n\n*[PAUSE]*\n\nBreathe in —\n\n*[PAUSE]*\n\nAnd release. Still.\n\n*[LONG PAUSE]*\n\nYou have stopped. This is the beginning of the return.\n\n*[PAUSE]*\n\n---\n\n## Step Two: Name It\n\n*[PAUSE]*\n\nThe second step is honesty — specific, non-dramatic, non-minimizing honesty about what actually happened.\n\n*[PAUSE]*\n\nMost people, in the aftermath of a setback, do one of two things with it: they catastrophize — turning it into evidence of their fundamental brokenness, proof that they cannot be trusted, confirmation of the worst they believe about themselves — or they minimize, rushing past it, deciding it was not that significant, papering over it with forward momentum before they have genuinely seen it.\n\nThis step asks for neither.\n\n*[PAUSE]*\n\nSimply name what happened. In your own mind, in clear language, without drama and without minimizing.\n\n*[PAUSE]*\n\nWhat was the setback? What exactly occurred — what did you do or not do, where did you drift, what promise did you break, what pattern reasserted itself, what relapse happened?\n\n*[LONG PAUSE]*\n\nName it. Give it a specific sentence. Not a story with explanation and context — the simple, honest description of what is true.\n\n*[LONG PAUSE]*\n\nAnd now: how long ago did it happen? How long have you been away from the practice or the intention you are returning to?\n\n*[PAUSE]*\n\nAnd finally: what has that period cost you? Not in catastrophic terms — in real ones. What was the actual effect of the time away or the choice that did not align?\n\n*[LONG PAUSE]*\n\nYou have named it. Not to punish yourself with it — to see it clearly. You cannot work with what you cannot see. Now you can see it.\n\n*[PAUSE]*\n\nTake a breath.\n\n*[PAUSE]*\n\nAnd release.\n\n*[LONG PAUSE]*\n\n---\n\n## Step Three: Release the Judgment\n\n*[PAUSE]*\n\nThis step is where the Reset most diverges from what most people do after a setback.\n\n*[PAUSE]*\n\nThe voice of judgment is almost certainly present right now. The part of you that is cataloguing what this means about you — that you cannot be trusted, that you always do this, that you are someone who starts and never finishes, that you knew this would happen, that the hope you had was foolish.\n\n*[PAUSE]*\n\nThat voice is not telling you the truth. It is telling you a story — a story that feels like truth because it is spoken in your own voice, with access to your own history, in language you recognize. But it is a story, not a fact. And it is a story that, if you continue to believe it, will make the return significantly harder than it needs to be.\n\n*[PAUSE]*\n\nWe are going to address the judgment directly.\n\n*[PAUSE]*\n\nLet the judgment speak. Give it a moment to say what it wants to say — fully, without interruption. Let the critical voice name its case against you.\n\n*[LONG PAUSE]*\n\nYou have heard it. Now examine it.\n\n*[PAUSE]*\n\nIs any of what it said accurate? Perhaps some of it is — and that part is worth taking seriously. The accurate part is information.\n\n*[PAUSE]*\n\nBut is all of it accurate? Is the story that you always do this actually supported by the full evidence of your life? Is the conclusion that you cannot change supported by the evidence of the many times you have? Is the claim that this setback defines you actually true?\n\n*[LONG PAUSE]*\n\nThe judgment is not the truth. It is the harsh interpretation of a person who is hurting, applied to evidence that is real but incomplete.\n\n*[PAUSE]*\n\nWhat would you say to a person you love deeply — someone whose life mattered to you, whose change you believed in — if they came to you with exactly what you just experienced?\n\n*[LONG PAUSE]*\n\nWould you tell them what the voice just told you? Or would you say something truer — something that acknowledged the difficulty without making it into a verdict?\n\n*[PAUSE]*\n\nSay that truer thing to yourself now. In your own mind, quietly.\n\n*[LONG PAUSE]*\n\nTake a breath —\n\n*[PAUSE]*\n\nAnd on the exhale, release the judgment. Not the honest accounting — the verdict. The story that the setback means something definitive and damning about who you are.\n\n*[PAUSE]*\n\nAgain — breathe in —\n\n*[PAUSE]*\n\nAnd release the verdict.\n\n*[LONG PAUSE]*\n\nWhat remains is the actual situation — a person who drifted, who is choosing to return, who is neither broken nor beyond the reach of their own capacity for change.\n\n*[PAUSE]*\n\nThat is you. That is exactly who you are right now.\n\n*[LONG PAUSE]*\n\n---\n\n## Step Four: Find the Ground\n\n*[PAUSE]*\n\nThe fourth step is the most interior.\n\n*[PAUSE]*\n\nBefore the setback. Before the drift. Before whatever period of being away from your practice or your intention or your best self — there was a ground. A place of steadiness inside you that exists independently of the circumstances, independently of whether you have been consistent, independently of what the week has looked like.\n\n*[PAUSE]*\n\nThat ground is still there. It did not leave when you drifted. It does not punish you for the time away. It is simply present — the same ground it was before — waiting for you to return to it.\n\n*[PAUSE]*\n\nWe are going to find it now.\n\n*[PAUSE]*\n\nBegin with the body. Feel your feet on the floor. The specific pressure of your weight against whatever you are sitting on. The temperature of the air where it contacts your skin.\n\n*[LONG PAUSE]*\n\nThese are not spiritual abstractions. They are the specific, physical reality of being present in a body in a room in a moment. That presence — that specific, unambiguous here-ness — is the beginning of the ground.\n\n*[PAUSE]*\n\nNow find the breath. Let it slow. Not controlled — invited. Let the breath become the rhythm of your presence here rather than a background function you have not been noticing.\n\n*[LONG PAUSE]*\n\nBreathe in — slow and full —\n\n*[PAUSE]*\n\nAnd release — complete —\n\n*[PAUSE]*\n\nAgain —\n\n*[PAUSE]*\n\nAnd release —\n\n*[LONG PAUSE]*\n\nBeneath the setback. Beneath the judgment. Beneath the story the week has been producing — what is present that has not actually changed?\n\n*[PAUSE]*\n\nYour desire to live well. The values that made the drift feel like a drift rather than simply a direction. The part of you that knows the difference between who you have been in difficult moments and who you actually are.\n\n*[PAUSE]*\n\nThose have not changed. They are the ground.\n\n*[LONG PAUSE]*\n\nStay here for a moment. Not in analysis — in the ground itself. The quiet, steady presence beneath everything that has happened.\n\n*[LONG PAUSE]*\n\nLet yourself feel that it is still here.\n\n*[LONG PAUSE]*\n\n*[LONG PAUSE]*\n\nYou have found the ground. This is where the return becomes possible.\n\n*[PAUSE]*\n\n---\n\n## Step Five: Return to Identity\n\n*[PAUSE]*\n\nFrom the ground, we return to the question of who you are.\n\n*[PAUSE]*\n\nNot who you have been this week or this month. Not who the setback would suggest you are. Who you actually are — the identity you are building, the values you have committed to, the person you have named yourself as becoming.\n\n*[PAUSE]*\n\nRecall the identity statement that is most important to you right now. The *I am someone who...* that represents the direction you have been moving, the person you have been becoming through the accumulation of your choices and your practices.\n\n*[LONG PAUSE]*\n\nSay it quietly in your own mind.\n\n*[PAUSE]*\n\nNow ask: did the setback erase that identity? Did the drift make it untrue? Or did it simply reveal that the identity is not yet fully automatic — that it is still being built, still being chosen, still requiring deliberate engagement rather than unconscious habit?\n\n*[PAUSE]*\n\nIdentity is not erased by a setback. It is tested by one. And a tested identity that chooses to return is a stronger identity than one that has never been tested.\n\n*[LONG PAUSE]*\n\nThe person who chooses to be here right now, doing this work of honest return — that person is demonstrating the identity, not abandoning it.\n\n*[PAUSE]*\n\nYou are someone who comes back. This moment is the proof.\n\n*[LONG PAUSE]*\n\nLet that land. Not as comfort — as fact.\n\n*[LONG PAUSE]*\n\n---\n\n## Step Six: Choose the Return\n\n*[PAUSE]*\n\nThe sixth step is the decision.\n\n*[PAUSE]*\n\nEverything in this practice up to this point has been preparation — honest naming, released judgment, found ground, recovered identity. All of it has been moving toward this: the deliberate, eyes-open choice to return.\n\n*[PAUSE]*\n\nNot the resolution never to drift again. That resolution does not hold because it asks for a perfection that no human life produces.\n\n*[PAUSE]*\n\nThe choice of the return is simpler and more durable: I am choosing, right now, in full awareness of what happened and without pretending it did not happen, to begin again.\n\n*[PAUSE]*\n\nNot because it was easy. Because it matters.\n\nNot because I feel ready. Because I have decided.\n\nNot because the circumstances are right. Because I am the kind of person who comes back when the circumstances are difficult.\n\n*[PAUSE]*\n\nTake a full breath in —\n\n*[PAUSE]*\n\nAnd hold it for a moment —\n\n*[PAUSE]*\n\nAnd release — let the exhale be the choice. The decision landing in the body, not just in the mind.\n\n*[PAUSE]*\n\nThe return has been chosen.\n\n*[LONG PAUSE]*\n\nLet's stay here for a moment before the final step — in the quiet of the decision that has just been made. This is not a small thing. This is the most important choice available to a person who has drifted: the choice to come back.\n\n*[LONG PAUSE]*\n\nYou have made it.\n\n*[LONG PAUSE]*\n\n---\n\n## Step Seven: Step Forward\n\n*[PAUSE]*\n\nThe final step is the smallest and the most specific.\n\n*[PAUSE]*\n\nEvery return requires a first step. Not a plan — a single, concrete, specific action that can happen today, in the hours remaining in this day, that expresses the choice you just made.\n\n*[PAUSE]*\n\nIt does not need to be large. It needs to be real and it needs to be specific.\n\n*[PAUSE]*\n\nIf you are returning to a daily practice you have abandoned — the first step is the minimum viable version of that practice, today. Not the full version. The floor. The two-minute version. The version so small it is almost impossible to decline.\n\n*[PAUSE]*\n\nIf you are returning from a relapse into a pattern you have been working to change — the first step is not the resolution to never do it again. The first step is one specific choice, today, that aligns with who you are rather than with the pattern.\n\n*[PAUSE]*\n\nIf you are returning from a period of drift without a clear catalyst — the first step is the smallest possible act of self-respect. One thing, today, that says: I am treating my own life as worth tending.\n\n*[LONG PAUSE]*\n\nName the first step. Specific. Today. Possible.\n\n*[LONG PAUSE]*\n\nThat is the step forward. Not the full return — the first step of it. The rest of the return is made of future steps that you will take when those future days arrive. Today, there is only today's step.\n\n*[PAUSE]*\n\nYou have named it. Now commit to it — quietly, in your own mind, in the same tone you used when you made the choice in Step Six. Not performance. Decision.\n\n*[LONG PAUSE]*\n\n---\n\n## Closing — The Affirmation of Return\n\n*[PAUSE]*\n\nBefore we close, I want to offer you the affirmation at the center of this pathway. Read it — or receive it — in your own mind as I speak it.\n\n*[PAUSE]*\n\nI am not broken. I am returning.\n\n*[PAUSE]*\n\nEvery reset is a choice to begin again — and that choice is strength.\n\n*[PAUSE]*\n\nI am not defined by the drift. I am defined by the return.\n\n*[PAUSE]*\n\nI have been here before. I know this ground. I know how to come back.\n\n*[PAUSE]*\n\nAnd I am coming back now.\n\n*[LONG PAUSE]*\n\n*[LONG PAUSE]*\n\n---\n\n*[PAUSE]*\n\nYou have moved through all seven steps of the Reset.\n\nYou stopped. You named what happened with honesty and without drama. You released the judgment — the verdict that was not the whole truth. You found the ground that was there before the setback and is still there now. You returned to the identity you are building — and recognized that the return itself is evidence of it. You made the choice — eyes open, specific, decided. And you named the first step forward.\n\n*[PAUSE]*\n\nThat is the complete Reset. Not a shortcut to feeling better. Not a way of erasing what happened. A genuine, honest, structured practice for coming back — with your dignity intact, with your identity strengthened rather than diminished, and with one specific next step in your hands.\n\n*[PAUSE]*\n\nThe return does not announce itself. It does not look impressive from the outside. It is quiet and specific and it belongs entirely to you.\n\n*[PAUSE]*\n\nTake one final breath — full, complete, and belonging to the person who just chose to come back —\n\n*[PAUSE]*\n\nAnd release.\n\n*[PAUSE]*\n\nWhen you are ready, open your eyes.\n\nTake the first step.\n\n*[Soft ambient tone — hold for 15 seconds, then fade slowly to silence]*\n\n---\n\n*[END OF RESET AUDIO — approximately 45 minutes]*\n\n*The Reset pathway is the most important practice on the Lifewoven platform. Return to it whenever you need it. There is no limit on how many times you can come back.*";
+const LESSONS = [{"title": "Introduction & Overview", "body": "# Reset Audio\n**Audio Scripts PDF · $27**\n\n---\n\n## Store Card Description\n\nReturning is not failure. It is the practice. The Reset Audio is a 45-minute guided experience for the specific moment when alignment feels distant and the path forward is unclear. It meets you where you are — without judgment — and walks you back.\n\n*(Narrated audio; AI-voiced first edition, owner-voiced version coming.)*\n\n---\n\n## Product Page Description\n\nThe Reset pathway is built on a single premise: returning is not failure. It is the practice.\n\nThis guided audio experience walks you through the complete Reset protocol — a 45-minute journey from wherever you are to a place of genuine re-ground. It is not a motivational session. It is not a pep talk. It is a structured, compassionate process for the specific experience of having lost your footing and needing to find it again.\n\nThe Reset Audio is for the moments when you know something has shifted — when the alignment feels distant, when the story has gone dark, when the energy is low and the path forward is unclear. It meets you there, without judgment, and walks you back.\n\nThis is the first edition of the Reset Audio, narrated by an AI voice trained on the Lifewoven tone and pacing. A version narrated by the founder is in production and will be available to all purchasers as a free update when released.\n\n---\n\n## The Seven-Step Reset Protocol\n\nThe script walks through seven complete steps:\n1. Stop\n2. Name It\n3. Release the Judgment\n4. Find the Ground\n5. Return to Identity\n6. Choose the Return\n7. Step Forward\n\n---\n\n## Complete Script\n\n# Reset Audio — The Complete Return Protocol\n\n*[NARRATOR NOTE: This script is 45 minutes. It is the most important and most sensitive piece of audio in this series. The listener has come here because something has gone wrong — a setback, a relapse, a period of drift, a failure of some kind. They are likely carrying shame alongside whatever else brought them here. The tone must be warm without being soft, honest without being harsh, and consistently free of the language of failure. The pace is slower than the morning sessions throughout. Pauses are longer. This is not a pep talk — it is an accompaniment.]*\n\n*[NARRATOR NOTE: Steps are clearly marked. The narrator may pause briefly between steps to allow the listener to settle before the next movement begins.]*\n\n---", "section": "Overview"}, {"title": "Opening", "body": "## Opening\n\n*[Soft ambient tone — hold for 15 seconds, then fade slowly under voice]*\n\nYou came back.\n\nWhatever brought you here — whatever happened, however long you were away, whatever you are feeling right now about the gap between where you wanted to be and where you actually are — you came back. You are here. That matters more than you currently believe it does.\n\nThis audio is the Reset pathway — a complete guided experience for returning after a setback. It takes approximately 45 minutes. It has seven movements. You do not need to have done anything correctly to use it. You need only to be willing to be honest, and to stay with the practice through all seven steps.\n\n*[PAUSE]*\n\nBefore we begin: find a position that you can hold for the length of this session. Sitting is recommended — something that keeps you present rather than pulling you toward sleep. Feet on the floor. Hands resting open.\n\n*[PAUSE]*\n\nIf you are carrying significant emotion right now — grief, frustration, shame, anger at yourself or at something that happened — that is the right material for this session. Bring it in. All of it. This practice is built specifically for the person who has something real to work with.\n\n*[PAUSE]*\n\nClose your eyes.\n\n*[LONG PAUSE]*\n\nTake one breath — not to clear anything, not to manufacture calm — simply to arrive.\n\n*[PAUSE]*\n\nAnd release.\n\n*[LONG PAUSE]*\n\nThis is where the Reset begins.\n\n*[PAUSE]*\n\n---\n\n## Step One: Stop\n\n*[PAUSE]*\n\nThe first step of the Reset is the simplest and the hardest: stop.\n\nNot stop moving through your day. Stop moving away from what happened. Stop the momentum of reaction, of self-justification, of analysis, of the internal commentary that has been running since the setback occurred.\n\n*[PAUSE]*\n\nJust stop.\n\n*[PAUSE]*\n\nYou have probably been in motion since whatever happened — managing it, thinking about it, feeling about it, perhaps trying to already fix it or understand it or put enough distance between yourself and it that it hurts less. That motion is natural. It is also what this step is gently asking you to pause.\n\n*[PAUSE]*\n\nFor a few minutes, let there simply be stillness.\n\n*[LONG PAUSE]*\n\nYou are not required to do anything with what happened right now. You are not required to have a plan for how to prevent it from happening again. You are not required to feel a particular way about it or to have already forgiven yourself or to be in any condition other than the one you are actually in.\n\n*[PAUSE]*\n\nRight now, in this moment, there is only this: stillness. The breath. The body. The room you are in.\n\n*[PAUSE]*\n\nTake three deliberate breaths — each one an invitation to stop.\n\nBreathe in —\n\n*[PAUSE]*\n\nAnd release. Stopping.\n\n*[PAUSE]*\n\nBreathe in —\n\n*[PAUSE]*\n\nAnd release. Here.\n\n*[PAUSE]*\n\nBreathe in —\n\n*[PAUSE]*\n\nAnd release. Still.\n\n*[LONG PAUSE]*\n\nYou have stopped. This is the beginning of the return.\n\n*[PAUSE]*\n\n---\n\n## Step Two: Name It\n\n*[PAUSE]*\n\nThe second step is honesty — specific, non-dramatic, non-minimizing honesty about what actually happened.\n\n*[PAUSE]*\n\nMost people, in the aftermath of a setback, do one of two things with it: they catastrophize — turning it into evidence of their fundamental brokenness, proof that they cannot be trusted, confirmation of the worst they believe about themselves — or they minimize, rushing past it, deciding it was not that significant, papering over it with forward momentum before they have genuinely seen it.\n\nThis step asks for neither.\n\n*[PAUSE]*\n\nSimply name what happened. In your own mind, in clear language, without drama and without minimizing.\n\n*[PAUSE]*\n\nWhat was the setback? What exactly occurred — what did you do or not do, where did you drift, what promise did you break, what pattern reasserted itself, what relapse happened?\n\n*[LONG PAUSE]*\n\nName it. Give it a specific sentence. Not a story with explanation and context — the simple, honest description of what is true.\n\n*[LONG PAUSE]*\n\nAnd now: how long ago did it happen? How long have you been away from the practice or the intention you are returning to?\n\n*[PAUSE]*\n\nAnd finally: what has that period cost you? Not in catastrophic terms — in real ones. What was the actual effect of the time away or the choice that did not align?\n\n*[LONG PAUSE]*\n\nYou have named it. Not to punish yourself with it — to see it clearly. You cannot work with what you cannot see. Now you can see it.\n\n*[PAUSE]*\n\nTake a breath.\n\n*[PAUSE]*\n\nAnd release.\n\n*[LONG PAUSE]*\n\n---\n\n## Step Three: Release the Judgment\n\n*[PAUSE]*\n\nThis step is where the Reset most diverges from what most people do after a setback.\n\n*[PAUSE]*\n\nThe voice of judgment is almost certainly present right now. The part of you that is cataloguing what this means about you — that you cannot be trusted, that you always do this, that you are someone who starts and never finishes, that you knew this would happen, that the hope you had was foolish.\n\n*[PAUSE]*\n\nThat voice is not telling you the truth. It is telling you a story — a story that feels like truth because it is spoken in your own voice, with access to your own history, in language you recognize. But it is a story, not a fact. And it is a story that, if you continue to believe it, will make the return significantly harder than it needs to be.\n\n*[PAUSE]*\n\nWe are going to address the judgment directly.\n\n*[PAUSE]*\n\nLet the judgment speak. Give it a moment to say what it wants to say — fully, without interruption. Let the critical voice name its case against you.\n\n*[LONG PAUSE]*\n\nYou have heard it. Now examine it.\n\n*[PAUSE]*\n\nIs any of what it said accurate? Perhaps some of it is — and that part is worth taking seriously. The accurate part is information.\n\n*[PAUSE]*\n\nBut is all of it accurate? Is the story that you always do this actually supported by the full evidence of your life? Is the conclusion that you cannot change supported by the evidence of the many times you have? Is the claim that this setback defines you actually true?\n\n*[LONG PAUSE]*\n\nThe judgment is not the truth. It is the harsh interpretation of a person who is hurting, applied to evidence that is real but incomplete.\n\n*[PAUSE]*\n\nWhat would you say to a person you love deeply — someone whose life mattered to you, whose change you believed in — if they came to you with exactly what you just experienced?\n\n*[LONG PAUSE]*\n\nWould you tell them what the voice just told you? Or would you say something truer — something that acknowledged the difficulty without making it into a verdict?\n\n*[PAUSE]*\n\nSay that truer thing to yourself now. In your own mind, quietly.\n\n*[LONG PAUSE]*\n\nTake a breath —\n\n*[PAUSE]*\n\nAnd on the exhale, release the judgment. Not the honest accounting — the verdict. The story that the setback means something definitive and damning about who you are.\n\n*[PAUSE]*\n\nAgain — breathe in —\n\n*[PAUSE]*\n\nAnd release the verdict.\n\n*[LONG PAUSE]*\n\nWhat remains is the actual situation — a person who drifted, who is choosing to return, who is neither broken nor beyond the reach of their own capacity for change.\n\n*[PAUSE]*\n\nThat is you. That is exactly who you are right now.\n\n*[LONG PAUSE]*\n\n---\n\n## Step Four: Find the Ground\n\n*[PAUSE]*\n\nThe fourth step is the most interior.\n\n*[PAUSE]*\n\nBefore the setback. Before the drift. Before whatever period of being away from your practice or your intention or your best self — there was a ground. A place of steadiness inside you that exists independently of the circumstances, independently of whether you have been consistent, independently of what the week has looked like.\n\n*[PAUSE]*\n\nThat ground is still there. It did not leave when you drifted. It does not punish you for the time away. It is simply present — the same ground it was before — waiting for you to return to it.\n\n*[PAUSE]*\n\nWe are going to find it now.\n\n*[PAUSE]*\n\nBegin with the body. Feel your feet on the floor. The specific pressure of your weight against whatever you are sitting on. The temperature of the air where it contacts your skin.\n\n*[LONG PAUSE]*\n\nThese are not spiritual abstractions. They are the specific, physical reality of being present in a body in a room in a moment. That presence — that specific, unambiguous here-ness — is the beginning of the ground.\n\n*[PAUSE]*\n\nNow find the breath. Let it slow. Not controlled — invited. Let the breath become the rhythm of your presence here rather than a background function you have not been noticing.\n\n*[LONG PAUSE]*\n\nBreathe in — slow and full —\n\n*[PAUSE]*\n\nAnd release — complete —\n\n*[PAUSE]*\n\nAgain —\n\n*[PAUSE]*\n\nAnd release —\n\n*[LONG PAUSE]*\n\nBeneath the setback. Beneath the judgment. Beneath the story the week has been producing — what is present that has not actually changed?\n\n*[PAUSE]*\n\nYour desire to live well. The values that made the drift feel like a drift rather than simply a direction. The part of you that knows the difference between who you have been in difficult moments and who you actually are.\n\n*[PAUSE]*\n\nThose have not changed. They are the ground.\n\n*[LONG PAUSE]*\n\nStay here for a moment. Not in analysis — in the ground itself. The quiet, steady presence beneath everything that has happened.\n\n*[LONG PAUSE]*\n\nLet yourself feel that it is still here.\n\n*[LONG PAUSE]*\n\n*[LONG PAUSE]*\n\nYou have found the ground. This is where the return becomes possible.\n\n*[PAUSE]*\n\n---\n\n## Step Five: Return to Identity\n\n*[PAUSE]*\n\nFrom the ground, we return to the question of who you are.\n\n*[PAUSE]*\n\nNot who you have been this week or this month. Not who the setback would suggest you are. Who you actually are — the identity you are building, the values you have committed to, the person you have named yourself as becoming.\n\n*[PAUSE]*\n\nRecall the identity statement that is most important to you right now. The *I am someone who...* that represents the direction you have been moving, the person you have been becoming through the accumulation of your choices and your practices.\n\n*[LONG PAUSE]*\n\nSay it quietly in your own mind.\n\n*[PAUSE]*\n\nNow ask: did the setback erase that identity? Did the drift make it untrue? Or did it simply reveal that the identity is not yet fully automatic — that it is still being built, still being chosen, still requiring deliberate engagement rather than unconscious habit?\n\n*[PAUSE]*\n\nIdentity is not erased by a setback. It is tested by one. And a tested identity that chooses to return is a stronger identity than one that has never been tested.\n\n*[LONG PAUSE]*\n\nThe person who chooses to be here right now, doing this work of honest return — that person is demonstrating the identity, not abandoning it.\n\n*[PAUSE]*\n\nYou are someone who comes back. This moment is the proof.\n\n*[LONG PAUSE]*\n\nLet that land. Not as comfort — as fact.\n\n*[LONG PAUSE]*\n\n---\n\n## Step Six: Choose the Return\n\n*[PAUSE]*\n\nThe sixth step is the decision.\n\n*[PAUSE]*\n\nEverything in this practice up to this point has been preparation — honest naming, released judgment, found ground, recovered identity. All of it has been moving toward this: the deliberate, eyes-open choice to return.\n\n*[PAUSE]*\n\nNot the resolution never to drift again. That resolution does not hold because it asks for a perfection that no human life produces.\n\n*[PAUSE]*\n\nThe choice of the return is simpler and more durable: I am choosing, right now, in full awareness of what happened and without pretending it did not happen, to begin again.\n\n*[PAUSE]*\n\nNot because it was easy. Because it matters.\n\nNot because I feel ready. Because I have decided.\n\nNot because the circumstances are right. Because I am the kind of person who comes back when the circumstances are difficult.\n\n*[PAUSE]*\n\nTake a full breath in —\n\n*[PAUSE]*\n\nAnd hold it for a moment —\n\n*[PAUSE]*\n\nAnd release — let the exhale be the choice. The decision landing in the body, not just in the mind.\n\n*[PAUSE]*\n\nThe return has been chosen.\n\n*[LONG PAUSE]*\n\nLet's stay here for a moment before the final step — in the quiet of the decision that has just been made. This is not a small thing. This is the most important choice available to a person who has drifted: the choice to come back.\n\n*[LONG PAUSE]*\n\nYou have made it.\n\n*[LONG PAUSE]*\n\n---\n\n## Step Seven: Step Forward\n\n*[PAUSE]*\n\nThe final step is the smallest and the most specific.\n\n*[PAUSE]*\n\nEvery return requires a first step. Not a plan — a single, concrete, specific action that can happen today, in the hours remaining in this day, that expresses the choice you just made.\n\n*[PAUSE]*\n\nIt does not need to be large. It needs to be real and it needs to be specific.\n\n*[PAUSE]*\n\nIf you are returning to a daily practice you have abandoned — the first step is the minimum viable version of that practice, today. Not the full version. The floor. The two-minute version. The version so small it is almost impossible to decline.\n\n*[PAUSE]*\n\nIf you are returning from a relapse into a pattern you have been working to change — the first step is not the resolution to never do it again. The first step is one specific choice, today, that aligns with who you are rather than with the pattern.\n\n*[PAUSE]*\n\nIf you are returning from a period of drift without a clear catalyst — the first step is the smallest possible act of self-respect. One thing, today, that says: I am treating my own life as worth tending.\n\n*[LONG PAUSE]*\n\nName the first step. Specific. Today. Possible.\n\n*[LONG PAUSE]*\n\nThat is the step forward. Not the full return — the first step of it. The rest of the return is made of future steps that you will take when those future days arrive. Today, there is only today's step.\n\n*[PAUSE]*\n\nYou have named it. Now commit to it — quietly, in your own mind, in the same tone you used when you made the choice in Step Six. Not performance. Decision.\n\n*[LONG PAUSE]*\n\n---\n\n## Closing — The Affirmation of Return\n\n*[PAUSE]*\n\nBefore we close, I want to offer you the affirmation at the center of this pathway. Read it — or receive it — in your own mind as I speak it.\n\n*[PAUSE]*\n\nI am not broken. I am returning.\n\n*[PAUSE]*\n\nEvery reset is a choice to begin again — and that choice is strength.\n\n*[PAUSE]*\n\nI am not defined by the drift. I am defined by the return.\n\n*[PAUSE]*\n\nI have been here before. I know this ground. I know how to come back.\n\n*[PAUSE]*\n\nAnd I am coming back now.\n\n*[LONG PAUSE]*\n\n*[LONG PAUSE]*\n\n---\n\n*[PAUSE]*\n\nYou have moved through all seven steps of the Reset.\n\nYou stopped. You named what happened with honesty and without drama. You released the judgment — the verdict that was not the whole truth. You found the ground that was there before the setback and is still there now. You returned to the identity you are building — and recognized that the return itself is evidence of it. You made the choice — eyes open, specific, decided. And you named the first step forward.\n\n*[PAUSE]*\n\nThat is the complete Reset. Not a shortcut to feeling better. Not a way of erasing what happened. A genuine, honest, structured practice for coming back — with your dignity intact, with your identity strengthened rather than diminished, and with one specific next step in your hands.\n\n*[PAUSE]*\n\nThe return does not announce itself. It does not look impressive from the outside. It is quiet and specific and it belongs entirely to you.\n\n*[PAUSE]*\n\nTake one final breath — full, complete, and belonging to the person who just chose to come back —\n\n*[PAUSE]*\n\nAnd release.\n\n*[PAUSE]*\n\nWhen you are ready, open your eyes.\n\nTake the first step.\n\n*[Soft ambient tone — hold for 15 seconds, then fade slowly to silence]*\n\n---\n\n*[END OF RESET AUDIO — approximately 45 minutes]*\n\n*The Reset pathway is the most important practice on the Lifewoven platform. Return to it whenever you need it. There is no limit on how many times you can come back.*", "section": ""}];
+let cur = 0;
+const done = new Set();
+
+const CORRECTED_CARD = `# The Reset Protocol
+**Audio Scripts PDF · $27**
+
+---
+
+## Store Card Description
+
+Returning is not failure. It is the practice.
+
+The Reset Protocol is a 45-minute guided script for the specific moment when alignment feels distant and the path forward is unclear. It meets you where you are — without judgment — and walks you back through seven movements: Stop, Name It, Release the Judgment, Find the Ground, Return to Identity, Choose the Return, and Step Forward.
+
+This product contains the complete narrator script, pacing notes, pause markers, and sound-cue directions. No recording is included.
+
+---
+
+## Product Page Description
+
+The Reset pathway is built on a single premise: returning is not failure. It is the practice.
+
+This guided experience walks you through the complete Reset protocol — a 45-minute journey from wherever you are to a place of genuine re-ground. It is not a motivational session. It is not a pep talk. It is a structured, compassionate process for the specific experience of having lost your footing and needing to find it again.
+
+The Reset Protocol is for the moments when you know something has shifted — when the alignment feels distant, when the story has gone dark, when the energy is low and the path forward is unclear. It meets you there, without judgment, and walks you back.
+
+---
+
+## The Seven-Step Reset Protocol
+
+The script walks through seven complete steps:
+1. Stop
+2. Name It
+3. Release the Judgment
+4. Find the Ground
+5. Return to Identity
+6. Choose the Return
+7. Step Forward
+
+---
+
+## Complete Script`;
+
+LESSONS[0] = {
+  ...LESSONS[0],
+  title: "Introduction & Overview",
+  body: CORRECTED_CARD,
+  section: "Overview",
+};
+
+function mdToHtml(md){
+  if(!md)return"";
+  let h=md;
+  h=h.replace(/&(?!amp;|lt;|gt;|quot;|#)/g,"&amp;");
+  h=h.replace(/```[\s\S]*?```/g,m=>{const c=m.replace(/^```\w*\n?/,"").replace(/```$/,"");return`<pre><code>${c.replace(/&amp;/g,"&")}</code></pre>`});
+  h=h.replace(/`([^`]+)`/g,"<code>$1</code>");
+  h=h.replace(/^\|(.+)\|\s*\n\|[-| :]+\|\s*\n((?:\|.+\|\s*\n?)*)/gm,(m,head,body)=>{
+    const ths=head.split("|").filter(c=>c.trim()).map(c=>`<th>${c.trim()}</th>`).join("");
+    const rows=body.trim().split("\n").map(r=>{const tds=r.split("|").filter(c=>c.trim()).map(c=>`<td>${c.trim()}</td>`).join("");return`<tr>${tds}</tr>`}).join("");
+    return`<table><thead><tr>${ths}</tr></thead><tbody>${rows}</tbody></table>`;
+  });
+  h=h.replace(/^####\s(.+)$/gm,"<h4>$1</h4>");
+  h=h.replace(/^###\s(.+)$/gm,"<h3>$1</h3>");
+  h=h.replace(/^##\s(.+)$/gm,"<h2>$1</h2>");
+  h=h.replace(/^#\s(.+)$/gm,"<h1>$1</h1>");
+  h=h.replace(/^---+$/gm,"<hr>");
+  h=h.replace(/\*\*\*(.+?)\*\*\*/g,"<strong><em>$1</em></strong>");
+  h=h.replace(/\*\*(.+?)\*\*/g,"<strong>$1</strong>");
+  h=h.replace(/\*([^*\n]+)\*/g,"<em>$1</em>");
+  h=h.replace(/^>\s(.+)$/gm,"<blockquote>$1</blockquote>");
+  h=h.replace(/^-\s\[\s\]\s(.+)$/gm,"<li>☐ $1</li>");
+  h=h.replace(/^-\s\[x\]\s(.+)$/gm,"<li>☑ $1</li>");
+  h=h.replace(/^[-*]\s(.+)$/gm,"<li>$1</li>");
+  h=h.replace(/^\d+\.\s(.+)$/gm,"<li>$1</li>");
+  h=h.replace(/(<li>[\s\S]*?<\/li>\n?)+/g,m=>`<ul>${m}</ul>`);
+  const blocks=h.split(/\n\n+/);
+  h=blocks.map(b=>{
+    b=b.trim();if(!b)return"";
+    if(/^<(h[1-6]|ul|ol|table|pre|blockquote|hr)/.test(b))return b;
+    if(/<\/(h[1-6]|ul|ol|table|pre|blockquote)>$/.test(b))return b;
+    if(b.startsWith("<hr>"))return b;
+    return`<p>${b.replace(/\n/g,"<br>")}</p>`;
+  }).join("\n");
+  return h;
+}
+
+function buildNav(){
+  const nav=document.getElementById("sidebar-nav");
+  let html="";
+  let lastSection="";
+  LESSONS.forEach((l,i)=>{
+    if(l.section&&l.section!==lastSection){
+      html+=`<div class="nav-section-label">${l.section}</div>`;
+      lastSection=l.section;
+    }
+    const active=i===cur?"active":"";
+    const isDone=done.has(i)?"done":"";
+    html+=`<div class="nav-item ${active} ${isDone}" id="ni${i}" onclick="show(${i})"><span class="nav-num">${String(i+1).padStart(2,"0")}</span>${l.title}</div>`;
+  });
+  nav.innerHTML=html;
+}
+
+function show(idx){
+  if(idx<0||idx>=LESSONS.length)return;
+  cur=idx;
+  const l=LESSONS[idx];
+  document.getElementById("eyebrow").textContent=`${BRAND_NAME} · ${idx+1} of ${LESSONS.length}`;
+  document.getElementById("lesson-title").textContent=l.title;
+  document.getElementById("lesson-body").innerHTML=mdToHtml(l.body);
+  document.getElementById("counter").textContent=`${idx+1} of ${LESSONS.length}`;
+  document.getElementById("prev-btn").disabled=idx===0;
+  document.getElementById("next-btn").disabled=idx===LESSONS.length-1;
+  const cb=document.getElementById("complete-btn");
+  cb.className=done.has(idx)?"complete-btn done":"complete-btn";
+  cb.textContent=done.has(idx)?"✓ Completed":"Mark Complete";
+  buildNav();
+  document.getElementById("content-area").scrollTo({top:0,behavior:"smooth"});
+  const ni=document.getElementById("ni"+idx);
+  if(ni)ni.scrollIntoView({block:"nearest",behavior:"smooth"});
+  updateProg();
+}
+
+function nav(dir){show(cur+dir)}
+
+function markDone(){
+  done.add(cur);
+  show(cur);
+  if(cur<LESSONS.length-1)setTimeout(()=>show(cur+1),600);
+}
+
+function updateProg(){
+  const pct=Math.round(done.size/LESSONS.length*100);
+  document.getElementById("prog-bar").style.width=pct+"%";
+  document.getElementById("prog-text").textContent=`${done.size} of ${LESSONS.length} complete`;
+}
+
+function dlCourse(){
+  const correctedSource=LESSONS.map(lesson=>lesson.body).join("\n\n---\n\n");
+  const blob=new Blob([correctedSource],{type:"text/markdown;charset=utf-8"});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement("a");
+  a.href=url;a.download="the-reset-protocol.md";a.click();
+  URL.revokeObjectURL(url);
+  const btn=document.getElementById("dl-btn");
+  const orig=btn.innerHTML;
+  btn.innerHTML="✓ Downloaded!";
+  setTimeout(()=>btn.innerHTML=orig,2000);
+}
+
+document.addEventListener("keydown",e=>{
+  if(e.key==="ArrowRight"||e.key==="ArrowDown")nav(1);
+  if(e.key==="ArrowLeft"||e.key==="ArrowUp")nav(-1);
+  if(e.key==="Enter")markDone();
+});
+
+buildNav();
+show(0);
+</script>
+</body>
+</html>

@@ -6,18 +6,17 @@
  *
  * Positioned between SocialProofSection (The Companion Book) and PricingSection (Founding Members)
  * 9-product grid with "Included with Oracle" badges
- * Two CTAs: "Get all of it with Oracle" + "Browse standalone"
+ * One CTA: "Get all of it with Oracle"
  * Closing footnote about independent creation
  */
 
 import { useReveal } from "../../hooks/useReveal";
-import { SHOP_URL } from "../../config";
 
 const products = [
   {
     icon: "📐",
     title: "Alignment Fundamentals",
-    description: "The 5S Framework in practice — working across all six dimensions. Six weeks, one coherent life.",
+    description: "The 5S Framework in practice — working across its five dimensions. Six weeks, one coherent life.",
     format: "6-week course",
     price: "$97",
   },
@@ -124,8 +123,7 @@ export default function LibrarySection() {
             }}
           >
             Lifewoven members at the Oracle tier get the complete Library included — every course, every
-            workbook, every guided script, and the Wisdom Card Deck. Combined standalone retail: $607.
-            You can also buy any product standalone. Seekers save 30%. Explorers pay full price.
+            workbook, every guided script, and the Wisdom Card Deck. Combined retail value: $607, included.
           </p>
         </div>
 
@@ -223,7 +221,7 @@ export default function LibrarySection() {
                     textDecoration: "line-through",
                   }}
                 >
-                  {product.price} standalone
+                  {product.price} retail value
                 </span>
                 <span
                   style={{
@@ -246,7 +244,7 @@ export default function LibrarySection() {
           ))}
         </div>
 
-        {/* ── Two CTAs ── */}
+        {/* ── Oracle CTA ── */}
         <div
           style={{
             display: "flex",
@@ -285,36 +283,6 @@ export default function LibrarySection() {
             }}
           >
             Get all of it with Oracle →
-          </a>
-          <a
-            href={SHOP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.4rem",
-              padding: "0.85rem 1.75rem",
-              borderRadius: "9999px",
-              border: "1px solid rgba(212,175,100,0.4)",
-              color: "rgba(212,175,100,0.85)",
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 600,
-              fontSize: "14px",
-              letterSpacing: "0.04em",
-              textDecoration: "none",
-              transition: "border-color 0.2s, color 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#D4AF64";
-              (e.currentTarget as HTMLElement).style.color = "#D4AF64";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,100,0.4)";
-              (e.currentTarget as HTMLElement).style.color = "rgba(212,175,100,0.85)";
-            }}
-          >
-            Browse standalone →
           </a>
         </div>
 

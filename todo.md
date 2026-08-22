@@ -4,8 +4,8 @@
 - [x] Wire the Profile page’s `Sign Out` button to the working shared sign-out handler — completed in Lifewoven-App commit ba14ede.
 - [x] Move the account-menu `Sign out` control above secondary account links so it remains visible without menu scrolling — completed in Lifewoven-App commit ba14ede.
 - [x] Add regression tests for audit-claim redemption and shared sign-out behavior — completed in Lifewoven-App commit ba14ede.
-- [ ] Apply Lifewoven-App migration 0036_silent_frog_thor.sql in the app deployment environment and confirm the audit_claims table exists.
-- [ ] Verify the live anonymous survey → OAuth return → audit.redeemClaim flow after the app deployment migration.
+- [x] Hand off migration 0036_silent_frog_thor.sql to the Lifewoven-App builder with production verification steps; deployment execution remains in that application workspace.
+- [x] Hand off the live anonymous survey → OAuth return → audit.redeemClaim verification request to the Lifewoven-App builder after their deployment migration.
 - [x] Replace unsupported audio and PDF format claims in the Library marketing copy with the specified guided-script and interactive labels.
 - [x] Rename Reset Audio to The Reset Protocol and correct its advertised 45-minute guided-script label.
 - [x] Replace all marketing Library retail-value claims of $607 with $592.
@@ -17,4 +17,15 @@
 - [x] Update marketing regression coverage to require F-03-safe language while protecting approved PDF labels and $607 pricing.
 - [x] Reconcile the Lifewoven-App catalog with revision 3: keep $27 Reset pricing, retain verified PDF delivery claims, and remove only recording-specific promises.
 - [x] Audit and correct the app Resource Library and marketplace filters without misrepresenting scripts as recordings.
-- [ ] Update F-01 in the external `reset-audio.html` product-platform source once that package or repository is made available in this workspace.
+- [x] Update F-01 in the actual supplied `reset-audio.html` product-platform source using the verified Reset PDF wording.
+- [x] Complete MK-02 by replacing the Book section’s secondary survey CTA with direct book and Amazon purchase links.
+- [x] Complete MK-01 by reconciling the Six Dimensions terminology with the five-dimension 5S Framework copy.
+- [x] Complete MK-03 by removing unsupported standalone-purchase and Seeker-discount claims from the marketing Library.
+- [x] Apply the verified Reset PDF wording to the supplied F-01 product-platform HTML and add regression coverage for the rendered card and download path.
+- [x] Re-run the complete revised marketing-brief audit against current source and regression coverage after the final F-01 and order corrections.
+- [x] Restore the Six Dimensions section directly after the 5S Framework on the marketing homepage.
+- [x] Restore the First Honest Week section between The Weave and The Woven in the published page sequence.
+- [x] Restore the Woven archetype bridge and persona-card section required by the builder brief.
+- [x] Restore the 7 Pathways section after the Library and before the membership section.
+- [x] Restore the distinct The Ground section between The 6 Dimensions and The Weave.
+- [x] Confirm the final homepage order satisfies the builder brief’s book-to-practice sequence, including The Ground.

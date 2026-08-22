@@ -27,13 +27,21 @@ import Nav from "../components/Nav";
 import ParticleField from "../components/ParticleField";
 import HeroSection from "../components/sections/HeroSection";
 import FiveThreadsSection from "../components/sections/FiveThreadsSection";
+import SixDimensionsSection from "../components/sections/SixDimensionsSection";
+import GroundSection from "../components/sections/GroundSection";
+import VaultSection from "../components/sections/VaultSection";
+import FirstHonestWeekSection from "../components/sections/FirstHonestWeekSection";
+import WovenGallerySection from "../components/sections/WovenGallerySection";
 import AuditSection from "../components/sections/AuditSection";
+import AppPreviewSection from "../components/sections/AppPreviewSection";
 import LumenSection from "../components/sections/LuminSection";
 import PricingSection from "../components/sections/PricingSection";
 import { TrustRow, PWAInstallFAQ, Footer } from "../components/sections/TrustFooter";
 import SocialProofSection from "../components/sections/SocialProofSection";
 import ClosingCTA from "../components/sections/ClosingCTA";
 import LibrarySection from "../components/sections/LibrarySection";
+import PathwaysSection from "../components/sections/PathwaysSection";
+import PWAStrip from "../components/sections/PWAStrip";
 
 export default function Home() {
   // Initialize scroll reveal for all .reveal elements
@@ -83,22 +91,46 @@ export default function Home() {
         {/* 1. Hero — full-bleed man holding book */}
         <HeroSection />
 
-        {/* 2. Five Threads — 5S Framework */}
+        {/* 2. Install / platform */}
+        <PWAStrip />
+
+        {/* 3. Five Threads — 5S Framework */}
         <FiveThreadsSection />
 
-        {/* 3. The Audit — the one primary public next step */}
+        {/* 4. The Six Dimensions of the Self */}
+        <SixDimensionsSection />
+
+        {/* 5. The Ground */}
+        <GroundSection />
+
+        {/* 6. The Weave */}
+        <VaultSection />
+
+        {/* 7. The First Honest Week */}
+        <FirstHonestWeekSection />
+
+        {/* 8. The Woven */}
+        <WovenGallerySection />
+
+        {/* 9. The Capacity Audit */}
         <AuditSection />
 
-        {/* 4. Lumen — Meet Lumen (full-bleed mascot) */}
+        {/* 10. Inside the app */}
+        <AppPreviewSection />
+
+        {/* 11. Lumen — Meet Lumen (full-bleed mascot) */}
         <LumenSection />
 
-        {/* 5. Social Proof — the book */}
+        {/* 12. The Soul Engineer Book */}
         <SocialProofSection />
 
-        {/* 6. The Library — 9-product grid */}
+        {/* 13. The Library — 9-product grid */}
         <LibrarySection />
 
-        {/* 7. Membership — instant Explorer or reviewed paid founding access */}
+        {/* 14. 7 Pathways */}
+        <PathwaysSection />
+
+        {/* 15. Membership — instant Explorer or reviewed paid founding access */}
         <PricingSection />
 
         {/* 10. Trust Row */}
