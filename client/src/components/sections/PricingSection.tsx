@@ -29,7 +29,7 @@ const libraryItems = [
   { icon: "✍️", title: "Belief Rewrite Workbook", format: "Interactive · 30 days", price: "$19" },
   { icon: "🧱", title: "The Identity Stack Workbook", format: "Interactive", price: "$22" },
   { icon: "📝", title: "Morning Alignment Series", format: "7 narrated scripts", price: "$37" },
-  { icon: "🔄", title: "The Reset Protocol", format: "45-min guided script", price: "$12" },
+  { icon: "🔄", title: "The Reset Protocol", format: "45-min guided script", price: "$27" },
   { icon: "🃏", title: "Wisdom Card Deck", format: "52 cards", price: "$34" },
 ];
 
@@ -558,7 +558,7 @@ export default function PricingSection() {
                     textAlign: "right",
                   }}
                 >
-                  Combined library retail: $592. Yours with Oracle.
+                  Combined library retail: $607. Yours with Oracle.
                 </p>
               </div>
             </div>

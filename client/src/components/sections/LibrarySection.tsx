@@ -46,14 +46,14 @@ const products = [
     icon: "✍️",
     title: "Belief Rewrite Workbook",
     description: "Rewire your story in 30 days. Surface limiting beliefs and rewrite with evidence.",
-    format: "Interactive · 30 days",
+    format: "Workbook PDF · 30 days",
     price: "$19",
   },
   {
     icon: "🧱",
     title: "The Identity Stack Workbook",
     description: "Design the habits that make you, you. Identity declaration through habit stack.",
-    format: "Interactive",
+    format: "Workbook PDF",
     price: "$22",
   },
   {
@@ -68,13 +68,13 @@ const products = [
     title: "The Reset Protocol",
     description: "The full resilience protocol. A guided practice for the specific moment when alignment feels distant.",
     format: "45-min guided script",
-    price: "$12",
+    price: "$27",
   },
   {
     icon: "🃏",
     title: "Wisdom Card Deck",
     description: "One card. One week. One practice. Fifty-two insights from the wisdom traditions.",
-    format: "52 cards",
+    format: "Digital Card Deck PDF",
     price: "$34",
   },
 ];
@@ -124,7 +124,7 @@ export default function LibrarySection() {
             }}
           >
             Lifewoven members at the Oracle tier get the complete Library included — every course, every
-            workbook, every guided script, and the Wisdom Card Deck. Combined standalone retail: $592.
+            workbook, every guided script, and the Wisdom Card Deck. Combined standalone retail: $607.
             You can also buy any product standalone. Seekers save 30%. Explorers pay full price.
           </p>
         </div>

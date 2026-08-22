@@ -3,7 +3,7 @@
  *
  * Design: warm bark ground, woven gold accent, Cormorant Garamond display
  * Compact horizontal strip — scannable in 20 seconds
- * Reset Audio called out as flagship (Resilience After Setback)
+ * The Reset Protocol called out as flagship (Resilience After Setback)
  * Positioned between LibrarySection and PricingSection
  */
 
