@@ -255,7 +255,7 @@ export default function HeroSection() {
                 maxWidth: "44ch",
               }}
             >
-              Founding members at Oracle tier get the complete Library — 9 products, $607 retail value, included.
+              Founding members at Oracle tier get the complete Library — 9 products, $592 retail value, included.
             </p>
           </div>
         </div>

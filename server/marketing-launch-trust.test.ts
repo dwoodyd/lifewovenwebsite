@@ -62,4 +62,24 @@ describe("marketing launch-trust source policy", () => {
     expect(home).not.toContain("<WovenGallerySection />");
     expect(home).not.toContain("<PathwaysSection />");
   });
+
+  it("describes Library products as the documents that actually ship and uses the corrected retail value", () => {
+    const library = source("client/src/components/sections/LibrarySection.tsx");
+    const pricing = source("client/src/components/sections/PricingSection.tsx");
+    const hero = source("client/src/components/sections/HeroSection.tsx");
+
+    for (const content of [library, pricing, hero]) {
+      expect(content).toContain("$592");
+      expect(content).not.toContain("$607");
+      expect(content).not.toContain("Reset Audio");
+      expect(content).not.toContain("45-min audio");
+      expect(content).not.toContain("7 audio sessions");
+    }
+
+    expect(library).toContain("The Reset Protocol");
+    expect(library).toContain("45-min guided script");
+    expect(library).toContain("Interactive · 30 days");
+    expect(library).toContain("7 narrated scripts");
+    expect(library).toContain("every guided script");
+  });
 });

@@ -7,6 +7,12 @@ import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
 
 export async function setupVite(app: Express, server: Server) {
+  // vite.config.ts exports a command-aware config factory. Passing the factory
+  // itself to createServer silently drops `root: client`, making `/src/main.tsx`
+  // resolve from the project root instead of the client directory.
+  const resolvedViteConfig = typeof viteConfig === "function"
+    ? viteConfig({ command: "serve", mode: "development", isSsrBuild: false, isPreview: false })
+    : viteConfig;
   const serverOptions = {
     middlewareMode: true,
     hmr: { server },
@@ -14,7 +20,7 @@ export async function setupVite(app: Express, server: Server) {
   };
 
   const vite = await createViteServer({
-    ...viteConfig,
+    ...resolvedViteConfig,
     configFile: false,
     server: serverOptions,
     appType: "custom",

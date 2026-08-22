@@ -26,11 +26,11 @@ const libraryItems = [
   { icon: "🌀", title: "The Alignment Current", format: "4-week course", price: "$147" },
   { icon: "⚛️", title: "Identity in Motion", format: "Course", price: "$127" },
   { icon: "🔍", title: "The Meaning Foundation", format: "4-week course", price: "$97" },
-  { icon: "✍️", title: "Belief Rewrite Workbook", format: "PDF · 30 days", price: "$19" },
-  { icon: "🧱", title: "The Identity Stack Workbook", format: "PDF", price: "$22" },
-  { icon: "🎧", title: "Morning Alignment Series", format: "7 audio sessions", price: "$37" },
-  { icon: "🔄", title: "Reset Audio", format: "45-min audio", price: "$27" },
-  { icon: "🃏", title: "Wisdom Card Deck", format: "PDF · 52 cards", price: "$34" },
+  { icon: "✍️", title: "Belief Rewrite Workbook", format: "Interactive · 30 days", price: "$19" },
+  { icon: "🧱", title: "The Identity Stack Workbook", format: "Interactive", price: "$22" },
+  { icon: "📝", title: "Morning Alignment Series", format: "7 narrated scripts", price: "$37" },
+  { icon: "🔄", title: "The Reset Protocol", format: "45-min guided script", price: "$12" },
+  { icon: "🃏", title: "Wisdom Card Deck", format: "52 cards", price: "$34" },
 ];
 
 const seekerFeatures = [
@@ -558,7 +558,7 @@ export default function PricingSection() {
                     textAlign: "right",
                   }}
                 >
-                  Combined library retail: $607. Yours with Oracle.
+                  Combined library retail: $592. Yours with Oracle.
                 </p>
               </div>
             </div>
