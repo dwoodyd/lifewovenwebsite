@@ -13,3 +13,8 @@
 - [x] Repair the Vite development configuration so the preview serves the frontend entrypoint for responsive verification.
 - [x] Verify required copy removals, links, navigation count, desktop/mobile header behavior, build/tests, and build health.
 - [x] Save a checkpoint ready for the user to publish.
+- [x] Fix signup return-path parsing so OAuth preserves `returnTo=/pricing`.
+- [x] Remove the hardcoded founding-seat claim from the public membership section.
+- [x] Add regression tests for signup return-path parsing and membership seat-copy policy.
+- [x] Verify OAuth state, rendered output, TypeScript, tests, and production build.
+- [x] Save a verified OAuth and seat-copy fix checkpoint.

@@ -5,9 +5,6 @@ import { useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
 import { SIGNUP_URL } from "../../config";
 
-const SLOTS_CLAIMED = 23;
-const TOTAL_SLOTS = 100;
-
 const explorerFeatures = [
   "Load-Bearing Survey diagnostic",
   "Daily emotional check-in",
@@ -137,7 +134,7 @@ export default function PricingSection() {
             Start with the core practice for free. When you are ready, Founding rates remain in place while your subscription stays active.
           </p>
           <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic", fontSize: "17px", color: "rgba(212,175,100,0.85)" }}>
-            {SLOTS_CLAIMED} of {TOTAL_SLOTS} Founding seats claimed.
+            100 Founding seats.
           </p>
           <div style={{ display: "inline-flex", alignItems: "center", gap: "0.75rem", background: "rgba(245,240,232,0.05)", border: "1px solid rgba(212,175,100,0.2)", borderRadius: "9999px", padding: "0.35rem 0.5rem", marginTop: "1.5rem" }}>
             <button onClick={() => setAnnualToggle(false)} style={{ padding: "0.4rem 1.1rem", borderRadius: "9999px", border: "none", cursor: "pointer", fontFamily: "'DM Sans', sans-serif", fontSize: "13px", fontWeight: 600, letterSpacing: "0.04em", background: !annualToggle ? "#D4AF64" : "transparent", color: !annualToggle ? "#1A140E" : "rgba(245,240,232,0.55)" }}>

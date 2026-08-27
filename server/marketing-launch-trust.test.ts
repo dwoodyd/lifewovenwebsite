@@ -10,6 +10,9 @@ describe("marketing launch-trust source policy", () => {
     const pricing = source("client/src/components/sections/PricingSection.tsx");
     expect(pricing).toContain('monthly: "$9"');
     expect(pricing).toContain("Founding rate while your subscription remains active.");
+    expect(pricing).toContain("100 Founding seats.");
+    expect(pricing).not.toContain("SLOTS_CLAIMED");
+    expect(pricing).not.toContain("seats claimed");
     expect(pricing).not.toContain("for life");
     expect(pricing).not.toContain("application");
   });
