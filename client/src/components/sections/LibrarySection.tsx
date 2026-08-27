@@ -11,7 +11,7 @@
  */
 
 import { useReveal } from "../../hooks/useReveal";
-import { SHOP_URL } from "../../config";
+import { SHOP_URL, SIGNUP_URL } from "../../config";
 
 const products = [
   {
@@ -60,14 +60,14 @@ const products = [
     icon: "🎧",
     title: "Morning Alignment Series",
     description: "Fifteen minutes, before the day asks anything of you. Seven complete sessions.",
-    format: "7 audio sessions",
+    format: "7 narrated scripts",
     price: "$37",
   },
   {
-    icon: "🔄",
-    title: "Reset Audio",
+    icon: "📝",
+    title: "The Reset Protocol",
     description: "The full resilience protocol. For the specific moment when alignment feels distant.",
-    format: "45-min audio",
+    format: "30–40 min guided script",
     price: "$27",
   },
   {
@@ -124,7 +124,7 @@ export default function LibrarySection() {
             }}
           >
             Lifewoven members at the Oracle tier get the complete Library included — every course, every
-            workbook, every audio session, and the Wisdom Card Deck. Combined standalone retail: $607.
+            workbook, every narrated script, and the Wisdom Card Deck. Combined standalone retail: $607.
             You can also buy any product standalone. Seekers save 30%. Explorers pay full price.
           </p>
         </div>
@@ -257,8 +257,9 @@ export default function LibrarySection() {
           }}
         >
           <a
-            href="#pricing-form"
-            onClick={(e) => { e.preventDefault(); document.getElementById("pricing-form")?.scrollIntoView({ behavior: "smooth" }); }}
+            href={SIGNUP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -284,7 +285,7 @@ export default function LibrarySection() {
               (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
             }}
           >
-            Get all of it with Oracle →
+            Start free →
           </a>
           <a
             href={SHOP_URL}

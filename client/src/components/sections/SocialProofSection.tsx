@@ -7,7 +7,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { AUDIT_URL, FIRST_HONEST_WEEK_URL } from "../../config";
+import { AMAZON_BOOK_URL, AUDIT_URL, BOOKS_URL, SIGNUP_URL } from "../../config";
 
 export default function SocialProofSection() {
   const sectionRef = useReveal(0.12) as React.RefObject<HTMLElement>;
@@ -172,7 +172,7 @@ export default function SocialProofSection() {
 
             <div className="flex flex-col gap-3" style={{ maxWidth: "480px" }}>
               <a
-                href={FIRST_HONEST_WEEK_URL}
+                href={AUDIT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -181,7 +181,7 @@ export default function SocialProofSection() {
                 Already have the book? Start with The First Honest Week. ›
               </a>
               <a
-                href={AUDIT_URL}
+                href={SIGNUP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -198,8 +198,16 @@ export default function SocialProofSection() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text-muted)"; }}
               >
-                Don’t have it yet? Start with the Load-Bearing Survey. ›
+                Start free →
               </a>
+              <div className="flex flex-wrap gap-x-5 gap-y-3 pt-1" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
+                <a href={BOOKS_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--lw-text-muted)", textDecoration: "none", borderBottom: "1px solid rgba(245,240,232,0.25)", paddingBottom: "2px" }}>
+                  Get the book →
+                </a>
+                <a href={AMAZON_BOOK_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--lw-text-muted)", textDecoration: "none", borderBottom: "1px solid rgba(245,240,232,0.25)", paddingBottom: "2px" }}>
+                  Paperback on Amazon →
+                </a>
+              </div>
             </div>
           </div>
 

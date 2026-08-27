@@ -8,7 +8,7 @@
  */
 
 import { useReveal } from "../../hooks/useReveal";
-import { AUDIT_URL } from "../../config";
+import { AUDIT_URL, SIGNUP_URL } from "../../config";
 
 const PATHWAYS = [
   {
@@ -47,7 +47,7 @@ const PATHWAYS = [
     label: "Daily Alignment",
     sub: null,
     flagship: false,
-    description: "The 5S Framework in practice. Six weeks, five dimensions, one coherent life.",
+    description: "The 5S Framework in practice — working across The 6 Dimensions, one coherent life.",
     thread: "Strategy",
     threadColor: "var(--thread-strategy)",
   },
@@ -266,15 +266,14 @@ export default function PathwaysSection() {
             The Load-Bearing Survey identifies which pathway fits your current moment — and routes you
             directly into it. Free, 12 questions, no account required.
           </p>
-          <a
-            href={AUDIT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{ flexShrink: 0 }}
-          >
-            Find your pathway →
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ flexShrink: 0 }}>
+              Find your pathway →
+            </a>
+            <a href={SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ flexShrink: 0 }}>
+              Start free →
+            </a>
+          </div>
         </div>
       </div>
     </section>

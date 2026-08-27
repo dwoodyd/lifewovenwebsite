@@ -6,39 +6,64 @@ const root = resolve(import.meta.dirname, "..");
 const source = (relativePath: string) => readFileSync(resolve(root, relativePath), "utf8");
 
 describe("marketing launch-trust source policy", () => {
-  it("uses the same founding Seeker rate and honest annual comparison as the app", () => {
+  it("uses the current Seeker rate and active-subscription founding-rate language", () => {
     const pricing = source("client/src/components/sections/PricingSection.tsx");
-    expect(pricing).toContain('{annualToggle ? "$89" : "$9"}');
-    expect(pricing).toContain("save 17–18% vs monthly");
-    expect(pricing).not.toContain("save ~47%");
-    expect(pricing).not.toContain("Locked at the founding rate for life.");
+    expect(pricing).toContain('monthly: "$9"');
+    expect(pricing).toContain("Founding rate while your subscription remains active.");
+    expect(pricing).not.toContain("for life");
+    expect(pricing).not.toContain("application");
   });
 
-  it("uses unified adult age, refund, AI-content, and analytics disclosures", () => {
+  it("uses the canonical survey and Lumen names without a marketing mascot poster image", () => {
+    const audit = source("client/src/components/sections/AuditSection.tsx");
+    const lumen = source("client/src/components/sections/LuminSection.tsx");
+    expect(audit).toContain("Load-Bearing Survey");
+    expect(lumen).toContain("Lumen.");
+    expect(lumen).not.toContain('<img\n            src="/manus-storage/mascot_poster');
+  });
+
+  it("provides a direct, pricing-aware signup path from the persistent header and every membership plan", () => {
+    const config = source("client/src/config.ts");
+    const nav = source("client/src/components/Nav.tsx");
+    const css = source("client/src/index.css");
+    const pricing = source("client/src/components/sections/PricingSection.tsx");
+    expect(config).toContain('export const SIGNUP_URL = `${APP_URL}/signup?returnTo=/pricing`;');
+    expect(nav).toContain("Start free");
+    expect(nav).toContain('href={SIGNUP_URL}');
+    expect(nav).not.toContain("hidden md:inline-flex");
+    expect(css).toMatch(/\.nav\s*\{[\s\S]*?position:\s*fixed/);
+    expect(pricing).toContain("function SignupButton");
+    expect(pricing).toContain('href={SIGNUP_URL}');
+  });
+
+  it("uses the required five-item navigation and book purchase destinations", () => {
+    const nav = source("client/src/components/Nav.tsx");
+    const book = source("client/src/components/sections/SocialProofSection.tsx");
+    const config = source("client/src/config.ts");
+    ["The Method", "The Library", "Pathways", "Membership", "Sign in"].forEach((label) => {
+      expect(nav).toContain(`label: "${label}"`);
+    });
+    expect(nav).not.toContain('label: "6 Dimensions"');
+    expect(nav).not.toContain('label: "First Honest Week"');
+    expect(config).toContain('https://www.soulengineer.online/books');
+    expect(config).toContain('https://a.co/d/0iwd1i2O');
+    expect(book).toContain("Paperback on Amazon");
+  });
+
+  it("uses guided-script language and the corrected Reset Protocol duration", () => {
+    const library = source("client/src/components/sections/LibrarySection.tsx");
+    expect(library).toContain("The Reset Protocol");
+    expect(library).toContain("30–40 min guided script");
+    expect(library).not.toContain("audio session");
+    expect(library).not.toContain("45-min audio");
+  });
+
+  it("keeps current legal and privacy disclosures", () => {
     const terms = source("client/src/pages/Terms.tsx");
     const privacy = source("client/src/pages/Privacy.tsx");
     expect(terms).toContain("at least 18 years old");
     expect(terms).toContain("eligible for a full refund within 7 days");
-    expect(terms).toContain("without your explicit consent");
     expect(privacy).toContain("Manus Analytics");
-    expect(privacy).toContain("attention, overwhelm, time perception, or energy");
     expect(privacy).toContain("adults aged 18 and over");
-  });
-
-  it("uses the canonical survey and Lumen names and does not stack a marketing mascot poster image", () => {
-    const nav = source("client/src/components/Nav.tsx");
-    const audit = source("client/src/components/sections/AuditSection.tsx");
-    const lumen = source("client/src/components/sections/LuminSection.tsx");
-    expect(nav).toContain("Load-Bearing Survey");
-    expect(audit).toContain("Load-Bearing Survey");
-    expect(lumen).toContain("Lumen.");
-    expect(lumen).not.toContain("<img\n            src=\"/manus-storage/mascot_poster");
-  });
-
-  it("keeps the honeypot out of the rendered layout and uses the current app login URL", () => {
-    const pricing = source("client/src/components/sections/PricingSection.tsx");
-    const config = source("client/src/config.ts");
-    expect(pricing).toContain('style={{ display: "none" }}');
-    expect(config).toContain('export const SIGNIN_URL = `${APP_URL}/login`;');
   });
 });

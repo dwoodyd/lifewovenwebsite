@@ -23,7 +23,7 @@ const auditQuestions = [
   },
   {
     number: "03",
-    question: "Name one standard you hold for others that you rarely apply to yourself.",
+    question: "Name one standard you hold for others that you rarely hold yourself to.",
     thread: "Standards",
     threadColor: "#7BC99A",
   },

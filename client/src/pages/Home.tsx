@@ -15,11 +15,11 @@
  * 5. Woven Gallery — archetype portraits
  * 6. Audit — 12 questions, free
  * 6b. App Preview
- * 7. Lumin — Meet Lumin (full-bleed mascot)
+ * 7. Lumen — Meet Lumen (full-bleed mascot)
  * 8. Social Proof — the book
  * 8b. Library — 9-product grid
  * 8c. 7 Pathways — compact strip
- * 9. Founding Members — application form
+ * 9. Membership — self-serve signup
  * 10. Trust Row → Closing CTA → Footer
  */
 import { useEffect } from "react";
@@ -126,7 +126,7 @@ export default function Home() {
         {/* 8c. 7 Pathways — compact strip */}
         <PathwaysSection />
 
-        {/* 9. Founding Members — application form */}
+        {/* 9. Membership — self-serve signup */}
         <PricingSection />
 
         {/* 10. Trust Row */}

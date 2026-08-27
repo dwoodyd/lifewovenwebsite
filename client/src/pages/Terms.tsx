@@ -4,7 +4,7 @@ const sections: LegalSection[] = [
   {
     heading: "Using Lifewoven",
     body: [
-      "Lifewoven gives you tools for reflection, journaling, and personal practice. By creating an account or applying for a founding seat, you agree to these terms. You must be at least 18 years old to use the service.",
+      "Lifewoven gives you tools for reflection, journaling, and personal practice. By creating an account, you agree to these terms. You must be at least 18 years old to use the service.",
     ],
   },
   {
@@ -16,7 +16,7 @@ const sections: LegalSection[] = [
   {
     heading: "Founding member rates",
     body: [
-      "Founding members lock in the rate shown at signup for as long as their subscription remains active without interruption, even when public pricing rises. If a subscription lapses or is cancelled, the founding rate may no longer be available on re-subscription.",
+      "Founding members keep the rate shown at signup while their subscription remains active without interruption, even when public pricing rises. If a subscription lapses or is cancelled, the founding rate may no longer be available on re-subscription.",
       "Lifewoven is currently in closed beta. Features may change, and some described capabilities may be added during the beta period.",
     ],
   },

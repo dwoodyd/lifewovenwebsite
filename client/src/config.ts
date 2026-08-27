@@ -8,7 +8,6 @@
  *
  * To override locally, create a .env file at the project root:
  *   VITE_APP_URL=https://app.lifewoven.click
- *   VITE_APPLY_ENDPOINT=https://api.lifewoven.click/apply
  *   VITE_SHOP_URL=https://soulengineer.online/shop
  */
 
@@ -22,10 +21,12 @@ export const AUDIT_URL = `${APP_URL}/audit`;
 /** Sign-in page URL. */
 export const SIGNIN_URL = `${APP_URL}/login`;
 
-/** API endpoint for the Founding Member application form POST. */
-export const APPLY_ENDPOINT =
-  (import.meta.env.VITE_APPLY_ENDPOINT as string | undefined) ??
-  "https://api.lifewoven.click/apply";
+/** Direct self-serve signup that returns new members to the app pricing view. */
+export const SIGNUP_URL = `${APP_URL}/signup?returnTo=/pricing`;
+
+/** Purchase destinations for Build a Life That Does Not Break You. */
+export const BOOKS_URL = "https://www.soulengineer.online/books";
+export const AMAZON_BOOK_URL = "https://a.co/d/0iwd1i2O";
 
 /** Standalone product shop URL. */
 export const SHOP_URL =
