@@ -7,7 +7,7 @@
  */
 
 import { useEffect, useRef } from "react";
-import { AUDIT_URL, BOOKS_URL, SIGNUP_URL } from "../../config";
+import { AUDIT_URL } from "../../config";
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -204,9 +204,7 @@ export default function HeroSection() {
                 Take the Load-Bearing Survey →
               </a>
               <a
-                href={SIGNUP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#the-five"
                 style={{
                   display: "inline-block",
                   color: "rgba(245,240,232,0.7)",
@@ -228,34 +226,7 @@ export default function HeroSection() {
                   (e.currentTarget as HTMLElement).style.borderColor = "rgba(245,240,232,0.3)";
                 }}
               >
-                Start free →
-              </a>
-              <a
-                href={BOOKS_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  display: "inline-block",
-                  color: "rgba(245,240,232,0.7)",
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontWeight: 400,
-                  fontSize: "0.9rem",
-                  letterSpacing: "0.02em",
-                  textDecoration: "none",
-                  borderBottom: "1px solid rgba(245,240,232,0.3)",
-                  paddingBottom: "2px",
-                  transition: "color 0.2s, border-color 0.2s",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "#F5F0E8";
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(245,240,232,0.7)";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.color = "rgba(245,240,232,0.7)";
-                  (e.currentTarget as HTMLElement).style.borderColor = "rgba(245,240,232,0.3)";
-                }}
-              >
-                Get the book →
+                I'm tired of starting over.
               </a>
             </div>
 

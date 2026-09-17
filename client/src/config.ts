@@ -8,6 +8,7 @@
  *
  * To override locally, create a .env file at the project root:
  *   VITE_APP_URL=https://app.lifewoven.click
+ *   VITE_APPLY_ENDPOINT=https://api.lifewoven.click/apply
  *   VITE_SHOP_URL=https://soulengineer.online/shop
  */
 
@@ -21,12 +22,28 @@ export const AUDIT_URL = `${APP_URL}/audit`;
 /** Sign-in page URL. */
 export const SIGNIN_URL = `${APP_URL}/login`;
 
-/** Direct self-serve signup that returns new members to the app pricing view. */
-export const SIGNUP_URL = `${APP_URL}/signup?returnTo=/pricing`;
+/** Direct self-serve signup page for new Lifewoven members. */
+export const SIGNUP_URL = `${APP_URL}/signup`;
 
-/** Purchase destinations for Build a Life That Does Not Break You. */
-export const BOOKS_URL = "https://www.soulengineer.online/books";
-export const AMAZON_BOOK_URL = "https://a.co/d/0iwd1i2O";
+/** Paid membership plans that can be carried through the sign-up return path. */
+export type PaidTier = "seeker" | "oracle";
+
+/**
+ * Direct self-serve sign-up for a selected paid plan. The app returns to the
+ * matching Pricing card after OAuth instead of sending a visitor to Dashboard.
+ */
+export const getTierSignupUrl = (tier: PaidTier) => {
+  const params = new URLSearchParams({
+    returnTo: `/pricing?tier=${tier}`,
+    tier,
+  });
+  return `${SIGNUP_URL}?${params.toString()}`;
+};
+
+/** API endpoint for the Founding Member application form POST. */
+export const APPLY_ENDPOINT =
+  (import.meta.env.VITE_APPLY_ENDPOINT as string | undefined) ??
+  "https://api.lifewoven.click/apply";
 
 /** Standalone product shop URL. */
 export const SHOP_URL =

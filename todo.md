@@ -1,20 +1,36 @@
 # Project TODO
 
-- [x] Audit the GitHub-synced site against the new-user funnel brief.
-- [x] Recover the missing implementation work identified by the new-user funnel audit.
-- [x] Add the direct `Start free` signup path to the header CTA and every membership card.
-- [x] Reduce navigation to The Method, The Library, Pathways, Membership, and Sign in.
-- [x] Rename all public Capacity Audit copy and CTAs to Load-Bearing Survey.
-- [x] Keep a compact primary header CTA visible throughout page scrolling.
-- [x] Differentiate reader and new-user CTAs across relevant homepage sections.
-- [x] Restore book purchase links for the Soul Engineer books page and Amazon paperback.
-- [x] Update The Reset Protocol to the 30–40 min guided script duration.
-- [x] Correct Lumen naming, membership rate language, product terminology, Seeker price, and five/six-dimensions explanation.
-- [x] Repair the Vite development configuration so the preview serves the frontend entrypoint for responsive verification.
-- [x] Verify required copy removals, links, navigation count, desktop/mobile header behavior, build/tests, and build health.
-- [x] Save a checkpoint ready for the user to publish.
-- [x] Fix signup return-path parsing so OAuth preserves `returnTo=/pricing`.
-- [x] Remove the hardcoded founding-seat claim from the public membership section.
-- [x] Add regression tests for signup return-path parsing and membership seat-copy policy.
-- [x] Verify OAuth state, rendered output, TypeScript, tests, and production build.
-- [x] Save a verified OAuth and seat-copy fix checkpoint.
+- [x] Redeem the `audit_claim` token after OAuth returns the user to the application — completed in Lifewoven-App commit ba14ede.
+- [x] Wire the Profile page’s `Sign Out` button to the working shared sign-out handler — completed in Lifewoven-App commit ba14ede.
+- [x] Move the account-menu `Sign out` control above secondary account links so it remains visible without menu scrolling — completed in Lifewoven-App commit ba14ede.
+- [x] Add regression tests for audit-claim redemption and shared sign-out behavior — completed in Lifewoven-App commit ba14ede.
+- [x] Hand off migration 0036_silent_frog_thor.sql to the Lifewoven-App builder with production verification steps; deployment execution remains in that application workspace.
+- [x] Hand off the live anonymous survey → OAuth return → audit.redeemClaim verification request to the Lifewoven-App builder after their deployment migration.
+- [x] Replace unsupported audio and PDF format claims in the Library marketing copy with the specified guided-script and interactive labels.
+- [x] Rename Reset Audio to The Reset Protocol and correct its advertised 45-minute guided-script label.
+- [x] Replace all marketing Library retail-value claims of $607 with $592.
+- [x] Audit the Lifewoven app and available catalog source for stale audio, PDF, Reset Audio, and $607 claims.
+- [x] Validate the corrected marketing page and record catalog or app changes owned by separate deployments.
+- [x] Repair the development preview Vite configuration so the client entry resolves from the configured client root.
+- [x] Prioritize F-03: replace the three live marketing audio-recording claims with the approved narrated-script and guided-script copy.
+- [x] Restore verified PDF labels and the $607 Library retail total on the marketing site; preserve all nine catalog prices, except for the approved F-03 display wording of `7 narrated scripts` and `45-min guided script`.
+- [x] Update marketing regression coverage to require F-03-safe language while protecting approved PDF labels and $607 pricing.
+- [x] Reconcile the Lifewoven-App catalog with revision 3: keep $27 Reset pricing, retain verified PDF delivery claims, and remove only recording-specific promises.
+- [x] Audit and correct the app Resource Library and marketplace filters without misrepresenting scripts as recordings.
+- [x] Update F-01 in the actual supplied `reset-audio.html` product-platform source using the verified Reset PDF wording.
+- [x] Complete MK-02 by replacing the Book section’s secondary survey CTA with direct book and Amazon purchase links.
+- [x] Complete MK-01 by reconciling the Six Dimensions terminology with the five-dimension 5S Framework copy.
+- [x] Complete MK-03 by removing unsupported standalone-purchase and Seeker-discount claims from the marketing Library.
+- [x] Apply the verified Reset PDF wording to the supplied F-01 product-platform HTML and add regression coverage for the rendered card and download path.
+- [x] Re-run the complete revised marketing-brief audit against current source and regression coverage after the final F-01 and order corrections.
+- [x] Restore the Six Dimensions section directly after the 5S Framework on the marketing homepage.
+- [x] Restore the First Honest Week section between The Weave and The Woven in the published page sequence.
+- [x] Restore the Woven archetype bridge and persona-card section required by the builder brief.
+- [x] Restore the 7 Pathways section after the Library and before the membership section.
+- [x] Restore the distinct The Ground section between The 6 Dimensions and The Weave.
+- [x] Confirm the final homepage order satisfies the builder brief’s book-to-practice sequence, including The Ground.
+- [x] Replace the two paid-founding application CTAs with direct self-serve signup links and exact claim-seat wording.
+- [x] Remove the retired application form, submission logic, and every remaining Founding Seat or Founding Member application string from the pricing source.
+- [x] Remove every legacy review and waiting-period message, leaving only the tracked 27-claimed seat count and subscription-active rate language.
+- [x] Remove the unsupported 30% standalone Library-product benefit from the Seeker tier.
+- [x] Add regression assertions that stale application and review strings do not exist anywhere in the pricing source, then revalidate before checkpointing.

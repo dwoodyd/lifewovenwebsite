@@ -6,18 +6,17 @@
  *
  * Positioned between SocialProofSection (The Companion Book) and PricingSection (Founding Members)
  * 9-product grid with "Included with Oracle" badges
- * Two CTAs: "Get all of it with Oracle" + "Browse standalone"
+ * One CTA: "Get all of it with Oracle"
  * Closing footnote about independent creation
  */
 
 import { useReveal } from "../../hooks/useReveal";
-import { SHOP_URL, SIGNUP_URL } from "../../config";
 
 const products = [
   {
     icon: "📐",
     title: "Alignment Fundamentals",
-    description: "The 5S Framework in practice — working across all six dimensions. Six weeks, one coherent life.",
+    description: "The 5S Framework in practice — working across its five dimensions. Six weeks, one coherent life.",
     format: "6-week course",
     price: "$97",
   },
@@ -46,35 +45,35 @@ const products = [
     icon: "✍️",
     title: "Belief Rewrite Workbook",
     description: "Rewire your story in 30 days. Surface limiting beliefs and rewrite with evidence.",
-    format: "PDF · 30 days",
+    format: "Workbook PDF · 30 days",
     price: "$19",
   },
   {
     icon: "🧱",
     title: "The Identity Stack Workbook",
     description: "Design the habits that make you, you. Identity declaration through habit stack.",
-    format: "PDF",
+    format: "Workbook PDF",
     price: "$22",
   },
   {
-    icon: "🎧",
+    icon: "📝",
     title: "Morning Alignment Series",
-    description: "Fifteen minutes, before the day asks anything of you. Seven complete sessions.",
+    description: "Fifteen minutes, before the day asks anything of you. Seven complete narrated scripts.",
     format: "7 narrated scripts",
     price: "$37",
   },
   {
-    icon: "📝",
+    icon: "🔄",
     title: "The Reset Protocol",
-    description: "The full resilience protocol. For the specific moment when alignment feels distant.",
-    format: "30–40 min guided script",
+    description: "The full resilience protocol. A guided practice for the specific moment when alignment feels distant.",
+    format: "45-min guided script",
     price: "$27",
   },
   {
     icon: "🃏",
     title: "Wisdom Card Deck",
     description: "One card. One week. One practice. Fifty-two insights from the wisdom traditions.",
-    format: "PDF · 52 cards",
+    format: "Digital Card Deck PDF",
     price: "$34",
   },
 ];
@@ -124,8 +123,7 @@ export default function LibrarySection() {
             }}
           >
             Lifewoven members at the Oracle tier get the complete Library included — every course, every
-            workbook, every narrated script, and the Wisdom Card Deck. Combined standalone retail: $607.
-            You can also buy any product standalone. Seekers save 30%. Explorers pay full price.
+            workbook, every guided script, and the Wisdom Card Deck. Combined retail value: $607, included.
           </p>
         </div>
 
@@ -223,7 +221,7 @@ export default function LibrarySection() {
                     textDecoration: "line-through",
                   }}
                 >
-                  {product.price} standalone
+                  {product.price} retail value
                 </span>
                 <span
                   style={{
@@ -246,7 +244,7 @@ export default function LibrarySection() {
           ))}
         </div>
 
-        {/* ── Two CTAs ── */}
+        {/* ── Oracle CTA ── */}
         <div
           style={{
             display: "flex",
@@ -257,9 +255,8 @@ export default function LibrarySection() {
           }}
         >
           <a
-            href={SIGNUP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#pricing-form"
+            onClick={(e) => { e.preventDefault(); document.getElementById("pricing-form")?.scrollIntoView({ behavior: "smooth" }); }}
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -285,37 +282,7 @@ export default function LibrarySection() {
               (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
             }}
           >
-            Start free →
-          </a>
-          <a
-            href={SHOP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.4rem",
-              padding: "0.85rem 1.75rem",
-              borderRadius: "9999px",
-              border: "1px solid rgba(212,175,100,0.4)",
-              color: "rgba(212,175,100,0.85)",
-              fontFamily: "'DM Sans', sans-serif",
-              fontWeight: 600,
-              fontSize: "14px",
-              letterSpacing: "0.04em",
-              textDecoration: "none",
-              transition: "border-color 0.2s, color 0.2s",
-            }}
-            onMouseEnter={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "#D4AF64";
-              (e.currentTarget as HTMLElement).style.color = "#D4AF64";
-            }}
-            onMouseLeave={(e) => {
-              (e.currentTarget as HTMLElement).style.borderColor = "rgba(212,175,100,0.4)";
-              (e.currentTarget as HTMLElement).style.color = "rgba(212,175,100,0.85)";
-            }}
-          >
-            Browse standalone →
+            Get all of it with Oracle →
           </a>
         </div>
 

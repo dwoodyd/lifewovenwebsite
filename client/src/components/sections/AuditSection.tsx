@@ -6,7 +6,7 @@
  */
 import { useEffect, useRef, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { AUDIT_URL } from "../../config";
+import { AUDIT_URL, SIGNIN_URL } from "../../config";
 
 const auditQuestions = [
   {
@@ -23,7 +23,7 @@ const auditQuestions = [
   },
   {
     number: "03",
-    question: "Name one standard you hold for others that you rarely hold yourself to.",
+    question: "Name one standard you hold for others that you rarely apply to yourself.",
     thread: "Standards",
     threadColor: "#7BC99A",
   },
@@ -90,11 +90,28 @@ export default function AuditSection() {
                 color: "var(--lw-text-muted)",
               }}
             >
-              The Load-Bearing Survey shows you which thread to tend first.
+              The Load-Bearing Survey shows you which thread to tend first. Take it without an account; if you choose to create one afterward, your completed reading follows you into Lifewoven.
             </p>
-            <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              Take the Load-Bearing Survey →
-            </a>
+            <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: "1rem" }}>
+              <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                Take the Load-Bearing Survey →
+              </a>
+              <a
+                href={SIGNIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontFamily: "'DM Sans', sans-serif",
+                  fontSize: "14px",
+                  color: "var(--lw-text-muted)",
+                  textDecoration: "none",
+                  borderBottom: "1px solid rgba(212,175,100,0.28)",
+                  paddingBottom: "0.2rem",
+                }}
+              >
+                Take me into the app →
+              </a>
+            </div>
           </div>
 
           {/* Right — Phone mockup with cycling questions */}

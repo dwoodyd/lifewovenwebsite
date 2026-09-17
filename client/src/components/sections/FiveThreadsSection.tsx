@@ -83,11 +83,11 @@ export default function FiveThreadsSection() {
 
   return (
     <section
-      id="the-method"
+      id="the-five"
       ref={sectionRef}
       className="relative w-full overflow-hidden"
       style={{ minHeight: "100svh" }}
-              aria-label="The Method — 5S Framework"
+      aria-label="The Five Threads — 5S Framework"
     >
       {/* ── Full-bleed video ── */}
       <div className="absolute inset-0 z-0">
@@ -166,7 +166,7 @@ export default function FiveThreadsSection() {
                   marginBottom: "1.25rem",
                 }}
               >
-                Five threads.{" "}
+                Five dimensions.{" "}
                 <em style={{ fontStyle: "italic", color: "#B0832F" }}>One</em>
                 <br />
                 <em style={{ fontStyle: "italic", color: "#B0832F" }}>life, woven.</em>
@@ -180,9 +180,9 @@ export default function FiveThreadsSection() {
                   maxWidth: "36ch",
                 }}
               >
-                The 6 Dimensions name what you are tending. The 5S Framework is
-                how you tend them — through State, Story, Standards, Strategy,
-                and Stewardship.
+                Other tools work on one of these at a time. Yours are already
+                entangled — your state shapes your story, your story sets your
+                standards, your standards bend your strategy.
               </p>
               <p
                 style={{

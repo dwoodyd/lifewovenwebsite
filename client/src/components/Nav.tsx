@@ -1,29 +1,25 @@
 /*
- * LIFEWOVEN Nav — compact, persistent conversion header.
+ * LIFEWOVEN Nav — Monastery Library at Dusk
+ * Transparent over hero, frosted glass on scroll
  */
 import { useEffect, useState } from "react";
-import { SIGNIN_URL, SIGNUP_URL } from "../config";
-
-const NAV_ITEMS = [
-  { label: "The Method", href: "#the-method", external: false },
-  { label: "The Library", href: "#the-library", external: false },
-  { label: "Pathways", href: "#pathways", external: false },
-  { label: "Membership", href: "#pricing", external: false },
-  { label: "Sign in", href: SIGNIN_URL, external: true },
-];
+import { AUDIT_URL, SIGNIN_URL } from "../config";
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <nav className={`nav ${scrolled ? "scrolled" : ""}`} role="navigation" aria-label="Main navigation">
+      {/* Skip to content */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 btn-primary text-sm z-50"
@@ -31,6 +27,7 @@ export default function Nav() {
         Skip to content
       </a>
 
+      {/* Logo */}
       <a href="/" className="flex items-center gap-2.5 group shrink-0" aria-label="Lifewoven home">
         <span
           aria-hidden="true"
@@ -39,60 +36,90 @@ export default function Nav() {
         >
           LW
         </span>
-        <span className="font-display text-xl font-semibold tracking-tight" style={{ color: "var(--lw-text)", fontFamily: "var(--font-display)" }}>
+        <span
+          className="font-display text-xl font-semibold tracking-tight"
+          style={{ color: "var(--lw-text)", fontFamily: "var(--font-display)" }}
+        >
           Lifewoven.
         </span>
       </a>
 
-      <div className="hidden xl:flex min-w-0 items-center gap-5 whitespace-nowrap">
-        {NAV_ITEMS.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            target={item.external ? "_blank" : undefined}
-            rel={item.external ? "noopener noreferrer" : undefined}
-            className="text-[13px] font-medium transition-colors hover:text-amber-400"
-            style={{ color: "var(--lw-text-muted)" }}
-          >
-            {item.label}
-          </a>
-        ))}
+      {/* Desktop links */}
+      <div className="hidden 2xl:flex min-w-0 items-center gap-4 whitespace-nowrap">
+        <a href="#the-five" className="text-[13px] font-medium transition-colors hover:text-amber-400"
+           style={{ color: "var(--lw-text-muted)" }}>
+          The Method
+        </a>
+        <a href="#the-library" className="text-[13px] font-medium transition-colors hover:text-amber-400"
+           style={{ color: "var(--lw-text-muted)" }}>
+          The Library
+        </a>
+        <a href="#pricing" className="text-[13px] font-medium transition-colors hover:text-amber-400"
+           style={{ color: "var(--lw-text-muted)" }}>
+          Membership
+        </a>
+        <a href={SIGNIN_URL} target="_blank" rel="noopener noreferrer" className="text-[13px] font-medium transition-colors hover:text-amber-400"
+           style={{ color: "var(--lw-text-muted)" }}>
+          Sign in
+        </a>
       </div>
 
-      <div className="flex items-center gap-2 sm:gap-3">
-        <a href={SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-sm whitespace-nowrap">
-          Start free
+      {/* CTA */}
+      <div className="flex items-center gap-3">
+        <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary hidden md:inline-flex whitespace-nowrap">
+          Take the Load-Bearing Survey
         </a>
+
+        {/* Mobile hamburger */}
         <button
-          className="xl:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen((open) => !open)}
+          className="2xl:hidden flex flex-col gap-1.5 p-2"
+          onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
           aria-expanded={menuOpen}
         >
-          <span className={`block w-5 h-0.5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} style={{ background: "var(--lw-text)" }} />
-          <span className={`block w-5 h-0.5 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} style={{ background: "var(--lw-text)" }} />
-          <span className={`block w-5 h-0.5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} style={{ background: "var(--lw-text)" }} />
+          <span className={`block w-5 h-0.5 transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+                style={{ background: "var(--lw-text)" }} />
+          <span className={`block w-5 h-0.5 transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
+                style={{ background: "var(--lw-text)" }} />
+          <span className={`block w-5 h-0.5 transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+                style={{ background: "var(--lw-text)" }} />
         </button>
       </div>
 
+      {/* Mobile menu */}
       {menuOpen && (
-        <div className="absolute top-full left-0 right-0 flex flex-col gap-0 xl:hidden" style={{ background: "rgba(26, 20, 14, 0.98)", backdropFilter: "blur(12px)", borderBottom: "1px solid var(--lw-border)" }}>
-          {NAV_ITEMS.map((item) => (
+        <div
+          className="absolute top-full left-0 right-0 flex flex-col gap-0 2xl:hidden"
+          style={{
+            background: "rgba(26, 20, 14, 0.97)",
+            backdropFilter: "blur(12px)",
+            borderBottom: "1px solid var(--lw-border)",
+          }}
+        >
+          {[
+            { label: "The Method", href: "#the-five", external: false },
+            { label: "The Library", href: "#the-library", external: false },
+            { label: "Membership", href: "#pricing", external: false },
+            { label: "Sign in", href: SIGNIN_URL, external: true },
+          ].map((item) => (
             <a
               key={item.label}
               href={item.href}
               target={item.external ? "_blank" : undefined}
               rel={item.external ? "noopener noreferrer" : undefined}
               className="px-6 py-4 text-base font-medium border-b transition-colors hover:text-amber-400"
-              style={{ color: "var(--lw-text-muted)", borderColor: "var(--lw-border)" }}
+              style={{
+                color: "var(--lw-text-muted)",
+                borderColor: "var(--lw-border)",
+              }}
               onClick={() => setMenuOpen(false)}
             >
               {item.label}
             </a>
           ))}
           <div className="px-6 py-4">
-            <a href={SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
-              Start free
+            <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary w-full justify-center" onClick={() => setMenuOpen(false)}>
+              Take the Load-Bearing Survey
             </a>
           </div>
         </div>

@@ -40,7 +40,7 @@ export default function NotFound() {
           color: "var(--lw-text)",
         }}
       >
-        This thread doesn't exist.
+        This path is not part of the weave.
       </h1>
       <p
         style={{
@@ -51,8 +51,8 @@ export default function NotFound() {
           lineHeight: 1.6,
         }}
       >
-        The page you're looking for has been unwoven.
-        Let's find your way back.
+        The page you were looking for is not here.
+        Return to Lifewoven and begin where you are.
       </p>
       <button
         onClick={() => setLocation("/")}

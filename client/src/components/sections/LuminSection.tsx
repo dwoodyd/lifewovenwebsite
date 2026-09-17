@@ -1,5 +1,5 @@
 /**
- * LumenSection — Full-bleed Lumen mascot video with scroll-triggered word-by-word copy entrance
+ * LuminSection — Full-bleed Lumen mascot video with scroll-triggered word-by-word copy entrance
  * 
  * Layout fix (Fix 4):
  *   Desktop: two-column — video fills left 55%, copy sits in right 45% (no collision)

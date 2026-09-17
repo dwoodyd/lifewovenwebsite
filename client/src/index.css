@@ -44,7 +44,7 @@
   /* Core palette — earthy/woven direction (matches app) */
   --lw-bg:           #1A140E;   /* warm bark/espresso — the ground */
   --lw-bg-elevated:  #262019;   /* card backgrounds — ink */
-  --lw-bg-lumin:     #110D08;   /* Lumen section — pull bark deeper */
+  --lw-bg-lumin:     #110D08;   /* Lumin section — pull bark deeper */
   --lw-text:         #EFE7D6;   /* parchment */
   --lw-text-muted:   #A89880;   /* warm muted parchment */
   --lw-amber:        #B0832F;   /* woven gold — CTAs, highlights */
@@ -443,7 +443,7 @@
     filter: drop-shadow(0 20px 80px rgba(176, 131, 47, 0.25));
   }
 
-  /* ---- Lumen section ---- */
+  /* ---- Lumin section ---- */
   .lumin-section {
     background: var(--lw-bg-lumin);
     position: relative;

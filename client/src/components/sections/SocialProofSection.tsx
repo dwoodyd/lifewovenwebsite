@@ -7,7 +7,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { AMAZON_BOOK_URL, AUDIT_URL, BOOKS_URL, SIGNUP_URL } from "../../config";
+import { AUDIT_URL } from "../../config";
 
 export default function SocialProofSection() {
   const sectionRef = useReveal(0.12) as React.RefObject<HTMLElement>;
@@ -163,7 +163,7 @@ export default function SocialProofSection() {
                 fontStyle: "italic",
               }}
             >
-              The Six Dimensions. The Capacity Math. The First Honest Week.
+              The six dimensions of the self. The Capacity Math. The First Honest Week.
               <br />
               <span style={{ color: "var(--lw-text-muted)", fontStyle: "normal", fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
                 This is where the book comes alive.
@@ -172,16 +172,16 @@ export default function SocialProofSection() {
 
             <div className="flex flex-col gap-3" style={{ maxWidth: "480px" }}>
               <a
-                href={AUDIT_URL}
+                href="https://www.soulengineer.online/books"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
                 style={{ fontSize: "15px", whiteSpace: "nowrap" }}
               >
-                Already have the book? Start with The First Honest Week. ›
+                Get the book →
               </a>
               <a
-                href={SIGNUP_URL}
+                href="https://a.co/d/0iwd1i2O"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -198,16 +198,26 @@ export default function SocialProofSection() {
                 onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text)"; }}
                 onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text-muted)"; }}
               >
-                Start free →
+                Paperback on Amazon →
               </a>
-              <div className="flex flex-wrap gap-x-5 gap-y-3 pt-1" style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px" }}>
-                <a href={BOOKS_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--lw-text-muted)", textDecoration: "none", borderBottom: "1px solid rgba(245,240,232,0.25)", paddingBottom: "2px" }}>
-                  Get the book →
-                </a>
-                <a href={AMAZON_BOOK_URL} target="_blank" rel="noopener noreferrer" style={{ color: "var(--lw-text-muted)", textDecoration: "none", borderBottom: "1px solid rgba(245,240,232,0.25)", paddingBottom: "2px" }}>
-                  Paperback on Amazon →
-                </a>
-              </div>
+              <a
+                href={AUDIT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "inline-block",
+                  fontSize: "14px",
+                  color: "var(--lw-text-muted)",
+                  fontFamily: "'DM Sans', sans-serif",
+                  textDecoration: "none",
+                  opacity: 0.85,
+                  alignSelf: "flex-start",
+                }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = "var(--lw-text-muted)"; }}
+              >
+                Already have the book? Start with The First Honest Week. ›
+              </a>
             </div>
           </div>
 

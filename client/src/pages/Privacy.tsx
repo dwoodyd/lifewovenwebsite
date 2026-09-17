@@ -4,7 +4,7 @@ const sections: LegalSection[] = [
   {
     heading: "What we collect",
     body: [
-      "When you create an account, we collect the information you give us directly, including your name, email address, and the membership tier you choose.",
+      "When you apply for a founding seat or create an account, we collect the information you give us directly: your name, email address, the tier you're interested in, and anything you write in the application form.",
       "When you use the Lifewoven app, we store the content you create — journal entries, daily check-ins, survey responses, and your Woven Self portraits — so that the practice works for you over time. Optional personalization responses may include self-described patterns around attention, overwhelm, time perception, or energy; they are not diagnoses.",
       "We also collect basic technical information automatically, such as device type, browser, and general usage patterns, to keep the service secure and to improve it.",
     ],
@@ -12,7 +12,7 @@ const sections: LegalSection[] = [
   {
     heading: "How we use it",
     body: [
-      "We use your information to provide and personalize the Lifewoven experience, to respond to support requests, to send you important account and service messages, and to improve our tools. We may process content in optional AI features you choose to use, but we do not use personal content to train general AI models without your explicit consent.",
+      "We use your information to provide and personalize the Lifewoven experience, to respond to your application and support requests, to send you important account and service messages, and to improve our tools. We may process content in optional AI features you choose to use, but we do not use personal content to train general AI models without your explicit consent.",
       "We do not sell your personal information, and we do not share your journal entries, check-ins, or portraits with advertisers or third parties for their own marketing.",
     ],
   },

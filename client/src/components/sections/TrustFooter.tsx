@@ -7,7 +7,7 @@
  */
 import { useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { SIGNIN_URL } from "../../config";
+import { AUDIT_URL } from "../../config";
 
 const trustChips = [
   "Soul Engineer Method",
@@ -308,11 +308,14 @@ export function Footer() {
           <nav aria-label="Footer navigation">
             <div className="flex flex-wrap gap-6">
               {[
-                { label: "The Method", href: "#the-method" },
+                { label: "The Five", href: "#the-five" },
+                { label: "6 Dimensions", href: "#six-dimensions" },
+                { label: "First Honest Week", href: "#first-honest-week" },
+                { label: "The Load-Bearing Survey", href: AUDIT_URL },
                 { label: "The Library", href: "#the-library" },
                 { label: "Pathways", href: "#pathways" },
-                { label: "Membership", href: "#pricing" },
-                { label: "Sign in", href: SIGNIN_URL },
+                { label: "Founding Members", href: "#pricing" },
+                { label: "Install Guide", href: "#install-guide" },
                 { label: "Privacy", href: "/privacy" },
                 { label: "Terms", href: "/terms" },
               ].map((link) => (

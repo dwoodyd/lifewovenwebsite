@@ -3,12 +3,12 @@
  *
  * Design: warm bark ground, woven gold accent, Cormorant Garamond display
  * Compact horizontal strip — scannable in 20 seconds
- * Reset Audio called out as flagship (Resilience After Setback)
+ * The Reset Protocol called out as flagship (Resilience After Setback)
  * Positioned between LibrarySection and PricingSection
  */
 
 import { useReveal } from "../../hooks/useReveal";
-import { AUDIT_URL, SIGNUP_URL } from "../../config";
+import { AUDIT_URL } from "../../config";
 
 const PATHWAYS = [
   {
@@ -47,7 +47,7 @@ const PATHWAYS = [
     label: "Daily Alignment",
     sub: null,
     flagship: false,
-    description: "The 5S Framework in practice — working across The 6 Dimensions, one coherent life.",
+    description: "The 5S Framework in practice. Six weeks, five dimensions, one coherent life.",
     thread: "Strategy",
     threadColor: "var(--thread-strategy)",
   },
@@ -266,14 +266,15 @@ export default function PathwaysSection() {
             The Load-Bearing Survey identifies which pathway fits your current moment — and routes you
             directly into it. Free, 12 questions, no account required.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <a href={AUDIT_URL} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ flexShrink: 0 }}>
-              Find your pathway →
-            </a>
-            <a href={SIGNUP_URL} target="_blank" rel="noopener noreferrer" className="btn-outline" style={{ flexShrink: 0 }}>
-              Start free →
-            </a>
-          </div>
+          <a
+            href={AUDIT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ flexShrink: 0 }}
+          >
+            Find your pathway →
+          </a>
         </div>
       </div>
     </section>

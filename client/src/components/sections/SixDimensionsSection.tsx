@@ -1,5 +1,5 @@
 /**
- * SixDimensionsSection — "THE 6 DIMENSIONS"
+ * SixDimensionsSection — "THE SIX DIMENSIONS OF THE SELF"
  * Brief: Inserted below the 5S Framework section.
  * Layout: eyebrow + headline + 6 dimension cards in a 2-col or 3-col grid
  * Each dimension: icon, name, one-line description, thread colour dot
@@ -67,7 +67,7 @@ export default function SixDimensionsSection() {
       <div className="container">
         {/* Header */}
         <div className="text-center" style={{ marginBottom: "clamp(2.5rem, 5vw, 4rem)" }}>
-          <p className="eyebrow mb-4">The 6 Dimensions</p>
+          <p className="eyebrow mb-4">The Six Dimensions of the Self</p>
           <h2
             className="font-display"
             style={{
@@ -78,7 +78,7 @@ export default function SixDimensionsSection() {
               marginBottom: "1.25rem",
             }}
           >
-            Six dimensions.{" "}
+            Six dimensions of the self.{" "}
             <em style={{ color: "var(--lw-amber)", fontStyle: "italic" }}>
               One life.
             </em>
