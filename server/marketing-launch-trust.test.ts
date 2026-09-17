@@ -8,8 +8,14 @@ const source = (relativePath: string) => readFileSync(resolve(root, relativePath
 describe("marketing launch-trust source policy", () => {
   it("uses the same founding Seeker rate and honest annual comparison as the app", () => {
     const pricing = source("client/src/components/sections/PricingSection.tsx");
+    const config = source("client/src/config.ts");
     expect(pricing).toContain('{annualToggle ? "$89" : "$9"}');
     expect(pricing).toContain("save 17–18% vs monthly");
+    expect(pricing).toContain('href={getTierSignupUrl("seeker")}');
+    expect(pricing).toContain('href={getTierSignupUrl("oracle")}');
+    expect(config).toContain('returnTo: `/pricing?tier=${tier}`');
+    expect(config).toContain("tier,");
+    expect(pricing).not.toContain('"$10"');
     expect(pricing).not.toContain("save ~47%");
     expect(pricing).not.toContain("Locked at the founding rate for life.");
   });
@@ -53,7 +59,7 @@ describe("marketing launch-trust source policy", () => {
     const config = source("client/src/config.ts");
     const nav = source("client/src/components/Nav.tsx");
     const home = source("client/src/pages/Home.tsx");
-    expect(pricing).toContain('import { SIGNIN_URL, SIGNUP_URL } from "../../config"');
+    expect(pricing).toContain('import { getTierSignupUrl, SIGNIN_URL, SIGNUP_URL } from "../../config"');
     expect(config).toContain('export const SIGNUP_URL = `${APP_URL}/signup`;');
     expect(pricing).toContain("Start free — instant");
     expect(pricing).toContain("Claim your founding seat");

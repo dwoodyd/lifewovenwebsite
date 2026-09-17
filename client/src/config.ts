@@ -25,6 +25,21 @@ export const SIGNIN_URL = `${APP_URL}/login`;
 /** Direct self-serve signup page for new Lifewoven members. */
 export const SIGNUP_URL = `${APP_URL}/signup`;
 
+/** Paid membership plans that can be carried through the sign-up return path. */
+export type PaidTier = "seeker" | "oracle";
+
+/**
+ * Direct self-serve sign-up for a selected paid plan. The app returns to the
+ * matching Pricing card after OAuth instead of sending a visitor to Dashboard.
+ */
+export const getTierSignupUrl = (tier: PaidTier) => {
+  const params = new URLSearchParams({
+    returnTo: `/pricing?tier=${tier}`,
+    tier,
+  });
+  return `${SIGNUP_URL}?${params.toString()}`;
+};
+
 /** API endpoint for the Founding Member application form POST. */
 export const APPLY_ENDPOINT =
   (import.meta.env.VITE_APPLY_ENDPOINT as string | undefined) ??

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { SIGNIN_URL, SIGNUP_URL } from "../../config";
+import { getTierSignupUrl, SIGNIN_URL, SIGNUP_URL } from "../../config";
 
 const SLOTS_CLAIMED = 27;
 const TOTAL_SLOTS = 100;
@@ -155,8 +155,8 @@ export default function PricingSection() {
 
         <div className="pricing-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: "1.5rem", alignItems: "stretch" }}>
           <TierCard name="Explorer" label="Explorer · Free" price="$0" detail="forever" description="Begin with a clear reading of where you are, then build from there." features={explorerFeatures} href={SIGNIN_URL} cta="Start free — instant" />
-          <TierCard name="Seeker" label="Seeker · Founding Rate" price={annualToggle ? "$89" : "$9"} detail={annualToggle ? "/yr founding" : "/mo founding"} description="The core practices, pathways, and journals for returning to the work." features={seekerFeatures} href={SIGNUP_URL} cta="Claim your founding seat" />
-          <TierCard name="Oracle" label="Oracle · Founding Rate" price={annualToggle ? "$249" : "$25"} detail={annualToggle ? "/yr founding" : "/mo founding"} description="The full Lifewoven system, with every tool, pathway, and Library practice unlocked." features={oracleFeatures} href={SIGNUP_URL} cta="Claim your founding seat" featured />
+          <TierCard name="Seeker" label="Seeker · Founding Rate" price={annualToggle ? "$89" : "$9"} detail={annualToggle ? "/yr founding" : "/mo founding"} description="The core practices, pathways, and journals for returning to the work." features={seekerFeatures} href={getTierSignupUrl("seeker")} cta="Claim your founding seat" />
+          <TierCard name="Oracle" label="Oracle · Founding Rate" price={annualToggle ? "$249" : "$25"} detail={annualToggle ? "/yr founding" : "/mo founding"} description="The full Lifewoven system, with every tool, pathway, and Library practice unlocked." features={oracleFeatures} href={getTierSignupUrl("oracle")} cta="Claim your founding seat" featured />
         </div>
 
         <div id="pricing-form" style={{ maxWidth: "600px", margin: "4rem auto 0", textAlign: "center", padding: "2rem", borderRadius: "16px", background: "rgba(245,240,232,0.025)", border: "1px solid rgba(212,175,100,0.2)" }}>
