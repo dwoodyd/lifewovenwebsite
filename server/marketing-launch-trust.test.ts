@@ -36,7 +36,10 @@ describe("marketing launch-trust source policy", () => {
     expect(nav).not.toContain("hidden md:inline-flex");
     expect(css).toMatch(/\.nav\s*\{[\s\S]*?position:\s*fixed/);
     expect(pricing).toContain("function SignupButton");
-    expect(pricing).toContain('href={SIGNUP_URL}');
+    expect(pricing).toContain('const signupUrl = planId === "explorer" ? SIGNUP_URL : `${SIGNUP_URL}&tier=${planId}`;');
+    expect(pricing).toContain('href={signupUrl}');
+    expect(pricing).toContain("By continuing, you agree to Lifewoven");
+    expect(pricing).toContain("provided through Manus services");
   });
 
   it("uses the required five-item navigation and book purchase destinations", () => {

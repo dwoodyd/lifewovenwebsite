@@ -3,7 +3,7 @@
  */
 import { useState } from "react";
 import { useReveal } from "../../hooks/useReveal";
-import { SIGNUP_URL } from "../../config";
+import { APP_URL, SIGNUP_URL } from "../../config";
 
 const explorerFeatures = [
   "Load-Bearing Survey diagnostic",
@@ -37,6 +37,7 @@ const oracleFeatures = [
 ];
 
 type Plan = {
+  id: "explorer" | "seeker" | "oracle";
   name: string;
   label: string;
   description: string;
@@ -47,30 +48,38 @@ type Plan = {
   featured?: boolean;
 };
 
-function SignupButton({ featured = false }: { featured?: boolean }) {
+function SignupButton({ planId, featured = false }: { planId: Plan["id"]; featured?: boolean }) {
+  const signupUrl = planId === "explorer" ? SIGNUP_URL : `${SIGNUP_URL}&tier=${planId}`;
+  const disclosureId = `signup-disclosure-${planId}`;
+
   return (
-    <a
-      href={SIGNUP_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{
-        display: "block",
-        textAlign: "center",
-        padding: "0.85rem 1.5rem",
-        borderRadius: "9999px",
-        background: featured ? "#D4AF64" : "transparent",
-        border: featured ? "1px solid #D4AF64" : "1px solid rgba(212,175,100,0.5)",
-        color: featured ? "#1A140E" : "#D4AF64",
-        fontFamily: "'DM Sans', sans-serif",
-        fontWeight: 700,
-        fontSize: "14px",
-        letterSpacing: "0.04em",
-        textDecoration: "none",
-        marginTop: "auto",
-      }}
-    >
-      Start free →
-    </a>
+    <div style={{ marginTop: "auto" }}>
+      <a
+        href={signupUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-describedby={disclosureId}
+        style={{
+          display: "block",
+          textAlign: "center",
+          padding: "0.85rem 1.5rem",
+          borderRadius: "9999px",
+          background: featured ? "#D4AF64" : "transparent",
+          border: featured ? "1px solid #D4AF64" : "1px solid rgba(212,175,100,0.5)",
+          color: featured ? "#1A140E" : "#D4AF64",
+          fontFamily: "'DM Sans', sans-serif",
+          fontWeight: 700,
+          fontSize: "14px",
+          letterSpacing: "0.04em",
+          textDecoration: "none",
+        }}
+      >
+        Start free →
+      </a>
+      <p id={disclosureId} style={{ margin: "0.65rem 0 0", fontFamily: "'DM Sans', sans-serif", fontSize: "11px", lineHeight: 1.5, textAlign: "center", color: "rgba(245,240,232,0.45)" }}>
+        By continuing, you agree to Lifewoven&apos;s <a href={`${APP_URL}/legal/terms`} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>Terms</a> and acknowledge its <a href={`${APP_URL}/legal/privacy`} target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "underline" }}>Privacy Policy</a>. Optional AI guidance is provided through Manus services.
+      </p>
+    </div>
   );
 }
 
@@ -93,6 +102,7 @@ export default function PricingSection() {
 
   const plans: Plan[] = [
     {
+      id: "explorer",
       name: "Explorer",
       label: "Explorer",
       description: "Lumen walks with you through the core tools. Begin the weave — no commitment required.",
@@ -102,6 +112,7 @@ export default function PricingSection() {
       features: explorerFeatures,
     },
     {
+      id: "seeker",
       name: "Seeker",
       label: "Seeker · Founding Rate",
       description: "Lumen opens the full system to you. Every tool, every pathway, every module — fully unlocked.",
@@ -111,6 +122,7 @@ export default function PricingSection() {
       features: seekerFeatures,
     },
     {
+      id: "oracle",
       name: "Oracle",
       label: "Oracle · Founding Rate",
       description: "Lumen and the Oracle work continuously on your behalf — reading the records you choose to bring into the conversation.",
@@ -160,7 +172,7 @@ export default function PricingSection() {
               </div>
               <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "var(--lw-text-muted)", lineHeight: 1.65 }}>{plan.description}</p>
               <FeatureList features={plan.features} />
-              <SignupButton featured={plan.featured} />
+              <SignupButton planId={plan.id} featured={plan.featured} />
             </article>
           ))}
         </div>
