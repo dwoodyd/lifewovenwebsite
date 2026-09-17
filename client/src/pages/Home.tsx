@@ -15,11 +15,11 @@
  * 5. Woven Gallery — archetype portraits
  * 6. Audit — 12 questions, free
  * 6b. App Preview
- * 7. Lumin — Meet Lumin (full-bleed mascot)
+ * 7. Lumen — companion guide (full-bleed mascot)
  * 8. Social Proof — the book
  * 8b. Library — 9-product grid
  * 8c. 7 Pathways — compact strip
- * 9. Founding Members — application form
+ * 9. Membership — self-serve signup
  * 10. Trust Row → Closing CTA → Footer
  */
 import { useEffect } from "react";
@@ -112,7 +112,7 @@ export default function Home() {
         {/* 8. The Woven */}
         <WovenGallerySection />
 
-        {/* 9. The Capacity Audit */}
+        {/* 9. The Load-Bearing Survey */}
         <AuditSection />
 
         {/* 10. Inside the app */}
@@ -130,7 +130,7 @@ export default function Home() {
         {/* 14. 7 Pathways */}
         <PathwaysSection />
 
-        {/* 15. Membership — instant Explorer or reviewed paid founding access */}
+        {/* 15. Membership — self-serve Explorer, Seeker, and Oracle access */}
         <PricingSection />
 
         {/* 10. Trust Row */}

@@ -84,5 +84,6 @@ describe("marketing launch-trust source policy", () => {
     expect(terms).toContain("eligible for a full refund within 7 days");
     expect(privacy).toContain("Manus Analytics");
     expect(privacy).toContain("adults aged 18 and over");
+    expect(privacy).not.toContain("application");
   });
 });
